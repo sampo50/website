@@ -1,0 +1,337 @@
+/* Base styles for the portfolio site. Implemented in a later step. */
+
+:root {
+	--bg: #f5f7fa;
+	--card: #ffffff;
+	--text: #0b0f19;
+	--muted: #6b7280;
+	--accent: #2563eb;
+	--accent-2: #059669;
+	--border: #e5e7eb;
+	--shadow: rgba(0, 0, 0, 0.08);
+	--grid: #e9edf3;
+}
+
+/* Resets */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+		Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+	background-color: var(--bg);
+	background-image:
+		linear-gradient(to right, var(--grid) 1px, transparent 1px),
+		linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+	background-size: 24px 24px;
+	color: var(--text);
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+.container {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+/* Header & Nav */
+header {
+	position: sticky;
+	top: 0;
+	z-index: 50;
+	background: rgba(255, 255, 255, 0.8);
+	backdrop-filter: blur(10px);
+	border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 12px;
+	height: 64px;
+}
+
+.brand {
+	font-weight: 700;
+	font-size: 1.25rem;
+	color: var(--text);
+	text-decoration: none;
+	margin-right: 28px;
+}
+
+.nav-toggle {
+	display: none;
+	background: none;
+	border: 1px solid var(--border);
+	color: var(--text);
+	padding: 6px 10px;
+	border-radius: 8px;
+}
+
+.nav-menu {
+	list-style: none;
+	display: flex;
+	gap: 12px;
+	margin-top: 3px;
+}
+
+.nav-menu a {
+	color: #374151;
+	text-decoration: none;
+	opacity: 0.95;
+	transition: color 180ms ease, opacity 180ms ease;
+}
+
+.nav-menu a:hover {
+	opacity: 1;
+	color: #000000;
+}
+
+/* Hero */
+.hero {
+	padding: 80px 0 48px;
+	background: radial-gradient(1200px 500px at 20% -10%, rgba(37,99,235,0.06), transparent 60%),
+		radial-gradient(800px 400px at 80% -10%, rgba(5,150,105,0.06), transparent 60%);
+	border-bottom: 1px solid var(--border);
+	box-shadow: 0 8px 30px var(--shadow);
+}
+
+.hero h1 {
+	font-size: clamp(1.8rem, 2.5vw + 1rem, 3rem);
+	line-height: 1.2;
+	margin-bottom: 10px;
+}
+
+.hero p {
+	color: var(--muted);
+	margin-bottom: 20px;
+}
+
+.btn {
+	display: inline-block;
+	padding: 10px 16px;
+	border-radius: 10px;
+	text-decoration: none;
+	border: 1px solid var(--border);
+	position: relative;
+	overflow: hidden;
+}
+
+.btn.primary {
+	background: linear-gradient(90deg, var(--accent), var(--accent-2));
+	color: #ffffff;
+	font-weight: 600;
+}
+
+/* See all projects button - match card hover scheme */
+.see-all {
+	background: #ffffff;
+	color: var(--text);
+}
+
+.see-all::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -200%;
+	width: 140%;
+	height: 100%;
+	background: #374151; /* grey slash to match cards */
+	transform: skewX(-20deg);
+	opacity: 0; /* hidden before hover */
+	transition: left 420ms ease, opacity 420ms ease, background-color 420ms ease;
+	z-index: 0;
+}
+
+.see-all:hover::before {
+	left: -10%;
+	opacity: 1;
+}
+
+.see-all span {
+	position: relative;
+	z-index: 1;
+	transition: color 360ms ease;
+}
+
+.see-all:hover span {
+	color: #ffffff;
+}
+
+/* Sections */
+.section {
+	padding: 48px 0;
+	border-bottom: 1px solid var(--border);
+}
+
+.section h2 {
+	font-size: 1.5rem;
+	margin-bottom: 16px;
+}
+
+/* Grid & Cards */
+.grid {
+	display: grid;
+	gap: 18px;
+}
+
+.projects-grid {
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card {
+	background: var(--card);
+	border: 1px solid var(--border);
+	border-radius: 14px;
+	padding: 18px;
+	box-shadow: 0 8px 30px var(--shadow);
+	transition: transform 200ms ease, box-shadow 200ms ease, color 200ms ease, background-color 200ms ease;
+	position: relative;
+	overflow: hidden;
+	display: block;
+	text-decoration: none;
+}
+
+/* Hover/slash only for anchor cards (listing pages) */
+a.card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -200%;
+	width: 140%;
+	height: 100%;
+	background: #374151; /* grey slash */
+	transform: skewX(-20deg);
+	opacity: 0; /* hidden before hover */
+	transition: left 420ms ease, opacity 420ms ease, background-color 420ms ease;
+	z-index: 0;
+}
+
+a.card:hover::before {
+	left: -10%;
+	opacity: 1;
+}
+
+a.card:hover {
+	box-shadow: 0 12px 34px var(--shadow);
+	color: #ffffff;
+	background-color: #f0f2f6; /* slight light-to-dark base shift under slash */
+}
+
+.card > * {
+	position: relative;
+	z-index: 1;
+	transition: color 200ms ease;
+}
+
+a.card:hover h3,
+a.card:hover p,
+a.card:hover a {
+	color: #ffffff;
+}
+
+.card h3 {
+	margin-bottom: 8px;
+}
+
+.card:link, .card:visited { color: inherit; text-decoration: none; }
+
+/* Expandable details cards (project detail pages) */
+details.card {
+	cursor: pointer;
+}
+
+details.card summary {
+	list-style: none;
+	outline: none;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+details.card summary::-webkit-details-marker { display: none; }
+
+details.card summary::after {
+	content: "▸";
+	font-size: 1.2rem;
+	font-weight: 700;
+	color: #111827;
+	margin-left: auto;
+	transition: transform 200ms ease, color 200ms ease;
+}
+
+details.card[open] summary::after {
+	transform: rotate(90deg);
+}
+
+details.card .content {
+	margin-top: 12px;
+	border-top: 1px solid var(--border);
+	padding-top: 12px;
+}
+
+/* Tags inside cards */
+.tags {
+	margin-top: 10px;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.tags li {
+	background: rgba(37,99,235,0.08);
+	border: 1px solid var(--border);
+	padding: 4px 8px;
+	border-radius: 999px;
+	font-size: 0.85rem;
+	color: var(--text);
+	transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
+}
+
+/* Hover effect for anchor cards only */
+a.card:hover .tags li {
+	background: rgba(255,255,255,0.18);
+	border-color: rgba(255,255,255,0.25);
+	color: #ffffff;
+}
+
+/* Skills */
+.skills {
+	list-style: none;
+	display: grid;
+	gap: 10px;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* Contact */
+.contact {
+	list-style: none;
+	display: flex;
+	gap: 14px;
+	flex-wrap: wrap;
+}
+
+.contact a { color: var(--accent); }
+
+/* Responsive */
+@media (max-width: 720px) {
+	.nav-toggle { display: inline-block; }
+	.nav-menu { display: none; position: absolute; right: 20px; top: 64px; background: var(--card); padding: 12px; border: 1px solid var(--border); border-radius: 12px; }
+	.nav-menu.open { display: block; }
+} 

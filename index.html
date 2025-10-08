@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sami Olavuo · Data Analyst</title>
+	<meta name="description" content="Portfolio of Sami Olavuo, Data Analyst. Projects, skills, and contact information.">
+	<meta name="author" content="Sami Olavuo">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="canonical" href="https://samiolavuo.com/">
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Sami Olavuo · Data Analyst">
+	<meta property="og:description" content="Projects, skills, and contact information.">
+	<meta property="og:url" content="https://samiolavuo.com/">
+	<meta property="og:image" content="assets/img/og-image.png">
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Sami Olavuo · Data Analyst">
+	<meta name="twitter:description" content="Projects, skills, and contact information.">
+	<meta name="twitter:image" content="assets/img/og-image.png">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="assets/css/styles.css">
+	<link rel="icon" href="assets/img/favicon.ico">
+	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+</head>
+<body>
+	<header>
+		<nav class="container" aria-label="Primary">
+			<div class="nav-inner">
+				<a class="brand" href="/">Sami Olavuo</a>
+				<button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+				<ul id="nav-menu" class="nav-menu">
+					<li><a href="/about.html">About</a></li>
+					<li><a href="/projects.html">Projects</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<main id="home">
+		<section class="hero">
+			<div class="container">
+				<h1>Data Analyst turning data into decisions</h1>
+				<p>SQL · Python · Visualization · Experimentation · Dashboarding</p>
+				<!-- buttons removed as requested -->
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container">
+				<h2>Featured Projects</h2>
+				<div class="grid projects-grid">
+					<a class="card project" href="/projects/churn-dashboard.html">
+						<h3>Churn Prediction Dashboard</h3>
+						<p>Built a churn model with Python and visualized drivers to guide retention efforts.</p>
+						<ul class="tags"><li>Python</li><li>scikit-learn</li><li>Dash</li></ul>
+					</a>
+					<a class="card project" href="/projects/ab-test-analyzer.html">
+						<h3>A/B Test Analyzer</h3>
+						<p>Automated experiment analysis with power checks, CUPED, and sequential testing guards.</p>
+						<ul class="tags"><li>Python</li><li>Pandas</li><li>Stats</li></ul>
+					</a>
+					<a class="card project" href="/projects/sales-forecasting.html">
+						<h3>Sales Forecasting</h3>
+						<p>Forecasted weekly sales using hierarchical models, with alerts for anomalous trends.</p>
+						<ul class="tags"><li>Python</li><li>Prophet</li><li>SQL</li></ul>
+					</a>
+				</div>
+				<div style="margin-top: 12px;">
+					<a class="btn see-all" href="/projects.html"><span>See all projects →</span></a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<script src="assets/js/main.js"></script>
+	<script>
+		document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
+	</script>
+</body>
+</html> 
