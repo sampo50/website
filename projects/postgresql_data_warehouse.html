@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PostgreSQL Data Warehouse (Bronze–Silver–Gold) · Project · Sami Olavuo</title>
+	<meta name="description" content="PostgreSQL Data Warehouse (Bronze–Silver–Gold) by Sami Olavuo.">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="stylesheet" href="../assets/css/styles.css">
+	<link rel="icon" href="../assets/img/favicon.ico">
+</head>
+<body>
+	<header>
+		<nav class="container" aria-label="Primary">
+			<div class="nav-inner">
+				<a class="brand" href="/">Sami Olavuo</a>
+				<ul class="nav-menu">
+					<li><a href="/about.html">About</a></li>
+					<li><a href="/projects.html">Projects</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<section class="section">
+			<div class="container">
+				<h1>PostgreSQL Data Warehouse (Bronze–Silver–Gold)</h1>
+				<p>End-to-end SQL pipeline built in PostgreSQL with DBeaver; Gold layer consumed in Looker Studio.</p>
+				
+				<details class="card" open>
+					<summary><h3>Details</h3></summary>
+					<div class="content">
+
+						<p style="margin: 0 0 8px 0;"><strong>Role:</strong> Data Analyst / Analytics Engineer</p>
+						<p style="margin: 0 0 8px 0;"><strong>Stack:</strong> PostgreSQL · DBeaver · SQL · Looker Studio</p>
+						<p style="margin: 0 0 16px 0;"><strong>Deliverables:</strong> Layered warehouse (Bronze/Silver/Gold) · Star schema marts · BI dashboard</p>
+
+						<p style="margin: 0 0 4px 0;">
+							🔗 <a href="https://github.com/sampo50/sql-data-warehouse" style="margin-right: 16px;">[GitHub repo / SQL scripts]</a>
+						</p>
+						<p style="margin: 0 0 4px 0;">
+							🔗 <a href="/Users/samiolavuo/Documents/GitHub/samiolavuo.com/assets/files/sql_data_architecture.drawio.png" style="margin-right: 16px;">[Database schema documentation]</a>
+						</p>
+						<p style="margin: 0 0 4px 0;">
+							🔗 <a href="/Users/samiolavuo/Documents/GitHub/samiolavuo.com/assets/files/sql_datawarehouse_looker_dashboard.png" style="margin-right: 16px;">[Looker Studio dashboard]</a>
+						</p>
+						<p style="margin: 0 0 4px 0;">
+							🔗 <a href="#" style="margin-right: 16px;">[Presentation deck]</a>
+						</p>
+						<p style="margin: 0;">
+							🔗 <a href="/Users/samiolavuo/Documents/GitHub/samiolavuo.com/assets/files/PostgreSQL_Bronze_Silver_Gold_Case_Study.pdf" style="margin-right: 16px;">[PDF one-pager]</a>
+						</p>
+					</div>
+				</details>
+				
+				<div class="grid" style="grid-template-columns: 1fr; gap: 12px;">
+					<details class="card" open>
+						<summary><h3>Summary</h3></summary>
+						<div class="content">
+							<details class="card" open>
+								<summary><h4>Executive Summary</h4></summary>
+								<div class="content">
+									<p>This project implements a structured data warehouse in PostgreSQL using a three-layer approach (Bronze/Silver/Gold). Raw source extracts are landed in Bronze, standardized and cleaned in Silver, and reshaped into analytics-ready marts in Gold. The Gold layer is then used to power a Looker Studio dashboard for customer and product reporting.</p>
+									<br>
+									<p>The outcome is a transparent, scalable SQL pipeline that separates raw ingestion from business logic and supports both BI and ad-hoc analysis.</p>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary><h4>Business Goal</h4></summary>
+								<div class="content">
+									<p>Create a reliable warehouse foundation for CRM + ERP data that enables:</p>
+									
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Consistent, reusable business metrics</li>
+										<li>Fast BI reporting with a curated Gold layer</li>
+										<li>Clear lineage from raw data to reporting outputs</li>
+										<li>Extensibility for future sources and new marts</li>
+									</ul>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary><h4>Architecture</h4></summary>
+								<div class="content">
+									<p><strong>Layered Warehouse Design</strong></p>
+									
+
+									<p style="margin-top: 16px;"><strong>Bronze (Raw)</strong></p>
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Minimal transformation</li>
+										<li>Source-aligned tables (raw extracts)</li>
+										<li>Goal: preserve the original payload and make ingestion repeatable</li>
+									</ul>
+
+									<p style="margin-top: 16px;"><strong>Silver (Clean &amp; Conformed)</strong></p>
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Cleaning (null handling, deduplication, type casting)</li>
+										<li>Standardization (naming conventions, consistent keys)</li>
+										<li>Derived fields and canonical attributes</li>
+									</ul>
+
+									<p style="margin-top: 16px;"><strong>Gold (Business-Ready)</strong></p>
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Analytics-ready tables/views</li>
+										<li>Star schema marts optimized for reporting</li>
+										<li>A single place for metric definitions used by BI</li>
+									</ul>
+
+									<p style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										🖼️ <a href="../assets/files/sql_data_architecture.drawio.png">[Architecture diagram image]</a>
+									</p>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary><h4>Data Flow</h4></summary>
+								<div class="content">
+									<p><strong>Sources → Bronze → Silver → Gold → Consumption</strong></p>
+									
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Sources: CRM + ERP extracts</li>
+										<li>Bronze: source-specific raw tables</li>
+										<li>Silver: standardized, validated entities</li>
+										<li>Gold: fact + dimension model</li>
+										<li>Consumption: Looker Studio reporting, ad-hoc SQL, downstream analytics</li>
+									</ul>
+
+									<p style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										🖼️ <a href="../assets/files/data_flow_diagram.drawio.png">[Data flow diagram image]</a>
+									</p>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary><h4>Gold Layer: Data Modeling</h4></summary>
+								<div class="content">
+									<p><strong>Star Schema (Reporting-First)</strong></p>
+									<p>The Gold layer is designed for semantic clarity and BI performance:</p>
+									
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Fact table: <code>fact_sales</code> (event-level measures at a defined grain)</li>
+										<li>Dimensions: <code>dim_customers</code>, <code>dim_products</code> (conformed attributes for slicing)</li>
+									</ul>
+
+									<p>This structure supports stable metrics, consistent joins, and scalable reporting.</p>
+									
+									<p style="margin-top: 16px;">🔗 <a href="#">[Link to ERD / model explanation]</a></p>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary><h4>Transformations (Silver Layer)</h4></summary>
+								<div class="content">
+									<p><strong>Standardization Pattern</strong></p>
+									<p>Key transformation categories:</p>
+									
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Cleaning: null handling, deduplication, type normalization</li>
+										<li>Conforming: harmonized keys across CRM/ERP, standardized naming</li>
+										<li>Derivation: reusable business fields and metric-ready attributes</li>
+									</ul>
+
+									<p style="margin-top: 16px;">🔗 <a href="#">[Link to transformation SQL / examples]</a></p>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary><h4>BI Output (Looker Studio)</h4></summary>
+								<div class="content">
+									<p><strong>Dashboard: Customer &amp; Product Report</strong></p>
+									<p>The Looker Studio dashboard consumes the Gold layer to provide:</p>
+									
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Customer segmentation summary</li>
+										<li>Sales by segment</li>
+										<li>Product/customer breakdown tables</li>
+										<li>Filterable exploration (segment, age group, etc.)</li>
+									</ul>
+
+									<p style="margin-left: 38px; margin-bottom: 4px; margin-top: 16px;">
+										🖼️ <a href="#">[Dashboard screenshot]</a>
+									</p>
+									<p style="margin-left: 38px; margin-bottom: 16px;">
+										🔗 <a href="#">[Live dashboard link]</a>
+									</p>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary><h4>Key Insights</h4></summary>
+								<div class="content">
+									<ol style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li style="margin-bottom: 16px;"><strong>Layer separation prevents “business logic drift”</strong><br>Raw ingestion stays stable while transformations evolve safely in Silver and Gold.</li>
+										<li style="margin-bottom: 16px;"><strong>Gold-layer star schema reduces downstream complexity</strong><br>BI and analysts share one consistent definition of metrics and dimensions.</li>
+										<li><strong>Standardization in Silver is the scaling lever</strong><br>Conformed keys and canonical attributes enable new marts with minimal rework.</li>
+									</ol>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary><h4>Limitations &amp; Next Steps</h4></summary>
+								<div class="content">
+									<p><strong>Planned upgrades</strong></p>
+									
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Automated data quality checks (freshness, row counts, uniqueness, referential integrity)</li>
+										<li>Incremental loading patterns and change tracking</li>
+										<li>Orchestration/scheduling and version-controlled SQL migrations</li>
+										<li>Optional semantic layer standardization for BI metric governance</li>
+									</ul>
+								</div>
+							</details>
+
+						</div>
+					</details>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<script src="../assets/js/main.js"></script>
+</body>
+</html> 

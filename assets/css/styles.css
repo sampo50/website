@@ -8,8 +8,8 @@
 	--accent: #2563eb;
 	--accent-2: #059669;
 	--border: #e5e7eb;
-	--shadow: rgba(0, 0, 0, 0.08);
-	--grid: #e9edf3;
+	--shadow: rgba(0, 0, 0, 0.05);
+	--grid: #d1d5db;
 }
 
 /* Resets */
@@ -335,3 +335,66 @@ a.card:hover .tags li {
 	.nav-menu { display: none; position: absolute; right: 20px; top: 64px; background: var(--card); padding: 12px; border: 1px solid var(--border); border-radius: 12px; }
 	.nav-menu.open { display: block; }
 } 
+
+.dw-list {
+	display: grid;
+	grid-template-columns: 180px 1fr;
+	column-gap: 24px;
+	row-gap: 10px;
+	margin: 12px 0 0 0;
+  }
+  
+  .dw-list dt,
+  .dw-list dd {
+	margin: 0;
+  }
+  
+  .dw-list dt {
+	font-weight: 500;
+  }
+  
+  .dw-list dd {
+	padding-left: 4px;
+  }
+  
+  /* Header row */
+  .dw-list dt:first-child,
+  .dw-list dd:nth-child(2) {
+	font-weight: 600;
+	padding-bottom: 6px;
+	border-bottom: 1px solid var(--border);
+  }
+  
+  .glass-card {
+	background: white;
+	padding: 5px 10px;
+	border-radius: 8px;
+	border: 1px solid rgba(0,0,0,0.08);
+	box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  }
+  
+  .glass-card:hover {
+	background: whitesmoke;
+  }
+  .tech-badge {
+	background: whitesmoke;
+	color: whitesmoke;
+	padding: 3px 10px;
+	border-radius: 999px;
+	font-size: 0.8em;
+	font-weight: 600;
+	letter-spacing: 0.3px;
+  }
+  
+  .hover-card {
+	background: #f2f2f2;
+	padding: 4px 9px;
+	border-radius: 6px;
+	transition: 0.2s ease;
+  }
+  
+  .hover-card:hover {
+	background: #e6f0ff;
+	box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  }
+  
