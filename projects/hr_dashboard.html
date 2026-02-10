@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Human Resources Dashboard · Project · Sami Olavuo</title>
+	<meta name="description" content="Human Resources Dashboard (HR Analytics) by Sami Olavuo. Executive-level overview of headcount, attrition, demographics, and compensation insights.">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="stylesheet" href="../assets/css/styles.css">
+	<link rel="icon" href="../assets/files/favicon.png">
+</head>
+
+<body>
+	<header>
+		<nav class="container" aria-label="Primary">
+			<div class="nav-inner">
+				<a class="brand" href="/">Sami Olavuo</a>
+				<ul class="nav-menu">
+					<li><a href="/about.html">About</a></li>
+					<li><a href="/projects.html">Projects</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<section class="section">
+			<div class="container">
+				<h1>Human Resources Dashboard</h1>
+				<p>Executive HR Analytics Dashboard · Workforce Overview + Drill-Down Insights</p>
+
+				<details class="card" open>
+					<summary>
+						<h3>Details</h3>
+					</summary>
+					<div class="content">
+
+						<p style="margin: 0 0 8px 0;"><strong>Role:</strong> Data Analyst / BI Developer</p>
+						<p style="margin: 0 0 8px 0;"><strong>Domain:</strong> HR Analytics</p>
+						<p style="margin: 0 0 16px 0;"><strong>Stack:</strong> Tableau · SQL (Data Prep / Modeling)</p>
+
+						<p style="margin: 0 0 4px 0;">
+							🔗 <a href="https://public.tableau.com/app/profile/sami.olavuo/viz/HRdashboard_17648615727240/HRSummary" style="margin-right: 16px;">[Tableau Public / Dashboard]</a>
+						</p>
+					</div>
+				</details>
+
+				<div class="grid" style="grid-template-columns: 1fr; gap: 12px;">
+					<details class="card" open>
+						<summary>
+							<h3>Summary</h3>
+						</summary>
+						<div class="content">
+
+							<details class="card" open>
+								<summary>
+									<h4>Executive Summary</h4>
+								</summary>
+								<div class="content">
+									<p>This project delivers an executive-level Human Resources analytics dashboard designed to provide an immediate, actionable overview of organizational health.</p>
+									<br>
+									<p>The dashboard consolidates workforce flow (headcount, hires, terminations), department distribution, demographics, and compensation structure into a single decision-support interface.</p>
+									<br>
+									<p>It is built for leaders who need fast answers first, with the option to drill into detail through consistent interactive filtering.</p>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Business Goal</h4>
+								</summary>
+								<div class="content">
+									<p>HR reporting often fails at the executive level because insight is spread across multiple reports, with limited comparability across dimensions (department, demographics, location, and time).</p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Workforce metrics are siloed (headcount vs. attrition vs. compensation)</li>
+										<li>Drill-down requires manual analysis, slowing decision cycles</li>
+										<li>Patterns (e.g., department attrition, salary structure) are hard to detect quickly</li>
+									</ul>
+
+									<p>This project addresses these issues by:</p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Creating a KPI-first executive overview</li>
+										<li>Standardizing key breakdowns (department, gender, age, education, location)</li>
+										<li>Connecting performance and compensation to demographic and education structure</li>
+									</ul>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Dashboard Structure</h4>
+								</summary>
+								<div class="content">
+									<p><strong>Top layer: Workforce Overview</strong></p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li><strong>Active Employees</strong> for instant current-state context</li>
+										<li><strong>Hired vs. Terminated</strong> totals and trend lines for workforce flow</li>
+										<li><strong>Department distribution</strong> including termination counts for retention risk scanning</li>
+										<li><strong>Location footprint</strong> to connect workforce to geography</li>
+									</ul>
+
+									<p style="margin-top: 16px;"><strong>Second layer: Demographics + Structure</strong></p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Gender distribution</li>
+										<li>Age group segmentation</li>
+										<li>Education distribution (and how it intersects with age)</li>
+										<li>Education vs. performance view for workforce quality signals</li>
+									</ul>
+
+									<p style="margin-top: 16px;"><strong>Third layer: Compensation</strong></p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Income by education and gender to highlight structural differences</li>
+										<li>Age vs. salary patterns to detect progression and outliers</li>
+									</ul>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Interactivity & Filters</h4>
+								</summary>
+								<div class="content">
+									<p>The dashboard is designed for fast segmentation using consistent filters across all views:</p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li><strong>Gender</strong> (single / multi-select)</li>
+										<li><strong>Status</strong> (e.g., active/terminated segmentation)</li>
+										<li><strong>Location</strong> (multi-site drill-down)</li>
+										<li><strong>Hire date</strong> (time-windowed analysis for cohort/period comparisons)</li>
+									</ul>
+
+									<p>Click-to-filter behavior enables exploratory analysis without switching pages or exporting data.</p>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Analytical Use Cases</h4>
+								</summary>
+								<div class="content">
+									<p>Typical leadership questions the dashboard supports:</p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Which departments have disproportionate terminations relative to size?</li>
+										<li>Is hiring keeping up with attrition over time?</li>
+										<li>How balanced is the workforce by gender and age group?</li>
+										<li>How do education levels map to performance ratings?</li>
+										<li>Do compensation patterns differ by education, gender, or age?</li>
+										<li>Where is the workforce concentrated geographically (and how is that changing)?</li>
+									</ul>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Design Principles</h4>
+								</summary>
+								<div class="content">
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li><strong>KPI hierarchy:</strong> start with the numbers that anchor interpretation, then expand into explanatory breakdowns</li>
+										<li><strong>Comparability:</strong> consistent encodings support quick cross-dimension comparison</li>
+										<li><strong>Decision speed:</strong> pattern recognition over raw tables</li>
+										<li><strong>Clarity under density:</strong> high information volume without UI overload</li>
+									</ul>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Outcome</h4>
+								</summary>
+								<div class="content">
+									<p>The result is a single-pane HR analytics product that supports continuous monitoring of organizational health and faster decision-making on hiring, retention, and compensation planning.</p>
+									<br>
+									<p>Instead of functioning as a static report, the dashboard operates as a living analytical interface where stakeholders can segment the workforce and validate hypotheses in seconds.</p>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Planned Extensions</h4>
+								</summary>
+								<div class="content">
+									<p><strong>Potential next steps</strong></p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Add retention cohorts (e.g., 30/90/180-day retention) by department and location</li>
+										<li>Introduce time-to-hire and recruiting funnel metrics (if data available)</li>
+										<li>Add pay equity views with controls for role/level and tenure</li>
+										<li>Create a dedicated “Attrition drivers” page (tenure, manager, performance, comp band)</li>
+									</ul>
+								</div>
+							</details>
+
+						</div>
+					</details>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<script src="../assets/js/main.js"></script>
+</body>
+
+</html>
