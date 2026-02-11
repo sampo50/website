@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Subscription Business Analytics Suite · Project · Sami Olavuo</title>
+	<meta name="description"
+		content="Subscription Business Analytics Suite by Sami Olavuo. Google Sheets analytics model for subscription KPIs (MRR, churn, ARPU), tenure, cohorts, and product usage.">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="stylesheet" href="../assets/css/styles.css">
+	<link rel="icon" href="../assets/files/favicon.png">
+</head>
+
+<body>
+	<header>
+		<nav class="container" aria-label="Primary">
+			<div class="nav-inner">
+				<a class="brand" href="/">Sami Olavuo</a>
+				<ul class="nav-menu">
+					<li><a href="/about.html">About</a></li>
+					<li><a href="/projects.html">Projects</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<section class="section">
+			<div class="container">
+				<h1>Subscription Business Analytics Suite</h1>
+				<p>Google Sheets Analytics Model · MRR Engine + Churn + Tenure + Usage</p>
+
+				<details class="card" open>
+					<summary>
+						<h3>Details</h3>
+					</summary>
+					<div class="content">
+
+						<p style="margin: 0 0 8px 0;"><strong>Role:</strong> Data Analyst / BI Developer</p>
+						<p style="margin: 0 0 8px 0;"><strong>Domain:</strong> Subscription / SaaS Analytics</p>
+						<p style="margin: 0 0 16px 0;"><strong>Stack:</strong> Google Sheets · Data Modeling · KPI
+							Framework</p>
+
+						<p style="margin: 0 0 4px 0;">
+							🔗 <a href="https://docs.google.com/spreadsheets/d/1rDJo36ByHO4hltvSeCXlgBSOYO2q4rpk0iZO8WCJXXA/edit?usp=sharing"
+								style="margin-right: 16px;">[Google Sheets / Model]</a>
+						</p>
+
+					</div>
+				</details>
+
+				<div class="grid" style="grid-template-columns: 1fr; gap: 12px;">
+					<details class="card" open>
+						<summary>
+							<h3>Summary</h3>
+						</summary>
+
+						<div class="content">
+
+							<details class="card" open>
+								<summary>
+									<h4>Executive Summary</h4>
+								</summary>
+								<div class="content">
+									<p>This project is a self-contained subscription analytics suite designed to turn
+										customer, subscription, and product usage data into a decision-ready KPI layer
+										and an executive dashboard.</p>
+									<br>
+									<p>The model includes an MRR engine (new vs. churned revenue), logo churn tracking,
+										ARPU, tenure analysis, and usage breakdowns to connect revenue outcomes to
+										customer behavior.</p>
+									<br>
+									<p>It is built to be Excel/Google Sheets compatible and structured to scale from
+										ad-hoc analysis into a repeatable monthly reporting workflow.</p>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Business Goal</h4>
+								</summary>
+								<div class="content">
+									<p>Subscription businesses need consistent, comparable KPI definitions over time.
+										Most reporting breaks down because revenue and customer events are scattered
+										across tables with inconsistent logic.</p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>MRR movements (new vs. churn) are not clearly separated</li>
+										<li>Customer churn is measured inconsistently (logo vs. revenue churn)</li>
+										<li>Tenure and retention insights require additional transformations</li>
+										<li>Usage signals are not connected to commercial outcomes</li>
+									</ul>
+
+									<p>This suite solves those issues by:</p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Standardizing the monthly KPI layer (MRR, New MRR, Churn MRR, Net MRR)</li>
+										<li>Building reusable customer and subscription “clean” tables</li>
+										<li>Adding tenure bucketing to support cohort and retention narratives</li>
+										<li>Including product usage logs to support behavioral segmentation</li>
+									</ul>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Data Model</h4>
+								</summary>
+								<div class="content">
+									<p style="margin-bottom: 16px; margin-top: 16px;">The workbook is organized as a
+										simple analytics “stack”:</p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li><strong>Raw:</strong> Customers, Subscriptions, UsageLogs</li>
+										<li><strong>Clean:</strong> Customers_clean, Subscriptions_clean, UsageLogs_clean</li>
+										<li><strong>Logic:</strong> TenureMonths, TenureBucket, MRR_Engine</li>
+										<li><strong>Output:</strong> metrics, Dashboard</li>
+									</ul>
+
+									<p style="margin-top: 16px;"><strong>Core entities</strong></p>
+
+									<dl class="dw-list">
+										<dt>Table</dt>
+										<dd>Purpose</dd>
+
+										<dt><code>Customers_clean</code></dt>
+										<dd>Customer master data: join month, plan, country, segment, cohort label</dd>
+
+										<dt><code>Subscriptions_clean</code></dt>
+										<dd>Subscription lifecycle: start/end months, monthly fee, status, active flag,
+											data quality flag</dd>
+
+										<dt><code>UsageLogs_clean</code></dt>
+										<dd>Product usage events: usage month, feature used, actions performed</dd>
+									</dl>
+
+									<p style="margin-top: 24px;"><strong>Scale (dataset)</strong></p>
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>~20,000 customers and ~20,000 subscriptions</li>
+										<li>~40,000 usage log rows (~997k actions recorded)</li>
+										<li>Average customer tenure ~15.9 months (median 12)</li>
+									</ul>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>KPI Engine (MRR + Churn)</h4>
+								</summary>
+								<div class="content">
+									<p>The KPI layer is built around a monthly MRR engine that decomposes revenue into
+										movement components instead of reporting a single line.</p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li><strong>MRR:</strong> recurring revenue for the month</li>
+										<li><strong>New MRR:</strong> revenue from new/starting subscriptions</li>
+										<li><strong>Churn MRR:</strong> revenue lost from ending subscriptions</li>
+										<li><strong>Net MRR:</strong> New MRR − Churn MRR</li>
+										<li><strong>ARPU:</strong> MRR / active customers</li>
+										<li><strong>Logo churn rate:</strong> churned customers / customers at risk</li>
+									</ul>
+
+									<p style="margin-top: 16px;"><strong>Lifecycle signal (from the dashboard)</strong>
+									</p>
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li><strong>Peak month:</strong> 2022-09</li>
+										<li><strong>Avg monthly MRR decline (post-peak):</strong> ~−10,068</li>
+										<li><strong>Months from peak to ~zero:</strong> 42</li>
+									</ul>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Tenure & Retention Views</h4>
+								</summary>
+								<div class="content">
+									<p>Customer longevity is modeled explicitly by calculating month-level tenure and
+										assigning each customer to a bucket.</p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Tenure computed from start month → end month</li>
+										<li>Bucketed into interpretable retention bands (e.g., 0–3, 4–6, 7–12, 12+ months)</li>
+										<li>Designed to support cohort-style narratives and churn diagnostics</li>
+									</ul>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Usage Analytics</h4>
+								</summary>
+								<div class="content">
+									<p>The suite includes product usage logs to support segmentation beyond billing
+										events. Usage is aggregated by month and feature area to connect engagement to
+										commercial outcomes.</p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Feature usage tracking (API / Dashboard / Reports / Exports)</li>
+										<li>Action-volume intensity via <code>ActionsPerformed</code></li>
+										<li>Enables “high-usage vs low-usage” segmentation for churn-risk hypotheses</li>
+									</ul>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Analytical Use Cases</h4>
+								</summary>
+								<div class="content">
+									<p>This model supports typical subscription analytics questions such as:</p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Is growth driven by acquisition, or is churn offsetting it?</li>
+										<li>When did the business peak, and what was the decline profile after that?</li>
+										<li>How does ARPU evolve over time alongside logo churn?</li>
+										<li>What does tenure distribution look like, and where does churn concentrate?</li>
+										<li>Do usage signals correlate with longer tenure or lower churn?</li>
+									</ul>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Limitations</h4>
+								</summary>
+								<div class="content">
+									<ol style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li style="margin-bottom: 16px;"><strong>Expansion / contraction MRR not separated</strong><br>
+											The KPI engine focuses on new and churned revenue; add-on and downgrade flows
+											can be modeled as additional movement categories.</li>
+										<li style="margin-bottom: 16px;"><strong>Usage is event-based, not account-scored</strong><br>
+											A dedicated engagement score (rolling 30/90-day usage index) would improve
+											risk segmentation.</li>
+										<li><strong>Spreadsheet-native scaling limits</strong><br>
+											For larger volumes, the same model structure ports cleanly to SQL/dbt +
+											BI semantic layers.</li>
+									</ol>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Planned Extensions</h4>
+								</summary>
+								<div class="content">
+									<p><strong>Potential next steps</strong></p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Add expansion/contraction MRR and net revenue retention (NRR)</li>
+										<li>Add cohort retention curves by join month and plan</li>
+										<li>Introduce churn-risk scoring using usage intensity + tenure + plan</li>
+										<li>Add segmentation cuts (country, segment, plan) across all KPI charts</li>
+									</ul>
+								</div>
+							</details>
+
+						</div>
+					</details>
+				</div>
+
+			</div>
+		</section>
+	</main>
+
+	<script src="../assets/js/main.js"></script>
+</body>
+
+</html>
