@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Visibility → Departure Delays (NYC) · Project · Sami Olavuo</title>
+	<meta name="description"
+		content="Visibility → Departure Delays (NYC) by Sami Olavuo. Statistical analysis of how weather visibility affects departure delays for Boeing 737/757 flights out of JFK/LGA/EWR (March 2013), including OLS, logistic regression, scenario impact, and robustness checks.">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="stylesheet" href="../assets/css/styles.css">
+	<link rel="icon" href="../assets/files/favicon.png">
+</head>
+
+<body>
+	<header>
+		<nav class="container" aria-label="Primary">
+			<div class="nav-inner">
+				<a class="brand" href="/">Sami Olavuo</a>
+				<ul class="nav-menu">
+					<li><a href="/about.html">About</a></li>
+					<li><a href="/projects.html">Projects</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<section class="section">
+			<div class="container">
+				<h1>Visibility → Departure Delays (NYC)</h1>
+				<p>Weather Impact Analysis · OLS + Logistic Regression + Scenario Translation + Robustness</p>
+
+				<details class="card" open>
+					<summary>
+						<h3>Details</h3>
+					</summary>
+					<div class="content">
+
+						<p style="margin: 0 0 8px 0;"><strong>Role:</strong> Data Analyst</p>
+						<p style="margin: 0 0 8px 0;"><strong>Domain:</strong> Aviation Operations · Delay Drivers · Capacity Constraints</p>
+						<p style="margin: 0 0 16px 0;"><strong>Stack:</strong> Python · pandas · statsmodels · Matplotlib · Regression Modeling</p>
+
+						<p style="margin: 0 0 8px 0;"><strong>Scope:</strong> Boeing 737/757 departures from <code>JFK</code>, <code>LGA</code>, <code>EWR</code> in March 2013</p>
+						<p style="margin: 0 0 16px 0;"><strong>Analytical sample:</strong> <code>N = 5,769</code> flights (after merges, filters, and missing-value removal)</p>
+
+						<p style="margin: 0 0 4px 0;">
+							🔗 <a href="#" style="margin-right: 16px;">[Notebook / Code]</a>
+							🔗 <a href="#" style="margin-right: 16px;">[PDF / Full Analysis]</a>
+                            🔗 <a href="#" style="margin-right: 16px;">[PDF / Executive Summary]</a>
+						</p>
+
+					</div>
+				</details>
+
+				<div class="grid" style="grid-template-columns: 1fr; gap: 12px;">
+					<details class="card" open>
+						<summary>
+							<h3>Summary</h3>
+						</summary>
+
+						<div class="content">
+
+							<details class="card" open>
+								<summary>
+									<h4>Executive Summary</h4>
+								</summary>
+								<div class="content">
+									<p>This project analyzes how visibility conditions affect departure delays at the three major New York airports (JFK, LGA, EWR), focusing on Boeing 737 and 757 aircraft during March 2013.</p>
+									<br>
+									<p>The key finding is that as visibility deteriorates, the entire distribution of departure delays shifts upward — indicating a systemic capacity constraint rather than isolated disruption events.</p>
+									<br>
+									<p>In the controlled OLS model, a one-mile improvement in visibility is associated with approximately <strong>3.1 minutes less</strong> departure delay on average. In an operational scenario (10 miles vs. 2 miles visibility), expected delay increases by roughly <strong>25 minutes</strong>.</p>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Business Goal</h4>
+								</summary>
+								<div class="content">
+									<p>In aviation operations, weather acts as a system-wide driver that reduces airport throughput. The objective was to produce a decision-ready estimate of the operational impact of poor visibility.</p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Quantify how visibility affects departure delays in minutes</li>
+										<li>Measure how visibility influences the probability of significant delays (>15 min)</li>
+										<li>Translate statistical coefficients into operational scenario impacts</li>
+										<li>Verify robustness against outliers and skewed delay distributions</li>
+									</ul>
+
+									<p>The analytical pipeline follows a driver-to-impact logic: exploratory evidence → controlled modeling → scenario translation → robustness validation.</p>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Dataset & Preparation</h4>
+								</summary>
+								<div class="content">
+									<p style="margin-bottom: 16px; margin-top: 16px;">The analytical dataset was constructed by merging flight records, aircraft data, and hourly weather observations:</p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li><strong>Flights:</strong> departure times, delays, origin airport, hour</li>
+										<li><strong>Planes:</strong> manufacturer and model → identification of Boeing 737/757</li>
+										<li><strong>Weather:</strong> visibility, wind speed, precipitation, temperature, pressure, humidity</li>
+									</ul>
+
+									<p style="margin-top: 16px;"><strong>Filtering and feature engineering</strong></p>
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Restricted to March 2013</li>
+										<li>Selected Boeing aircraft with 737 or 757 model codes</li>
+										<li>Removed rows missing departure delay or visibility</li>
+										<li>Created visibility categories for exploratory analysis</li>
+										<li>Created binary variable for delays exceeding 15 minutes</li>
+									</ul>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Exploratory Analysis (EDA)</h4>
+								</summary>
+								<div class="content">
+									<p>Boxplots of departure delays by visibility category show that worsening visibility raises not only extreme delays but the entire distribution.</p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Median delays increase as visibility declines</li>
+										<li>Distribution shift indicates reduced operational capacity</li>
+									</ul>
+
+									<p>This confirms that the phenomenon exists in raw data before modeling.</p>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Modeling Approach</h4>
+								</summary>
+								<div class="content">
+									<p>Two complementary models were estimated:</p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li><strong>OLS regression (HC3 robust errors):</strong> effect on average delay in minutes</li>
+										<li><strong>Logistic regression:</strong> effect on probability of significant delay (>15 min)</li>
+									</ul>
+
+									<p>Both models controlled for airport, hour of day, and additional weather variables to isolate the independent effect of visibility.</p>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Key Results</h4>
+								</summary>
+								<div class="content">
+
+									<p><strong>OLS regression</strong></p>
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Visibility coefficient: −3.099 minutes per mile</li>
+										<li>95% CI: [−4.774, −1.424]</li>
+										<li>p &lt; 0.001</li>
+									</ul>
+
+									<p>Interpretation: each additional mile of visibility reduces expected departure delay by about 3.1 minutes.</p>
+
+									<p style="margin-top: 16px;"><strong>Logistic regression</strong></p>
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>Visibility coefficient: −0.156 (log-odds per mile)</li>
+										<li>Better visibility significantly reduces the probability of delays exceeding 15 minutes</li>
+									</ul>
+
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Operational Scenario Analysis</h4>
+								</summary>
+								<div class="content">
+									<p>To translate statistical results into operational terms, predictions were computed at representative visibility levels:</p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li>10 miles visibility → predicted delay: 6.12 minutes</li>
+										<li>2 miles visibility → predicted delay: 30.91 minutes</li>
+										<li><strong>Impact: +24.79 minutes</strong></li>
+									</ul>
+
+									<p>The effect is consistent across airports because the model estimates a common visibility coefficient.</p>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Robustness Checks</h4>
+								</summary>
+								<div class="content">
+									<p>Departure delays are highly skewed with extreme outliers. Additional models were estimated to ensure results are not driven by extreme events.</p>
+
+									<ul style="margin-left: 38px; margin-bottom: 16px; margin-top: 16px;">
+										<li><strong>Winsorized OLS:</strong> coefficient −2.68 (still highly significant)</li>
+										<li><strong>Median regression:</strong> coefficient ≈ −0.98 minutes per mile</li>
+									</ul>
+
+									<p>The smaller median effect indicates that poor visibility disproportionately increases severe disruptions rather than uniformly affecting all flights.</p>
+								</div>
+							</details>
+
+							<details class="card" open>
+								<summary>
+									<h4>Key Insight</h4>
+								</summary>
+								<div class="content">
+									<p>Poor visibility functions as a system-level capacity shock in airport operations. It increases average delays, raises the probability of significant disruptions, and amplifies extreme delay events.</p>
+								</div>
+							</details>
+
+						</div>
+					</details>
+				</div>
+
+			</div>
+		</section>
+	</main>
+
+	<script src="../assets/js/main.js"></script>
+</body>
+
+</html>
