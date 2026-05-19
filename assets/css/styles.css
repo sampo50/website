@@ -451,6 +451,45 @@ img {
 	font-weight: 600;
 }
 
+/* Expert / proof */
+.expert-block {
+	display: grid;
+	gap: 14px;
+	margin-bottom: 24px;
+}
+
+.expert-block p {
+	color: var(--muted);
+}
+
+.expert-block strong {
+	color: var(--text);
+	font-weight: 600;
+}
+
+.expert-closing {
+	color: var(--text) !important;
+	font-weight: 500;
+	padding-top: 4px;
+}
+
+.expert-meta {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.expert-meta li {
+	font-size: 0.8125rem;
+	font-weight: 500;
+	color: var(--muted);
+	padding: 6px 12px;
+	background: var(--card);
+	border: 1px solid var(--border);
+	border-radius: 999px;
+}
+
 /* Process */
 .process-steps {
 	list-style: none;
@@ -538,6 +577,11 @@ img {
 	padding: 0 20px 18px;
 	font-size: 0.9375rem;
 	color: var(--muted);
+}
+
+.faq-item a {
+	color: var(--accent);
+	font-weight: 600;
 }
 
 /* CTA */
