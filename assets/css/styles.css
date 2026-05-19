@@ -1,4 +1,4 @@
-/* Revenue Performance Audit — consulting landing */
+/* Sami Olavuo — Hinnoittelukonsultointi portfolio */
 
 :root {
 	--bg: #f7f5f2;
@@ -963,6 +963,367 @@ body.has-sticky-cta {
 	.sticky-cta {
 		display: none !important;
 	}
+}
+
+/* Homepage & portfolio */
+.hero-tagline {
+	font-size: 1.0625rem;
+	font-weight: 500;
+	color: var(--accent);
+	margin-bottom: 24px;
+	max-width: 36rem;
+}
+
+.benefit-grid {
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+	gap: 10px;
+}
+
+.benefit-grid li {
+	padding: 12px 14px;
+	background: var(--card);
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	font-size: 0.9375rem;
+	font-weight: 500;
+	text-align: center;
+}
+
+.service-portfolio {
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 20px;
+}
+
+.service-portfolio-2 {
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.service-card {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.service-card .btn {
+	margin-top: auto;
+	align-self: flex-start;
+}
+
+.service-type {
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--accent);
+}
+
+.service-card-featured {
+	border-color: var(--accent);
+	box-shadow: 0 8px 32px rgba(30, 58, 76, 0.12);
+}
+
+.diagnostic-cta-section {
+	padding: 56px 0;
+}
+
+.diagnostic-cta-box {
+	text-align: center;
+	padding: 40px 32px;
+	background: var(--card);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+}
+
+.page-hero {
+	padding: 56px 0 48px;
+}
+
+.page-header {
+	padding: 48px 0 24px;
+	border-bottom: 1px solid var(--border);
+}
+
+.page-header h1 {
+	font-family: var(--font-serif);
+	font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
+	font-weight: 400;
+	line-height: 1.15;
+}
+
+.footer-grid {
+	display: grid;
+	gap: 20px;
+}
+
+.footer-brand {
+	font-weight: 600;
+	margin-bottom: 4px;
+}
+
+.footer-tagline {
+	font-size: 0.875rem;
+	color: var(--muted);
+}
+
+.footer-links {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px 20px;
+}
+
+.footer-links a {
+	color: var(--muted);
+	text-decoration: none;
+	font-size: 0.875rem;
+}
+
+.footer-links a:hover {
+	color: var(--accent);
+}
+
+.resource-grid {
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 16px;
+}
+
+.resource-badge {
+	display: inline-block;
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: var(--muted);
+	margin-bottom: 8px;
+}
+
+.resource-meta {
+	font-size: 0.8125rem;
+	color: var(--muted);
+	margin-top: 8px;
+}
+
+.blog-list {
+	list-style: none;
+	display: grid;
+	gap: 0;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	overflow: hidden;
+	background: var(--card);
+}
+
+.blog-list-item a {
+	display: block;
+	padding: 24px 28px;
+	text-decoration: none;
+	color: inherit;
+	border-bottom: 1px solid var(--border);
+	transition: background 0.15s ease;
+}
+
+.blog-list-item:last-child a {
+	border-bottom: none;
+}
+
+.blog-list-item a:hover {
+	background: var(--accent-soft);
+}
+
+.blog-list-item h2 {
+	font-size: 1.125rem;
+	font-weight: 600;
+	margin-bottom: 8px;
+}
+
+.blog-list-item p {
+	font-size: 0.9375rem;
+	color: var(--muted);
+	margin-bottom: 8px;
+}
+
+.blog-read {
+	font-size: 0.875rem;
+	font-weight: 600;
+	color: var(--accent);
+}
+
+.article-main {
+	padding: 48px 0 64px;
+}
+
+.article-back {
+	margin-bottom: 20px;
+}
+
+.article-back a {
+	color: var(--muted);
+	text-decoration: none;
+}
+
+.article-status {
+	color: var(--muted);
+	margin: 16px 0;
+}
+
+.about-content h2 {
+	font-size: 1.25rem;
+	margin: 32px 0 12px;
+}
+
+.about-content h2:first-child {
+	margin-top: 0;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+/* Diagnostic modal */
+body.diagnostic-open {
+	overflow: hidden;
+}
+
+.diagnostic-modal {
+	position: fixed;
+	inset: 0;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+}
+
+.diagnostic-modal[hidden] {
+	display: none;
+}
+
+.diagnostic-backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(26, 24, 20, 0.5);
+}
+
+.diagnostic-dialog {
+	position: relative;
+	width: 100%;
+	max-width: 520px;
+	max-height: 90vh;
+	overflow-y: auto;
+	background: var(--card);
+	border-radius: var(--radius);
+	padding: 28px 24px 24px;
+	box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+}
+
+.diagnostic-close {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	width: 40px;
+	height: 40px;
+	border: none;
+	background: transparent;
+	font-size: 1.5rem;
+	line-height: 1;
+	cursor: pointer;
+	color: var(--muted);
+	border-radius: 8px;
+}
+
+.diagnostic-close:hover {
+	background: var(--bg-alt);
+	color: var(--text);
+}
+
+.diagnostic-progress {
+	font-size: 0.8125rem;
+	font-weight: 600;
+	color: var(--accent);
+	margin-bottom: 12px;
+}
+
+.diagnostic-dialog h2 {
+	font-family: var(--font-serif);
+	font-size: 1.5rem;
+	font-weight: 400;
+	margin-bottom: 12px;
+	padding-right: 32px;
+}
+
+.diagnostic-intro {
+	color: var(--muted);
+	font-size: 0.9375rem;
+	margin-bottom: 20px;
+}
+
+.diagnostic-question {
+	font-weight: 600;
+	margin-bottom: 14px;
+}
+
+.diagnostic-options {
+	display: grid;
+	gap: 8px;
+	margin-bottom: 16px;
+}
+
+.diagnostic-option {
+	text-align: left;
+	padding: 14px 16px;
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	background: var(--bg);
+	font: inherit;
+	font-size: 0.9375rem;
+	cursor: pointer;
+	transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.diagnostic-option:hover,
+.diagnostic-option:focus-visible {
+	border-color: var(--accent);
+	background: var(--accent-soft);
+	outline: none;
+}
+
+.diagnostic-result-text {
+	color: var(--muted);
+	margin-bottom: 20px;
+}
+
+.diagnostic-intensity-note {
+	font-size: 0.9375rem;
+	color: var(--text);
+	padding: 14px 16px;
+	margin-bottom: 20px;
+	background: var(--accent-soft);
+	border-left: 3px solid var(--accent);
+	border-radius: 0 8px 8px 0;
+	line-height: 1.5;
+}
+
+.diagnostic-result-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-bottom: 12px;
+}
+
+.diagnostic-back {
+	margin-top: 8px;
 }
 
 @media (prefers-reduced-motion: reduce) {

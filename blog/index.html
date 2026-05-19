@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fi">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Blogi hinnoittelusta, kannattavuudesta ja revenue performancesta</title>
+	<meta name="description" content="Artikkeleita hinnoittelusta, kateesta, paketoinnista ja revenue performancesta B2B-yrityksille.">
+	<link rel="canonical" href="https://samiolavuo.com/blog/">
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/css/styles.css">
+	<link rel="icon" href="/assets/files/favicon.png">
+</head>
+<body>
+	<a class="skip-link" href="#sisalto">Siirry sisältöön</a>
+	<header class="site-header"><nav class="container nav"><a class="brand" href="/">Sami Olavuo</a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">Valikko</button><ul id="nav-menu" class="nav-menu"><li><a href="/">Hinnoittelu</a></li><li><a href="/pricing-audit/">Auditit</a></li><li><a href="/pricing-sprint/">Sprintit</a></li><li><a href="/resources/">Resurssit</a></li><li><a href="/blog/" aria-current="page">Blogi</a></li><li><a href="/about/">Kuka</a></li><li><a class="nav-cta" href="/contact/">Ota yhteyttä</a></li></ul></nav></header>
+	<main id="sisalto">
+		<header class="page-header"><div class="container"><h1>Blogi</h1><p class="section-intro">Hinnoittelu, kannattavuus ja revenue performance — käytännönläheisesti.</p></div></header>
+		<section class="section"><div class="container">
+			<ul class="blog-list" id="blog-list"></ul>
+		</div></section>
+	</main>
+	<footer class="site-footer"><div class="container"><p class="footer-muted">&copy; <span id="year"></span></p></div></footer>
+	<script src="/assets/js/blog-posts.js"></script>
+	<script>
+		document.getElementById('blog-list').innerHTML = window.BLOG_POSTS.map(function (p) {
+			return '<li class="blog-list-item"><a href="/blog/' + p.slug + '/"><h2>' + p.title + '</h2><p>' + p.excerpt + '</p><span class="blog-read">Lue artikkeli →</span></a></li>';
+		}).join('');
+		document.getElementById('year').textContent = new Date().getFullYear();
+	</script>
+	<script src="/assets/js/main.js"></script>
+</body>
+</html>

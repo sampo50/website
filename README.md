@@ -1,29 +1,40 @@
 # samiolavuo.com
 
-Revenue Performance Audit — B2B-konsultointisivusto hospitality- ja flexible living -operaattoreille.
+Kaupallinen hinnoitteluportfolio: Pricing Audit, Pricing Sprint, Revenue Performance Audit, resurssit ja blogi.
 
 ## Paikallinen esikatselu
 
 ```bash
 python3 -m http.server 8080
-# tai
-npx serve -l 8080
 ```
 
-Avaa selaimessa: `http://localhost:8080`
+Avaa http://localhost:8080
 
 ## Rakenne
 
-- `index.html` — päälanding (palvelu, prosessi, FAQ, CTA)
-- `about.html` — yhteystiedot
-- `assets/css/styles.css` — tyylit
-- `assets/js/main.js` — mobiilinavigaatio, sujuva ankkuriscrollaus
-- `sitemap.xml` — SEO-sivukartta
+- `/` — Hinnoittelun portfolio ja diagnostiikka-CTA
+- `/pricing-audit/` — Pricing Audit (+ coworking, margin)
+- `/pricing-sprint/` — Pricing Sprint (+ saas, value-based-pricing)
+- `/revenue-performance-audit/` — Hospitality / flexible living
+- `/resources/` — Työkalut (tulossa)
+- `/blog/` — Artikkelit
+- `/about/` — Kuka
+- `/contact/` — Yhteystiedot
 
-## Julkaisu (GitHub Pages)
+## Diagnostiikka
 
-1. Commitoi ja pushaa `main`-haaraan
-2. Repo → Settings → Pages → Deploy from branch → `main` / root
-3. Mukautettu domain `samiolavuo.com`: DNS osoittaa GitHub Pages -hostiin, domain lisätty Pages-asetuksiin
+Painike `data-diagnostic-open` avaa 3-vaiheisen modalin.
 
-Muutokset näkyvät yleensä muutamassa minuutissa pushin jälkeen.
+- **Logiikka:** `assets/js/pricingDiagnostic.js` → `getRecommendation(industry, size, pain)`
+- **UI:** `assets/js/diagnostic.js`
+- **TS-lähde (tuleva build):** `src/lib/pricingDiagnostic.ts`
+
+Testit (vaatii Node):
+
+```bash
+node assets/js/pricingDiagnostic.test.js
+```
+
+## Julkaisu
+
+Push `main` → GitHub Pages (root). Domain: samiolavuo.com.
