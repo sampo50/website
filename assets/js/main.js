@@ -1,8 +1,4 @@
-// Basic interactivity for the portfolio site will be added later.
-
 (function () {
-	// Smooth scroll and mobile nav toggling added in later step
-	console.log("Portfolio site initialized");
 
 	// Mobile nav toggle
 	var toggle = document.querySelector('.nav-toggle');

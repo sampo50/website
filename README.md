@@ -1,44 +1,29 @@
 # samiolavuo.com
 
-A simple, fast, and responsive personal portfolio for Data Analyst work.
+Revenue Performance Audit — B2B-konsultointisivusto hospitality- ja flexible living -operaattoreille.
 
-## Local preview
-
-Use any static server. Examples:
+## Paikallinen esikatselu
 
 ```bash
-# Python 3
 python3 -m http.server 8080
-# or Node.js
+# tai
 npx serve -l 8080
 ```
 
-Then open `http://localhost:8080`.
+Avaa selaimessa: `http://localhost:8080`
 
-## Structure
+## Rakenne
 
-- `index.html`: Main page with About, Projects, Skills, Contact
-- `assets/css/styles.css`: Styles
-- `assets/js/main.js`: Small enhancements (mobile nav, smooth scroll)
-- `assets/img/`: Images, favicons, social preview
-- `sitemap.xml`: Sitemap for SEO
+- `index.html` — päälanding (palvelu, prosessi, FAQ, CTA)
+- `about.html` — yhteystiedot
+- `assets/css/styles.css` — tyylit
+- `assets/js/main.js` — mobiilinavigaatio, sujuva ankkuriscrollaus
+- `sitemap.xml` — SEO-sivukartta
 
-## Customize
+## Julkaisu (GitHub Pages)
 
-- Edit text in `index.html` (hero, sections, links)
-- Replace images in `assets/img/` (add `favicon.ico`, `og-image.png`)
-- Tweak colors in `:root` within `assets/css/styles.css`
+1. Commitoi ja pushaa `main`-haaraan
+2. Repo → Settings → Pages → Deploy from branch → `main` / root
+3. Mukautettu domain `samiolavuo.com`: DNS osoittaa GitHub Pages -hostiin, domain lisätty Pages-asetuksiin
 
-## Deploy
-
-Any static host works:
-- GitHub Pages
-- Netlify
-- Vercel
-- Cloudflare Pages
-
-For GitHub Pages (project site):
-1. Commit and push to `main`
-2. In repo Settings → Pages → Build from branch → `main`/`root`
-
-For custom domain `samiolavuo.com`, configure DNS to your host and add domain in host settings. 
+Muutokset näkyvät yleensä muutamassa minuutissa pushin jälkeen.
