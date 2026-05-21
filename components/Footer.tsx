@@ -22,11 +22,8 @@ export function Footer() {
             <p className="font-serif text-lg text-ink">{SITE.name}</p>
             <p className="mt-1 text-sm text-muted">{SITE.tagline}</p>
             <p className="mt-4 text-sm text-muted">
-              <a
-                href={SITE.domain}
-                className="hover:text-accent"
-              >
-                www.samiolavuo.com
+              <a href={SITE.domain} className="hover:text-accent">
+                samiolavuo.com
               </a>
             </p>
           </div>

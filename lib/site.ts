@@ -1,6 +1,6 @@
 export const SITE = {
   name: "Sami Olavuo",
-  domain: "https://www.samiolavuo.com",
+  domain: "https://samiolavuo.com",
   tagline: "Revenue & Pricing Performance Consulting",
   email: "sami.olavuo@gmail.com",
   linkedIn: "https://www.linkedin.com/in/sami-olavuo",

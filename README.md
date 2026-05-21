@@ -30,12 +30,12 @@ The site deploys automatically on every push to `main` via [`.github/workflows/d
 1. Open the repo on GitHub → **Settings** → **Pages**
 2. Under **Build and deployment**, set **Source** to **GitHub Actions** (not “Deploy from branch” with `/` on main — the built site lives in the Actions artifact)
 3. Wait for the workflow **Deploy to GitHub Pages** to finish (Actions tab)
-4. Optional custom domain:
-   - **Pages** → **Custom domain** → `www.samiolavuo.com`
-   - DNS at your registrar:
-     - `CNAME` record: `www` → `<username>.github.io` (GitHub shows the exact target)
-     - Apex `samiolavuo.com`: use GitHub’s A records or redirect apex → www
-   - `public/CNAME` already contains `www.samiolavuo.com`
+4. Custom domain **https://samiolavuo.com**:
+   - **Pages** → **Custom domain** → `samiolavuo.com`
+   - DNS (GitHub shows exact values in repo settings):
+     - Apex: `A` records → GitHub Pages IP addresses, **or**
+     - `www` CNAME → `<user>.github.io` if you prefer www (then update `public/CNAME` accordingly)
+   - `public/CNAME` contains `samiolavuo.com`
 
 ### Project site (no custom domain)
 
