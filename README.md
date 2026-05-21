@@ -2,7 +2,7 @@
 
 MVP website for **Sami Olavuo** — Revenue & Pricing Performance Consulting.
 
-Next.js 15 · TypeScript · Tailwind CSS · static export for **GitHub Pages**.
+Next.js 15 · TypeScript · Tailwind CSS · static export · **Cloudflare Pages** + **GitHub**.
 
 ## Local development
 
@@ -19,33 +19,60 @@ Open http://localhost:3000
 npm run build
 ```
 
-Output: `out/` (includes `.nojekyll` and `CNAME` from `public/`).
+Output: `out/` (static HTML, `_next` assets, `.nojekyll` from `public/`).
 
-## GitHub Pages deployment
+---
 
-The site deploys automatically on every push to `main` via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
+## Julkaisu: Cloudflare Pages + GitHub
 
-### One-time GitHub setup
+Lähdekoodi on GitHubissa (`sampo50/website`). Julkaisu tapahtuu **Cloudflare Pages** -projektilla — DNS on jo Cloudflaressa, joten tämä korvaa GitHub Pages -julkaisun.
 
-1. Open the repo on GitHub → **Settings** → **Pages**
-2. Under **Build and deployment**, set **Source** to **GitHub Actions** (not “Deploy from branch” with `/` on main — the built site lives in the Actions artifact)
-3. Wait for the workflow **Deploy to GitHub Pages** to finish (Actions tab)
-4. Custom domain **https://samiolavuo.com**:
-   - **Pages** → **Custom domain** → `samiolavuo.com`
-   - DNS (GitHub shows exact values in repo settings):
-     - Apex: `A` records → GitHub Pages IP addresses, **or**
-     - `www` CNAME → `<user>.github.io` if you prefer www (then update `public/CNAME` accordingly)
-   - `public/CNAME` contains `samiolavuo.com`
+### 1. Luo Pages-projekti (kerran)
 
-### Project site (no custom domain)
+1. [Cloudflare Dashboard](https://dash.cloudflare.com/) → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**
+2. Valitse GitHub → repo **`sampo50/website`**
+3. **Production branch:** `main`
+4. **Build settings:**
 
-If you serve from `https://<user>.github.io/website/` instead of a custom domain, set in the workflow build step:
+   | Asetus | Arvo |
+   |--------|------|
+   | Framework preset | `None` |
+   | Build command | `npm run build` |
+   | Build output directory | `out` |
+   | Root directory | `/` |
 
-```yaml
-NEXT_PUBLIC_BASE_PATH: "/website"
-```
+5. **Environment variables** (Production):
 
-(replace `website` with your repo name), then rebuild.
+   | Name | Value |
+   |------|--------|
+   | `NODE_VERSION` | `20` |
+   | `NEXT_PUBLIC_BASE_PATH` | *(tyhjä — älä aseta, jos domain on juuri `samiolavuo.com`)* |
+
+6. **Save and Deploy** — odota vihreä build.
+
+`wrangler.toml` ja `.nvmrc` vahvistavat saman output-kansion (`out`) repossa.
+
+### 2. Custom domain
+
+1. Pages-projekti → **Custom domains** → **Set up a custom domain**
+2. Lisää **`samiolavuo.com`** (ja halutessa `www.samiolavuo.com` → redirect apexille)
+3. DNS: Cloudflare hallitsee zonea — CNAME/flattening luodaan automaattisesti.
+
+### 3. Poista vanha julkaisu (tärkeää)
+
+Jos näet vielä **vanhan suomenkielisen** sivun:
+
+- **Workers & Pages** → tarkista, ettei ole **toista** Pages-projektia, joka käyttää samaa domainia.
+- **Caching** → **Configuration** → **Purge Everything** (kerran uuden deployn jälkeen).
+- GitHubissa: **Settings → Pages** → poista custom domain / poista käytöstä, jos GitHub Pages oli aiemmin päällä (ei enää tarvita).
+
+### 4. Päivitykset
+
+Jokainen **`git push` → `main`** laukaisee Cloudflare Pages -buildin automaattisesti (Git-integraatio).
+
+Tarkista buildit: Cloudflare → projekti → **Deployments**.
+
+---
 
 ## Pages
 

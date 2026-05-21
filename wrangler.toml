@@ -1,0 +1,5 @@
+# Cloudflare Pages — build output for static Next.js export
+# https://developers.cloudflare.com/pages/configuration/build-configuration/
+name = "samiolavuo-com"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "out"
