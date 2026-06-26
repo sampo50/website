@@ -1,7 +1,7 @@
 export const SITE = {
   name: "Sami Olavuo",
   domain: "https://samiolavuo.com",
-  tagline: "Revenue & Pricing Performance Consulting",
+  tagline: "Hospitality Revenue Performance",
   email: "sami.olavuo@gmail.com",
   linkedIn: "https://www.linkedin.com/in/sami-olavuo",
 } as const;
@@ -16,108 +16,112 @@ export type ServicePath = {
 
 export const SERVICE_PATHS: ServicePath[] = [
   {
-    title: "Hospitality & Flexible Living Revenue Performance",
+    title: "Fractional Revenue Manager",
     description:
-      "For serviced apartments, aparthotels, boutique hospitality, flexible living and coworking operators.",
+      "Hands-on revenue leadership for operators who need senior pricing, distribution and forecasting ownership — without a full-time hire.",
     focus: [
-      "Pricing & availability",
-      "Occupancy and ADR",
-      "Channel mix",
-      "B2B demand",
-      "Seasonality",
-      "Portfolio performance",
+      "Pricing and availability strategy",
+      "Channel mix and distribution",
+      "Forecasting and budget cycles",
+      "Revenue reporting and KPI ownership",
+      "Commercial routines and decision-making",
     ],
-    href: "/hospitality-revenue-performance",
-    cta: "Explore Hospitality Audit",
+    href: "/contact",
+    cta: "Discuss an engagement",
   },
   {
-    title: "B2B Pricing & Profitability",
+    title: "Revenue Strategy & Pricing",
     description:
-      "For B2B service businesses with unclear pricing, inconsistent discounting or weak visibility into customer-level profitability.",
+      "Structured work on pricing logic, segmentation, channel performance and revenue roadmaps for hospitality and serviced living portfolios.",
     focus: [
-      "Price architecture",
-      "Packaging",
-      "Discount logic",
-      "Customer profitability",
-      "Sales pricing rules",
-      "Margin visibility",
+      "Revenue performance diagnostics",
+      "Seasonal and segment pricing",
+      "Direct vs OTA strategy",
+      "Corporate and B2B demand",
+      "90-day revenue roadmaps",
     ],
-    href: "/b2b-pricing-profitability",
-    cta: "Explore B2B Pricing Audit",
+    href: "/contact",
+    cta: "Discuss an engagement",
   },
   {
-    title: "Ecommerce Pricing & Margin Optimization",
+    title: "Tools, Forecasts & AI",
     description:
-      "For ecommerce and portfolio businesses balancing price, volume, inventory, campaigns and margin.",
+      "Practical setup and maintenance of the commercial stack — dashboards, forecasting models, RMS workflows and AI-assisted pricing.",
     focus: [
-      "Category pricing",
-      "Campaign logic",
-      "Margin control",
-      "Competitor pricing",
-      "Stock-based pricing",
-      "Pricing dashboards",
+      "Revenue dashboards and reporting",
+      "Forecasting models and scenarios",
+      "RMS, PMS and channel manager workflows",
+      "Data pipelines and performance tracking",
+      "AI-assisted pricing and demand signals",
     ],
-    href: "/ecommerce-pricing-optimization",
-    cta: "Explore Ecommerce Sprint",
+    href: "/contact",
+    cta: "Discuss an engagement",
   },
 ];
 
-export const LEAKAGE_EXAMPLES = [
+export const REVENUE_CHALLENGES = [
   "Underpriced peak demand",
-  "Inconsistent discounting",
-  "Weak channel mix",
-  "Poor package architecture",
-  "Low margin customer segments",
-  "Slow pricing decisions",
+  "Weak channel mix and OTA dependency",
+  "Inconsistent length-of-stay pricing",
+  "Unmanaged corporate and B2B rates",
+  "Slow or manual pricing decisions",
+  "Missing forecasting and reporting",
 ];
 
 export const METHOD_STEPS = [
   {
     title: "Commercial Baseline",
     description:
-      "Understand what is sold, to whom, at what price, through which channels and at what margin.",
+      "Map occupancy, ADR, RevPAR, channel mix, segments and pricing logic across the portfolio.",
   },
   {
-    title: "Leakage Map",
+    title: "Revenue Diagnosis",
     description:
-      "Identify where revenue or margin is lost across pricing, discounts, channels, capacity, packaging or reporting.",
+      "Identify where revenue is leaking — pricing, availability, channels, segments or decision-making.",
   },
   {
-    title: "Opportunity Sizing",
+    title: "Strategy & Roadmap",
     description:
-      "Prioritize the commercial moves with the highest financial impact and lowest execution friction.",
+      "Define pricing rules, channel priorities, forecasting approach and the next commercial moves.",
   },
   {
-    title: "90-Day Roadmap",
+    title: "Tools & Reporting",
     description:
-      "Define what should change first, who owns it and which metrics will prove progress.",
+      "Set up or improve dashboards, forecasting routines and the workflows that support daily decisions.",
   },
   {
-    title: "Implementation Support",
+    title: "Ongoing Optimization",
     description:
-      "Support pricing changes, dashboards, commercial routines and management decisions after the audit.",
+      "Iterate on pricing, forecasts and performance — including AI-assisted analysis where it adds value.",
   },
 ];
 
 export const PROOF_BULLETS = [
-  "Pricing and revenue strategy ownership for a c. €12M multi-asset portfolio",
+  "Revenue strategy ownership for a c. €12M multi-asset hospitality portfolio",
   "c. 7% YoY improvement in key revenue KPIs",
   "€300K+ annual commercial opportunity identified",
-  "Hands-on experience with Excel, Power BI, SQL, forecasting and performance tracking",
-  "Work across pricing, operations, finance and senior management decision-making",
+  "Hands-on experience with forecasting, Power BI, SQL and performance tracking",
+  "Work across pricing, operations, finance and senior management",
 ];
 
 export const HERO_PROOF_STRIP = [
-  "Portfolio-level revenue management experience",
-  "Pricing, forecasting and commercial analytics",
-  "Power BI, SQL, Excel and performance tracking",
-  "Audit-first, implementation-oriented approach",
+  "Fractional revenue manager or advisor",
+  "Serviced living and accommodation operators",
+  "Pricing, forecasting and channel strategy",
+  "Limited to a small number of clients",
 ];
 
 export const SERVICE_OFFERINGS = [
-  "Revenue Leakage Snapshot",
-  "Revenue Performance Audit",
-  "Pricing & Packaging Sprint",
-  "Pricing Dashboard Setup",
-  "Fractional Revenue & Pricing Lead",
+  "Fractional Revenue Manager",
+  "Revenue Strategy & Pricing",
+  "Tools, Forecasts & AI",
 ];
+
+export const CLIENT_TYPES = [
+  "Serviced apartments",
+  "Aparthotels",
+  "Boutique hotels",
+  "Serviced living",
+  "Coliving",
+  "Flexible living",
+] as const;

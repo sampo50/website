@@ -1,23 +1,15 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-
-const BUSINESS_TYPES = [
-  "Hospitality / Flexible Living",
-  "B2B Services",
-  "Ecommerce",
-  "Other",
-] as const;
+import { CLIENT_TYPES } from "@/lib/site";
 
 const CHALLENGES = [
-  "Pricing",
-  "Margin",
-  "Occupancy / Utilization",
-  "Discounting",
-  "Channel mix",
-  "Ecommerce margin",
-  "B2B profitability",
-  "Reporting / dashboards",
+  "Pricing strategy",
+  "Channel mix and distribution",
+  "Forecasting and budgeting",
+  "Revenue reporting and dashboards",
+  "Fractional revenue management",
+  "AI-assisted pricing or analysis",
   "Not sure yet",
 ] as const;
 
@@ -104,7 +96,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="company" className="block text-sm font-medium text-ink">
-          Company
+          Company / concept
         </label>
         <input
           id="company"
@@ -141,23 +133,24 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="businessType" className="block text-sm font-medium text-ink">
-          Business type
+        <label htmlFor="conceptType" className="block text-sm font-medium text-ink">
+          Concept type
         </label>
         <select
-          id="businessType"
-          name="businessType"
+          id="conceptType"
+          name="conceptType"
           className="mt-1 w-full rounded-md border border-border px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
           defaultValue=""
         >
           <option value="" disabled>
             Select…
           </option>
-          {BUSINESS_TYPES.map((t) => (
+          {CLIENT_TYPES.map((t) => (
             <option key={t} value={t}>
               {t}
             </option>
           ))}
+          <option value="Other">Other</option>
         </select>
       </div>
 
@@ -190,6 +183,7 @@ export function ContactForm() {
           id="message"
           name="message"
           rows={4}
+          placeholder="Tell me about your portfolio, units and current revenue setup."
           className="mt-1 w-full rounded-md border border-border px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
         />
       </div>

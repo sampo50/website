@@ -3,12 +3,8 @@ import { SITE } from "@/lib/site";
 
 const links = [
   { href: "/services", label: "Services" },
-  { href: "/revenue-leakage-audit", label: "Method" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
-  { href: "/hospitality-revenue-performance", label: "Hospitality" },
-  { href: "/b2b-pricing-profitability", label: "B2B" },
-  { href: "/ecommerce-pricing-optimization", label: "Ecommerce" },
 ];
 
 export function Footer() {
@@ -41,7 +37,7 @@ export function Footer() {
           </ul>
         </div>
         <p className="mt-10 border-t border-border pt-8 text-sm text-muted">
-          © {year} {SITE.name}. Revenue & Pricing Performance Consulting.
+          © {year} {SITE.name}. {SITE.tagline}.
         </p>
       </div>
     </footer>

@@ -1,6 +1,6 @@
 # samiolavuo.com
 
-MVP website for **Sami Olavuo** — Revenue & Pricing Performance Consulting.
+MVP website for **Sami Olavuo** — Hospitality Revenue Performance (fractional revenue management for accommodation and serviced living operators).
 
 Next.js 15 · TypeScript · Tailwind CSS · static export · **Cloudflare Pages** + **GitHub**.
 
@@ -80,10 +80,6 @@ Tarkista buildit: Cloudflare → projekti → **Deployments**.
 |-------|-------------|
 | `/` | Homepage |
 | `/services/` | Services |
-| `/revenue-leakage-audit/` | Method |
-| `/hospitality-revenue-performance/` | Hospitality |
-| `/b2b-pricing-profitability/` | B2B |
-| `/ecommerce-pricing-optimization/` | Ecommerce |
 | `/about/` | About |
 | `/contact/` | Contact (MVP form) |
 

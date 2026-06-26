@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.name}`,
   },
   description:
-    "Find and fix revenue leakage in pricing, margins, channels and commercial decision-making.",
+    "Fractional revenue management and advisory for hospitality and serviced living operators — pricing, forecasting, tooling and AI-assisted commercial decisions.",
   openGraph: {
     siteName: SITE.name,
     locale: "en_GB",

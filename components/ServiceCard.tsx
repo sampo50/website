@@ -26,8 +26,8 @@ export function ServiceCard({
       </ul>
       {detailed && (
         <p className="mt-4 text-sm text-muted">
-          Most engagements start with a diagnostic audit, then continue with
-          implementation support as needed.
+          Engagements are scoped for ongoing ownership or focused advisory —
+          depending on portfolio size and the level of hands-on support needed.
         </p>
       )}
       <Link href={href} className="btn-secondary mt-6 self-start">

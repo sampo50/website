@@ -7,35 +7,39 @@ import { PROOF_BULLETS } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Sami Olavuo works at the intersection of pricing, revenue management, commercial analytics and business performance.",
+    "Sami Olavuo provides fractional revenue management and advisory for hospitality and serviced living operators.",
 };
 
 const workingStyle = [
-  "Diagnostic before solution",
   "Commercial impact before complexity",
   "Practical recommendations over theoretical models",
-  "Clear owner, metric and next step for each recommendation",
+  "Clear ownership, metrics and next steps",
   "Data-informed, not tool-dependent",
+  "Built for operators who need ongoing revenue leadership",
 ];
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
-        headline="Revenue, pricing and commercial performance consulting."
-        subheadline="Sami Olavuo works at the intersection of pricing, revenue management, commercial analytics and business performance."
+        headline="Fractional revenue management for hospitality operators."
+        subheadline="I help accommodation and serviced living concepts improve revenue performance through pricing, forecasting, tooling and structured commercial decision-making."
       />
 
       <Section>
         <div className="max-w-2xl space-y-4 text-muted">
           <p>
-            His background includes portfolio-level revenue management, pricing
-            strategy, forecasting and performance tracking in capacity-based
-            service businesses.
+            My background is in portfolio-level revenue management, pricing
+            strategy and forecasting for capacity-based hospitality businesses.
+            I have owned revenue performance across multi-asset portfolios —
+            from pricing and channel mix to reporting, forecasting and
+            management decision-making.
           </p>
           <p>
-            He helps companies move from intuition-based pricing to structured
-            commercial decision-making.
+            Today I work with a small number of operators as a fractional
+            revenue manager or advisor. The focus is on building and maintaining
+            the commercial systems that drive revenue — not delivering
+            one-off audits and moving on.
           </p>
         </div>
         <ul className="mt-10 grid gap-3 sm:grid-cols-2">
@@ -51,7 +55,7 @@ export default function AboutPage() {
       </Section>
 
       <Section alt>
-        <h2 className="font-serif text-2xl text-ink">How Sami works</h2>
+        <h2 className="font-serif text-2xl text-ink">How I work</h2>
         <ul className="mt-6 space-y-3">
           {workingStyle.map((w) => (
             <li key={w} className="flex gap-3 text-sm text-ink">
@@ -61,7 +65,7 @@ export default function AboutPage() {
           ))}
         </ul>
         <Link href="/contact" className="btn-primary mt-10 inline-flex">
-          Book a Revenue Review
+          Book a call
         </Link>
       </Section>
     </>

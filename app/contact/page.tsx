@@ -6,15 +6,16 @@ import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Book a Revenue Review with Sami Olavuo.",
+  description:
+    "Book a call with Sami Olavuo to discuss fractional revenue management for your hospitality or serviced living concept.",
 };
 
 export default function ContactPage() {
   return (
     <>
       <PageHero
-        headline="Book a Revenue Review"
-        subheadline="In a 30-minute call, we will look at your business model, current pricing challenges and where revenue or margin may be leaking."
+        headline="Book a call"
+        subheadline="Tell me about your concept, portfolio and current revenue setup. We'll discuss whether fractional revenue management or advisory support is the right fit."
       />
 
       <Section>
