@@ -5,24 +5,24 @@ import { ContactForm } from "@/components/ContactForm";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Yhteystiedot",
   description:
-    "Book a call with Sami Olavuo to discuss fractional revenue management for your hospitality or serviced living concept.",
+    "Varaa kartoituspuhelu Sami Olavuon kanssa — Revenue Audit tai Fractional Revenue Manager majoitus- ja serviced living -yrityksille.",
 };
 
 export default function ContactPage() {
   return (
     <>
       <PageHero
-        headline="Book a call"
-        subheadline="Tell me about your concept, portfolio and current revenue setup. We'll discuss whether fractional revenue management or advisory support is the right fit."
+        headline="Varaa kartoituspuhelu"
+        subheadline="Kerro yrityksestäsi, portfoliostasi ja nykyisestä revenue management -tilanteesta. Käydään läpi, sopiiko Revenue Audit vai Fractional Revenue Manager -palvelu."
       />
 
       <Section>
         <div className="mx-auto max-w-xl">
           <ContactForm />
           <p className="mt-8 text-center text-sm text-muted">
-            Or email directly:{" "}
+            Tai lähetä sähköpostia:{" "}
             <a
               href={`mailto:${SITE.email}`}
               className="font-medium text-accent hover:underline"

@@ -6,10 +6,15 @@ import { useState } from "react";
 import { SITE } from "@/lib/site";
 
 const nav = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "Etusivu" },
+  { href: "/about", label: "Tietoa" },
+  { href: "/contact", label: "Yhteystiedot" },
+];
+
+const serviceLinks = [
+  { href: "/services", label: "Kaikki palvelut" },
+  { href: "/revenue-audit", label: "Revenue Audit" },
+  { href: "/fractional-revenue-manager", label: "Fractional Revenue Manager" },
 ];
 
 export function Header() {
@@ -40,8 +45,24 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          <div className="relative group/services">
+            <span className="cursor-default text-sm font-medium text-muted">
+              Palvelut ▾
+            </span>
+            <div className="invisible absolute right-0 top-full z-50 mt-2 min-w-[240px] rounded-md border border-border bg-white py-2 opacity-0 shadow-lg transition-all group-hover/services:visible group-hover/services:opacity-100">
+              {serviceLinks.map((s) => (
+                <Link
+                  key={s.href}
+                  href={s.href}
+                  className="block px-4 py-2 text-sm text-ink hover:bg-canvas"
+                >
+                  {s.label}
+                </Link>
+              ))}
+            </div>
+          </div>
           <Link href="/contact" className="btn-primary text-sm">
-            Book a call
+            Varaa kartoituspuhelu
           </Link>
         </nav>
 
@@ -52,7 +73,7 @@ export function Header() {
           aria-controls="mobile-nav"
           onClick={() => setOpen(!open)}
         >
-          Menu
+          Valikko
         </button>
       </div>
 
@@ -74,13 +95,24 @@ export function Header() {
                 </Link>
               </li>
             ))}
+            {serviceLinks.map((s) => (
+              <li key={s.href}>
+                <Link
+                  href={s.href}
+                  className="text-sm text-muted"
+                  onClick={() => setOpen(false)}
+                >
+                  {s.label}
+                </Link>
+              </li>
+            ))}
             <li>
               <Link
                 href="/contact"
                 className="btn-primary mt-2 w-full text-center"
                 onClick={() => setOpen(false)}
               >
-                Book a call
+                Varaa kartoituspuhelu
               </Link>
             </li>
           </ul>

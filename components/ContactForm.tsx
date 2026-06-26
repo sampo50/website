@@ -3,14 +3,20 @@
 import { FormEvent, useState } from "react";
 import { CLIENT_TYPES } from "@/lib/site";
 
+const PACKAGES = [
+  "Revenue Audit",
+  "Fractional Revenue Manager",
+  "En tiedä vielä",
+] as const;
+
 const CHALLENGES = [
-  "Pricing strategy",
-  "Channel mix and distribution",
-  "Forecasting and budgeting",
-  "Revenue reporting and dashboards",
-  "Fractional revenue management",
-  "AI-assisted pricing or analysis",
-  "Not sure yet",
+  "Hinnoittelu",
+  "Forecasting ja kysynnän ennakointi",
+  "Jakelukanavat ja kanavamix",
+  "Käyttöaste ja saatavuus",
+  "AI-avusteinen hinnoittelu",
+  "Raportointi ja analytiikka",
+  "En tiedä vielä",
 ] as const;
 
 export function ContactForm() {
@@ -27,12 +33,12 @@ export function ContactForm() {
     const email = String(data.get("email") ?? "").trim();
 
     if (!name || !email) {
-      setError("Please fill in name and email.");
+      setError("Täytä nimi ja sähköposti.");
       return;
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setError("Please enter a valid email address.");
+      setError("Anna kelvollinen sähköpostiosoite.");
       return;
     }
 
@@ -52,17 +58,17 @@ export function ContactForm() {
         role="status"
       >
         <p className="font-semibold text-ink">
-          Thanks — your message has been captured in this MVP form.
+          Kiitos — viestisi on tallennettu (MVP-lomake).
         </p>
         <p className="mt-2 text-sm text-muted">
-          This is placeholder functionality. Sami will follow up by email.
+          Tämä on väliaikainen toiminnallisuus. Sami ottaa yhteyttä sähköpostitse.
         </p>
         <button
           type="button"
           className="btn-secondary mt-6"
           onClick={() => setSubmitted(false)}
         >
-          Send another message
+          Lähetä uusi viesti
         </button>
       </div>
     );
@@ -71,8 +77,8 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="card space-y-5" noValidate>
       <p className="text-xs text-muted">
-        MVP form — no backend. Submissions are not sent to an external service
-        yet.
+        MVP-lomake — ei vielä backendiä. Viestejä ei lähetetä ulkoiseen
+        palveluun.
       </p>
 
       {error && (
@@ -83,7 +89,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-ink">
-          Name <span className="text-accent">*</span>
+          Nimi <span className="text-accent">*</span>
         </label>
         <input
           id="name"
@@ -96,7 +102,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="company" className="block text-sm font-medium text-ink">
-          Company / concept
+          Yritys / konsepti
         </label>
         <input
           id="company"
@@ -108,7 +114,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-ink">
-          Email <span className="text-accent">*</span>
+          Sähköposti <span className="text-accent">*</span>
         </label>
         <input
           id="email"
@@ -121,7 +127,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="website" className="block text-sm font-medium text-ink">
-          Website
+          Verkkosivut
         </label>
         <input
           id="website"
@@ -134,7 +140,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="conceptType" className="block text-sm font-medium text-ink">
-          Concept type
+          Konseptityyppi
         </label>
         <select
           id="conceptType"
@@ -143,20 +149,41 @@ export function ContactForm() {
           defaultValue=""
         >
           <option value="" disabled>
-            Select…
+            Valitse…
           </option>
           {CLIENT_TYPES.map((t) => (
             <option key={t} value={t}>
               {t}
             </option>
           ))}
-          <option value="Other">Other</option>
+          <option value="Muu">Muu</option>
+        </select>
+      </div>
+
+      <div>
+        <label htmlFor="package" className="block text-sm font-medium text-ink">
+          Kiinnostava paketti
+        </label>
+        <select
+          id="package"
+          name="package"
+          className="mt-1 w-full rounded-md border border-border px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+          defaultValue=""
+        >
+          <option value="" disabled>
+            Valitse…
+          </option>
+          {PACKAGES.map((p) => (
+            <option key={p} value={p}>
+              {p}
+            </option>
+          ))}
         </select>
       </div>
 
       <div>
         <label htmlFor="challenge" className="block text-sm font-medium text-ink">
-          Main challenge
+          Päähaaste
         </label>
         <select
           id="challenge"
@@ -165,7 +192,7 @@ export function ContactForm() {
           defaultValue=""
         >
           <option value="" disabled>
-            Select…
+            Valitse…
           </option>
           {CHALLENGES.map((c) => (
             <option key={c} value={c}>
@@ -177,19 +204,19 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-ink">
-          Message
+          Viesti
         </label>
         <textarea
           id="message"
           name="message"
           rows={4}
-          placeholder="Tell me about your portfolio, units and current revenue setup."
+          placeholder="Kerro portfoliostasi, kohteiden määrästä ja nykyisestä revenue management -tilanteesta."
           className="mt-1 w-full rounded-md border border-border px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
         />
       </div>
 
       <button type="submit" className="btn-primary w-full sm:w-auto">
-        Submit
+        Lähetä
       </button>
     </form>
   );

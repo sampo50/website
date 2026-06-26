@@ -78,10 +78,12 @@ Tarkista buildit: Cloudflare → projekti → **Deployments**.
 
 | Route | Description |
 |-------|-------------|
-| `/` | Homepage |
-| `/services/` | Services |
-| `/about/` | About |
-| `/contact/` | Contact (MVP form) |
+| `/` | Etusivu |
+| `/services/` | Palvelut |
+| `/revenue-audit/` | Revenue Audit |
+| `/fractional-revenue-manager/` | Fractional Revenue Manager |
+| `/about/` | Tietoa |
+| `/contact/` | Yhteystiedot (MVP-lomake) |
 
 ## Legacy
 

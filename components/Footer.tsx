@@ -2,9 +2,11 @@ import Link from "next/link";
 import { SITE } from "@/lib/site";
 
 const links = [
-  { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/services", label: "Palvelut" },
+  { href: "/revenue-audit", label: "Revenue Audit" },
+  { href: "/fractional-revenue-manager", label: "Fractional Revenue Manager" },
+  { href: "/about", label: "Tietoa" },
+  { href: "/contact", label: "Yhteystiedot" },
 ];
 
 export function Footer() {

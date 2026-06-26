@@ -5,8 +5,8 @@ type ProofSectionProps = {
 };
 
 export function ProofSection({
-  headline = "Built on hands-on hospitality revenue management.",
-  text = "Experience across portfolio-level revenue management, pricing strategy, forecasting and performance tracking for capacity-based accommodation businesses.",
+  headline = "Käytännön hospitality revenue management -kokemus.",
+  text = "Kokemusta portfolio-tason revenue managementista, hinnoittelusta, forecastingista ja suorituskyvyn seurannasta majoitusliiketoimissa.",
   bullets,
 }: ProofSectionProps) {
   return (

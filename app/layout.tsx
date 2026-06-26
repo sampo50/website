@@ -23,10 +23,10 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.name}`,
   },
   description:
-    "Fractional revenue management and advisory for hospitality and serviced living operators — pricing, forecasting, tooling and AI-assisted commercial decisions.",
+    "Revenue Audit ja Fractional Revenue Manager majoitus- ja serviced living -yrityksille — hinnoittelu, forecasting ja AI-avusteinen revenue management.",
   openGraph: {
     siteName: SITE.name,
-    locale: "en_GB",
+    locale: "fi_FI",
     type: "website",
   },
 };
@@ -37,13 +37,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${instrumentSerif.variable}`}>
+    <html lang="fi" className={`${dmSans.variable} ${instrumentSerif.variable}`}>
       <body className="font-sans">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-white"
         >
-          Skip to content
+          Siirry sisältöön
         </a>
         <Header />
         <main id="main">{children}</main>
