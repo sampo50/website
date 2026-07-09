@@ -6,6 +6,7 @@ import { ServiceAreaList } from "@/components/ServiceAreaList";
 import { ProcessSteps } from "@/components/ProcessSteps";
 import { FAQ } from "@/components/FAQ";
 import { ContactForm } from "@/components/ContactForm";
+import { HeroExpertCard } from "@/components/HeroExpertCard";
 import {
   HERO,
   CTA,
@@ -24,23 +25,32 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="border-b border-border bg-white/50 py-20 md:py-28 lg:py-32">
+      <section className="border-b border-border bg-white/50 py-20 md:py-24 lg:py-28">
         <div className="mx-auto max-w-6xl px-6">
-          <p className="section-label">{HERO.label}</p>
-          <h1 className="mt-4 max-w-3xl font-serif text-4xl font-normal leading-[1.15] tracking-tight text-ink md:text-5xl lg:text-[3.25rem]">
-            {HERO.headline}
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
-            {HERO.subheadline}
-          </p>
-          <p className="mt-4 max-w-2xl text-sm text-muted">{HERO.note}</p>
-          <div className="mt-10 flex flex-wrap gap-3">
-            <Link href="#yhteystiedot" className="btn-primary">
-              {CTA.primary}
-            </Link>
-            <Link href="#paketointi" className="btn-secondary">
-              {CTA.secondary}
-            </Link>
+          <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(280px,0.8fr)] lg:gap-16">
+            <div>
+              <h1 className="max-w-2xl font-serif text-4xl font-normal leading-[1.12] tracking-tight text-ink md:text-5xl lg:text-[3.25rem]">
+                {HERO.headline}
+              </h1>
+              <p className="mt-5 max-w-xl text-xl leading-snug text-ink md:text-2xl">
+                {HERO.subheadline}
+              </p>
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-lg">
+                {HERO.body}
+              </p>
+              <p className="mt-5 max-w-xl border-l-2 border-accent/30 pl-4 text-sm leading-relaxed text-ink/80 md:text-base">
+                {HERO.trustLine}
+              </p>
+              <div className="mt-10 flex flex-wrap gap-3">
+                <Link href="#yhteystiedot" className="btn-primary">
+                  {CTA.primary}
+                </Link>
+                <Link href="#paketointi" className="btn-secondary">
+                  {CTA.secondary}
+                </Link>
+              </div>
+            </div>
+            <HeroExpertCard />
           </div>
         </div>
       </section>

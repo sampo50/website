@@ -76,12 +76,25 @@ export const SERVICE_PATHS: ServicePath[] = [
 ];
 
 export const HERO = {
-  label: "Fractional Revenue Manager",
-  headline: "Kaupallinen tulosohjaus ilman kokoaikaista rekrytointia",
-  subheadline:
-    "Autan itsenäisiä hotelleja, boutique-hotelleja ja serviced living -operaattoreita parantamaan hinnoittelua, käyttöastetta, kanavamixia ja ennustettavuutta.",
-  note: "Sopii erityisesti 25–120 huoneen hotelleille, serviced apartment -kohteille, aparthotelleille ja pienille hotelliportfolioille.",
+  headline: "Fractional Revenue Manager hotellillesi",
+  subheadline: "Kaupallinen tulosohjaus ilman kokoaikaista rekrytointia.",
+  body:
+    "Autan itsenäisiä hotelleja, boutique-hotelleja ja serviced living -operaattoreita parantamaan hinnoittelua, käyttöastetta, kanavamixia ja ennustettavuutta jatkuvalla revenue management -mallilla.",
+  trustLine:
+    "Työskentelen osana hotellin kaupallista arkea: seuraan pickupia, kysyntää, forecastia ja kanavamixiä, ja muutan havainnot konkreettisiksi päätöksiksi.",
 };
+
+export const HERO_EXPERT_CARD = {
+  name: SITE.name,
+  role: "Fractional Revenue Manager",
+  description:
+    "Hotellien, aparthotellien ja serviced living -kohteiden kaupallinen tulosohjaus",
+  bullets: [
+    "Hinnoittelu & kysynnän hallinta",
+    "Forecast & kaupallinen rytmi",
+    "Kanavamix & nettotuotto",
+  ],
+} as const;
 
 export const TARGET_CUSTOMER = {
   headline: "Kenelle tämä on tehty",
@@ -208,9 +221,9 @@ export const HERO_SUBTAGLINE = HERO.subheadline;
 export const HERO_PROOF_STRIP = TARGET_CUSTOMER.types.slice(0, 4);
 export const CLIENT_TYPES = TARGET_CUSTOMER.types;
 export const SITE_INTRO = {
-  headline: HERO.headline,
-  text: HERO.subheadline,
-  text2: HERO.note,
+  headline: HERO.subheadline,
+  text: HERO.body,
+  text2: HERO.trustLine,
   goal: SOLUTION.paragraphs[2],
 };
 export const PACKAGE_COMPARISON = SERVICE_PATHS.map((s) => ({
