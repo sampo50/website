@@ -47,17 +47,6 @@ export function CredibilitySection() {
         </ul>
       </div>
 
-      <article className="card mt-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">
-          Case-esimerkki
-        </p>
-        <h3 className="mt-2 font-semibold text-ink">
-          {CREDIBILITY.caseStudy.title}
-        </h3>
-        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted">
-          {CREDIBILITY.caseStudy.text}
-        </p>
-      </article>
     </div>
   );
 }
