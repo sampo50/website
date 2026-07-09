@@ -12,6 +12,7 @@ import {
   CTA,
   TARGET_CUSTOMER,
   PROBLEM_SIGNALS,
+  PROBLEM_INSIGHT,
   SOLUTION,
   SOLUTION_AREAS,
   SERVICE_PATHS,
@@ -60,22 +61,20 @@ export default function HomePage() {
         <p className="section-label">Kenelle</p>
         <h2 className="section-title mt-3">{TARGET_CUSTOMER.headline}</h2>
         <p className="mt-4 max-w-2xl text-muted">{TARGET_CUSTOMER.text}</p>
-        <ul className="mt-8 flex flex-wrap gap-2">
+        <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {TARGET_CUSTOMER.types.map((type) => (
-            <li
-              key={type}
-              className="rounded-full border border-border bg-white px-4 py-2 text-sm text-ink"
-            >
+            <li key={type} className="card text-sm font-medium text-ink">
               {type}
             </li>
           ))}
         </ul>
+        <p className="mt-6 text-sm text-muted">{TARGET_CUSTOMER.note}</p>
       </Section>
 
       {/* Ongelmat */}
-      <Section alt>
+      <Section alt id="ongelmat">
         <p className="section-label">Tilanne</p>
-        <h2 className="section-title mt-3">Tunnistatko nämä ongelmat?</h2>
+        <h2 className="section-title mt-3">Tunnistatko nämä merkit?</h2>
         <ul className="mt-8 grid gap-3 sm:grid-cols-2">
           {PROBLEM_SIGNALS.map((item) => (
             <li key={item} className="card text-sm leading-relaxed text-ink">
@@ -83,6 +82,9 @@ export default function HomePage() {
             </li>
           ))}
         </ul>
+        <p className="mt-8 max-w-2xl border-l-2 border-accent/30 pl-4 text-sm leading-relaxed text-ink/80 md:text-base">
+          {PROBLEM_INSIGHT}
+        </p>
       </Section>
 
       {/* Palvelu */}

@@ -97,14 +97,15 @@ export const HERO_EXPERT_CARD = {
 } as const;
 
 export const TARGET_CUSTOMER = {
-  headline: "Kenelle tämä on tehty",
-  text: "Työskentelen suoraan hotellin tai operaattorin johdon kanssa — ei toimistomallilla, vaan käytännön revenue management -osaamisella.",
+  headline: "Kenelle palvelu sopii?",
+  text: "Palvelu on rakennettu majoitusoperaattoreille, joilla kaupallinen ohjaus on jo tärkeää, mutta kokoaikainen revenue manager ei ole vielä perusteltu rekrytointi.",
+  note: "Sopii erityisesti noin 25–120 huoneen tai yksikön kohteille.",
   types: [
     "Itsenäiset hotellit",
     "Boutique-hotellit",
     "Aparthotellit",
-    "Serviced apartments",
-    "Serviced living",
+    "Serviced apartment -kohteet",
+    "Serviced living -operaattorit",
     "Pienet hotelliportfoliot",
   ],
 };
@@ -113,11 +114,14 @@ export const PROBLEM_SIGNALS = [
   "Hintoja muutetaan liian harvoin tai liian myöhään",
   "Päätökset perustuvat tuntumaan, eivät kysyntädataan",
   "OTA-kanavat ohjaavat liikaa myyntiä ja katetta",
-  "Hiljaisiin jaksoihin reagoidaan vasta kun on liian myöhäistä",
+  "Hiljaisiin jaksoihin reagoidaan vasta, kun pickup on jo pysähtynyt",
   "Korkean kysynnän päivinä potentiaalia jää pöydälle",
   "Ryhmä- ja long-stay-varauksia hyväksytään ilman displacement-analyysiä",
   "Forecast ei ohjaa myyntiä, markkinointia eikä operatiivista suunnittelua",
 ] as const;
+
+export const PROBLEM_INSIGHT =
+  "Usein tulos ei vuoda yhdestä suuresta virheestä, vaan pienistä päivittäisistä päätöksistä: hinnasta, saatavuudesta, rajoituksista, kanavista ja segmenteistä.";
 
 export const SOLUTION = {
   headline: "Mitä teen käytännössä",
