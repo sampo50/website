@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Section } from "@/components/Section";
-import { PROOF_BULLETS } from "@/lib/site";
+import { CREDIBILITY } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Tietoa",
@@ -43,7 +43,7 @@ export default function AboutPage() {
           </p>
         </div>
         <ul className="mt-10 grid gap-3 sm:grid-cols-2">
-          {PROOF_BULLETS.map((b) => (
+          {CREDIBILITY.bullets.map((b) => (
             <li
               key={b}
               className="rounded-lg border border-border bg-white px-4 py-3 text-sm text-ink"

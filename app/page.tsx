@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { PackageCard } from "@/components/PackageCard";
 import { Section } from "@/components/Section";
-import { ServiceCard } from "@/components/ServiceCard";
-import { ProofSection } from "@/components/ProofSection";
+import { CredibilitySection } from "@/components/CredibilitySection";
 import { ServiceAreaList } from "@/components/ServiceAreaList";
 import { ProcessSteps } from "@/components/ProcessSteps";
 import { FAQ } from "@/components/FAQ";
+import { SolutionComparison } from "@/components/SolutionComparison";
 import { ContactForm } from "@/components/ContactForm";
 import { HeroExpertCard } from "@/components/HeroExpertCard";
 import {
@@ -15,11 +16,11 @@ import {
   PROBLEM_INSIGHT,
   SOLUTION,
   SOLUTION_AREAS,
-  SERVICE_PATHS,
+  PACKAGES,
   PROCESS_STEPS,
-  PROOF_BULLETS,
+  PROCESS_HEADING,
   FAQ_ITEMS,
-  SITE,
+  CONTACT,
 } from "@/lib/site";
 
 export default function HomePage() {
@@ -91,19 +92,24 @@ export default function HomePage() {
       <Section id="palvelu">
         <p className="section-label">Palvelu</p>
         <h2 className="section-title mt-3">{SOLUTION.headline}</h2>
-        <div className="mt-6 max-w-2xl space-y-4 text-muted">
-          {SOLUTION.paragraphs.map((p) => (
-            <p key={p}>{p}</p>
-          ))}
+        <p className="mt-6 max-w-2xl text-muted">{SOLUTION.body}</p>
+        <div className="mt-10">
+          <SolutionComparison
+            before={SOLUTION.comparison.before}
+            after={SOLUTION.comparison.after}
+          />
         </div>
         <div className="mt-14">
           <ServiceAreaList
-            title="Mitä palvelu sisältää"
-            areas={SOLUTION_AREAS.map((area) => ({ ...area }))}
+            title="Mitä palvelu sisältää?"
+            areas={SOLUTION_AREAS.map((area) => ({
+              title: area.title,
+              bullets: [...area.bullets],
+            }))}
           />
         </div>
         <div className="mt-16">
-          <h3 className="font-serif text-2xl text-ink">Miten työ etenee</h3>
+          <h3 className="section-title">{PROCESS_HEADING}</h3>
           <div className="mt-8">
             <ProcessSteps steps={PROCESS_STEPS} />
           </div>
@@ -119,16 +125,16 @@ export default function HomePage() {
           mukaan. Hinnat ovat suuntaa-antavia — lopullinen laajuus sovitaan
           kartoituksessa.
         </p>
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {SERVICE_PATHS.map((s) => (
-            <ServiceCard key={s.title} {...s} />
+        <div className="mt-10 grid items-stretch gap-6 lg:grid-cols-3">
+          {PACKAGES.map((pkg) => (
+            <PackageCard key={pkg.title} {...pkg} />
           ))}
         </div>
       </Section>
 
       {/* Kokemus */}
       <Section id="kokemus">
-        <ProofSection bullets={PROOF_BULLETS} />
+        <CredibilitySection />
       </Section>
 
       {/* FAQ */}
@@ -142,25 +148,22 @@ export default function HomePage() {
 
       {/* Yhteystiedot */}
       <Section id="yhteystiedot">
-        <div className="mx-auto max-w-xl">
+        <div className="mx-auto max-w-5xl">
           <p className="section-label">Yhteystiedot</p>
-          <h2 className="section-title mt-3">{CTA.primary}</h2>
-          <p className="mt-4 text-muted">
-            Kerro hotellistasi tai kohteestasi, huonemäärästä ja nykyisestä
-            revenue management -tilanteesta. Vastaan henkilökohtaisesti.
-          </p>
-          <div className="mt-10">
+          <h2 className="section-title mt-3">{CONTACT.heading}</h2>
+          <p className="mt-4 max-w-2xl text-muted">{CONTACT.body}</p>
+
+          <div className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
+            <div>
+              <p className="text-sm font-medium text-ink">Suora yhteys</p>
+              <ul className="mt-4 space-y-3 text-muted">
+                <li>{CONTACT.direct.email}</li>
+                <li>{CONTACT.direct.phone}</li>
+                <li>{CONTACT.direct.website}</li>
+              </ul>
+            </div>
             <ContactForm />
           </div>
-          <p className="mt-8 text-center text-sm text-muted">
-            Tai sähköposti:{" "}
-            <a
-              href={`mailto:${SITE.email}`}
-              className="font-medium text-accent hover:underline"
-            >
-              {SITE.email}
-            </a>
-          </p>
         </div>
       </Section>
     </>

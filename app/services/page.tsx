@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { Section } from "@/components/Section";
-import { ServiceCard } from "@/components/ServiceCard";
+import { PackageCard } from "@/components/PackageCard";
 import { CTASection } from "@/components/CTASection";
 import { ComparisonTable } from "@/components/ComparisonTable";
-import { SERVICE_PATHS, SITE_INTRO } from "@/lib/site";
+import { PACKAGES, SITE_INTRO, CTA } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Palvelut",
@@ -18,13 +18,13 @@ export default function ServicesPage() {
       <PageHero
         headline={SITE_INTRO.headline}
         subheadline={`${SITE_INTRO.text} ${SITE_INTRO.text2}`}
-        primaryCta={{ label: "Varaa 30 minuutin revenue-kartoitus", href: "/contact" }}
+        primaryCta={{ label: CTA.primary, href: "/#yhteystiedot" }}
       />
 
       <Section>
-        <div className="grid gap-6 lg:grid-cols-3">
-          {SERVICE_PATHS.map((s) => (
-            <ServiceCard key={s.title} {...s} detailed />
+        <div className="grid items-stretch gap-6 lg:grid-cols-3">
+          {PACKAGES.map((pkg) => (
+            <PackageCard key={pkg.title} {...pkg} />
           ))}
         </div>
       </Section>
@@ -41,7 +41,7 @@ export default function ServicesPage() {
       <CTASection
         headline="Etkö ole varma, kumpi paketti sopii?"
         text="Varaa kartoituspuhelu ja katsotaan aloitetaanko Revenue Auditilla, Revenue Controlilla vai Revenue Growth -mallilla."
-        buttonLabel="Varaa 30 minuutin revenue-kartoitus"
+        buttonLabel={CTA.primary}
       />
     </>
   );

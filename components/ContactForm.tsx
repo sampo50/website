@@ -1,24 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { CLIENT_TYPES } from "@/lib/site";
-
-const PACKAGES = [
-  "Revenue Audit",
-  "Revenue Control",
-  "Revenue Growth",
-  "En tiedä vielä",
-] as const;
-
-const CHALLENGES = [
-  "Hinnoittelu",
-  "Forecasting ja kysynnän ennakointi",
-  "Jakelukanavat ja kanavamix",
-  "Käyttöaste ja saatavuus",
-  "Ryhmä- ja long-stay-hinnoittelu",
-  "Forecast ja raportointi",
-  "En tiedä vielä",
-] as const;
+import { CONTACT } from "@/lib/site";
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -43,9 +26,10 @@ export function ContactForm() {
       return;
     }
 
-    // TODO: Connect Formspree, Netlify Forms, HubSpot, Resend, or API route.
+    // TODO: Wire form submission to Cloudflare Pages Forms or another handler.
+    // See https://developers.cloudflare.com/pages/configuration/forms/
     if (process.env.NODE_ENV === "development") {
-      console.log("[ContactForm MVP]", Object.fromEntries(data));
+      console.log("[ContactForm]", Object.fromEntries(data));
     }
 
     setSubmitted(true);
@@ -95,18 +79,6 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="company" className="block text-sm font-medium text-ink">
-          Yritys / konsepti
-        </label>
-        <input
-          id="company"
-          name="company"
-          type="text"
-          className="mt-1 w-full rounded-md border border-border px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-        />
-      </div>
-
-      <div>
         <label htmlFor="email" className="block text-sm font-medium text-ink">
           Sähköposti <span className="text-accent">*</span>
         </label>
@@ -132,8 +104,20 @@ export function ContactForm() {
       </div>
 
       <div>
+        <label htmlFor="company" className="block text-sm font-medium text-ink">
+          Hotelli / yritys
+        </label>
+        <input
+          id="company"
+          name="company"
+          type="text"
+          className="mt-1 w-full rounded-md border border-border px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+        />
+      </div>
+
+      <div>
         <label htmlFor="website" className="block text-sm font-medium text-ink">
-          Verkkosivut
+          Verkkosivu
         </label>
         <input
           id="website"
@@ -145,70 +129,6 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="conceptType" className="block text-sm font-medium text-ink">
-          Konseptityyppi
-        </label>
-        <select
-          id="conceptType"
-          name="conceptType"
-          className="mt-1 w-full rounded-md border border-border px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-          defaultValue=""
-        >
-          <option value="" disabled>
-            Valitse…
-          </option>
-          {CLIENT_TYPES.map((t) => (
-            <option key={t} value={t}>
-              {t}
-            </option>
-          ))}
-          <option value="Muu">Muu</option>
-        </select>
-      </div>
-
-      <div>
-        <label htmlFor="package" className="block text-sm font-medium text-ink">
-          Kiinnostava paketti
-        </label>
-        <select
-          id="package"
-          name="package"
-          className="mt-1 w-full rounded-md border border-border px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-          defaultValue=""
-        >
-          <option value="" disabled>
-            Valitse…
-          </option>
-          {PACKAGES.map((p) => (
-            <option key={p} value={p}>
-              {p}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <div>
-        <label htmlFor="challenge" className="block text-sm font-medium text-ink">
-          Päähaaste
-        </label>
-        <select
-          id="challenge"
-          name="challenge"
-          className="mt-1 w-full rounded-md border border-border px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-          defaultValue=""
-        >
-          <option value="" disabled>
-            Valitse…
-          </option>
-          {CHALLENGES.map((c) => (
-            <option key={c} value={c}>
-              {c}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <div>
         <label htmlFor="message" className="block text-sm font-medium text-ink">
           Viesti
         </label>
@@ -216,13 +136,12 @@ export function ContactForm() {
           id="message"
           name="message"
           rows={4}
-          placeholder="Kerro hotellistasi tai kohteestasi, huonemäärästä ja nykyisestä revenue management -tilanteesta."
           className="mt-1 w-full rounded-md border border-border px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
         />
       </div>
 
       <button type="submit" className="btn-primary w-full sm:w-auto">
-        Lähetä
+        {CONTACT.cta}
       </button>
     </form>
   );

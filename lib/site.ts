@@ -7,10 +7,31 @@ export const SITE = {
   linkedIn: "https://www.linkedin.com/in/sami-olavuo",
 } as const;
 
+export const SEO = {
+  title: "Fractional Revenue Manager | Sami Olavuo",
+  description:
+    "Fractional revenue management -palvelu itsenäisille hotelleille, boutique-hotelleille, aparthotelleille ja serviced living -operaattoreille. Hinnoittelu, forecast, kanavamix ja kaupallinen tulosohjaus ilman kokoaikaista rekrytointia.",
+} as const;
+
+export const FOOTER = {
+  line: "Kaupallinen tulosohjaus hotelleille, aparthotelleille ja serviced living -operaattoreille.",
+} as const;
+
 export const CTA = {
   primary: "Varaa 30 minuutin revenue-kartoitus",
   secondary: "Katso palvelupaketit",
   header: "Varaa kartoitus",
+} as const;
+
+export const CONTACT = {
+  heading: "Aloita Revenue Auditilla",
+  body: "Auditoinnin jälkeen tiedät, missä nykyinen tulospotentiaali vuotaa, mitkä päätökset vaikuttavat nopeimmin ja kannattaako jatkuva fractional revenue management ottaa käyttöön.",
+  cta: CTA.primary,
+  direct: {
+    email: "[Sähköposti]",
+    phone: "[Puhelin]",
+    website: "[Verkkosivu]",
+  },
 } as const;
 
 export const NAV_ANCHORS = [
@@ -21,6 +42,50 @@ export const NAV_ANCHORS = [
   { href: "#faq", label: "FAQ" },
 ] as const;
 
+export type Package = {
+  title: string;
+  positioning: string;
+  description: string;
+  price: string;
+  cta: string;
+  href: string;
+  highlighted?: boolean;
+};
+
+export const PACKAGES: Package[] = [
+  {
+    title: "Revenue Audit",
+    positioning:
+      "Paras aloituspiste, kun haluat nähdä tulospotentiaalin ennen jatkuvaa yhteistyötä.",
+    description:
+      "Kertaluonteinen analyysi nykyisestä hinnoittelusta, kanavista, segmenteistä, kilpailukentästä ja kaupallisesta ohjauksesta.",
+    price: "1 500–3 500 €",
+    cta: "Aloita auditilla",
+    href: "#yhteystiedot",
+  },
+  {
+    title: "Revenue Control",
+    positioning:
+      "Kevyt jatkuva revenue management -malli pienelle tai stabiilille kohteelle.",
+    description:
+      "Sopii hotellille, joka tarvitsee säännöllistä hinnoittelun, pickupin ja forecastin seurantaa ilman täyttä kaupallista kokonaisvastuuta.",
+    price: "1 200–2 500 €/kk",
+    cta: "Kysy Revenue Controlista",
+    href: "#yhteystiedot",
+  },
+  {
+    title: "Revenue Growth",
+    positioning:
+      "Täysi fractional revenue manager -palvelu kasvuhakuiselle hotellille tai operaattorille.",
+    description:
+      "Sopii kohteelle tai pienelle portfoliolle, jossa hinnoittelu, forecast, kanavamix, kampanjat ja kaupallinen rytmi halutaan rakentaa järjestelmällisesti.",
+    price: "2 500–4 500 €/kk",
+    cta: "Keskustele kasvumallista",
+    href: "#yhteystiedot",
+    highlighted: true,
+  },
+];
+
 export type ServicePath = {
   title: string;
   description: string;
@@ -30,50 +95,14 @@ export type ServicePath = {
   price?: string;
 };
 
-export const SERVICE_PATHS: ServicePath[] = [
-  {
-    title: "Revenue Audit",
-    description:
-      "Kertaluonteinen analyysi nykyisestä hinnoittelusta, kanavista, segmenteistä, kilpailukentästä ja tulospotentiaalista.",
-    focus: [
-      "Hinnoittelu ja kysyntä",
-      "Kanavat ja segmentit",
-      "Kilpailukenttä ja tulospotentiaali",
-      "90 päivän toimintasuunnitelma",
-    ],
-    href: "#yhteystiedot",
-    cta: "Kysy auditista",
-    price: "1 500–3 500 €",
-  },
-  {
-    title: "Revenue Control",
-    description:
-      "Kevyt jatkuva revenue management -malli pienelle tai stabiilille kohteelle.",
-    focus: [
-      "Perushinnoittelun ohjaus",
-      "Pickup- ja kysyntäseuranta",
-      "Forecast ja KPI-raportointi",
-      "Kanavien kaupallinen kontrolli",
-    ],
-    href: "#yhteystiedot",
-    cta: "Kysy Revenue Controlista",
-    price: "1 200–2 500 €/kk",
-  },
-  {
-    title: "Revenue Growth",
-    description:
-      "Täysi fractional revenue manager -palvelu kasvuhakuiselle hotellille tai serviced living -operaattorille.",
-    focus: [
-      "Viikoittainen kaupallinen rytmi",
-      "Hinnoittelu, saatavuus ja rajoitukset",
-      "Forecast, kanavamix ja segmentit",
-      "Johtoa tukeva päätöksenteko",
-    ],
-    href: "#yhteystiedot",
-    cta: "Kysy Revenue Growthista",
-    price: "2 500–4 500 €/kk",
-  },
-];
+export const SERVICE_PATHS: ServicePath[] = PACKAGES.map((pkg) => ({
+  title: pkg.title,
+  description: pkg.description,
+  focus: [],
+  href: pkg.href,
+  cta: pkg.cta,
+  price: pkg.price,
+}));
 
 export const HERO = {
   headline: "Fractional Revenue Manager hotellillesi",
@@ -124,98 +153,143 @@ export const PROBLEM_INSIGHT =
   "Usein tulos ei vuoda yhdestä suuresta virheestä, vaan pienistä päivittäisistä päätöksistä: hinnasta, saatavuudesta, rajoituksista, kanavista ja segmenteistä.";
 
 export const SOLUTION = {
-  headline: "Mitä teen käytännössä",
-  paragraphs: [
-    "Toimin ulkoistettuna revenue managerina, joka tuo hotellillenne viikoittaisen kaupallisen rytmin.",
-    "Hinnoittelu, saatavuus, rajoitukset, kampanjat, segmentit ja jakelukanavat ohjataan järjestelmällisesti datan, kysynnän ja liiketoimintatavoitteiden perusteella.",
-    "Tavoite ei ole tehdä satunnaisia hintamuutoksia, vaan rakentaa toimintamalli, jossa johto näkee ajoissa missä kysyntä vahvistuu, missä ollaan jäljessä ja mitä päätöksiä seuraavaksi tarvitaan.",
-  ],
-};
+  headline: "Ulkoinen revenue manager, joka tuo hotellillesi kaupallisen rytmin",
+  body:
+    "Toimin hotellin ulkoistettuna revenue managerina. Hinnoittelu, saatavuus, rajoitukset, kampanjat, segmentit ja jakelukanavat ohjataan järjestelmällisesti datan, kysynnän ja liiketoimintatavoitteiden perusteella.",
+  goal:
+    "Tavoitteena on rakentaa toimintamalli, jossa johto näkee ajoissa missä kysyntä vahvistuu, missä ollaan jäljessä ja mitä päätöksiä seuraavaksi tarvitaan.",
+  comparison: {
+    before: [
+      "Hintapäätökset tehdään reaktiivisesti",
+      "Forecast jää raportiksi",
+      "Kanavamixiä seurataan, mutta ei aktiivisesti ohjata",
+      "Hiljaisiin jaksoihin herätään liian myöhään",
+    ],
+    after: [
+      "Pickup ja kysyntä ohjaavat päätöksiä viikoittain",
+      "Forecast tukee myyntiä, markkinointia ja operatiivista suunnittelua",
+      "Kanavia arvioidaan nettotuoton perusteella",
+      "Hiljaisiin ja korkean kysynnän jaksoihin valmistaudutaan ajoissa",
+    ],
+  },
+} as const;
 
 export const SOLUTION_AREAS = [
   {
     title: "Hinnoittelu ja kysynnän hallinta",
-    description:
-      "Päivittäinen pickup-seuranta, dynaaminen hinnoittelu, korkean kysynnän päivien optimointi, hiljaisten jaksojen toimenpiteet sekä minimiyöpymisten ja saatavuusrajoitusten hallinta.",
+    bullets: [
+      "Päivittäinen pickup-seuranta",
+      "Dynaaminen hinnoittelu",
+      "Korkean kysynnän päivien optimointi",
+      "Hiljaisten jaksojen toimenpiteet",
+      "Minimiyöpymisten ja saatavuusrajoitusten hallinta",
+    ],
   },
   {
     title: "Forecast ja raportointi",
-    description:
-      "90/180/365 päivän forecast, kuukausittainen revenue-raportti, KPI-seuranta sekä selkeä päätösloki: mitä muutettiin, miksi ja mitä seurataan seuraavaksi.",
+    bullets: [
+      "90/180/365 päivän forecast",
+      "Kuukausittainen revenue-raportti",
+      "KPI-seuranta",
+      "Selkeä päätösloki: mitä muutettiin, miksi ja mitä seurataan seuraavaksi",
+    ],
   },
   {
     title: "Jakelustrategia",
-    description:
-      "OTA-kanavien optimointi, suoran myynnin kaupallinen tuki, kampanjoiden seuranta, hintapariteetin valvonta ja kanavakohtaisen nettotuoton arviointi.",
+    bullets: [
+      "OTA-kanavien optimointi",
+      "Suoran myynnin kaupallinen tuki",
+      "Kampanjoiden seuranta",
+      "Hintapariteetin valvonta",
+      "Kanavakohtaisen nettotuoton arviointi",
+    ],
   },
   {
     title: "Serviced living -optimointi",
-    description:
-      "Lyhyiden ja pitkien varausten tasapainotus, corporate- ja long-stay-kysynnän hinnoittelu sekä käyttöasteen, vaihtokustannusten ja kassavirran yhteensovittaminen.",
+    bullets: [
+      "Lyhyiden ja pitkien varausten tasapainotus",
+      "Corporate- ja long-stay-kysynnän hinnoittelu",
+      "Käyttöasteen, vaihtokustannusten ja kassavirran yhteensovittaminen",
+    ],
   },
 ] as const;
 
+export const PROCESS_HEADING = "Näin yhteistyö alkaa";
+
 export const PROCESS_STEPS = [
   {
-    title: "Revenue-kartoitus",
+    title: "30 minuutin kartoitus",
     description:
-      "30 minuutin kartoitus nykytilasta, tavoitteista ja siitä, mikä palvelumalli sopii kohteeseen.",
+      "Käydään läpi kohteen nykytilanne, tavoitteet, järjestelmät ja kaupalliset haasteet.",
   },
   {
     title: "Revenue Audit",
     description:
-      "Valinnainen kertaluonteinen analyysi, joka tuottaa selkeän kuvan nykytilasta ja 90 päivän toimintasuunnitelman.",
+      "Analysoidaan hinnoittelu, kanavat, segmentit, kysyntäkalenteri, kilpailukenttä ja tulospotentiaali.",
   },
   {
-    title: "Käyttöönotto",
+    title: "Toimenpidesuunnitelma",
     description:
-      "Hinnoittelun, forecastin, raportoinnin ja kanavien ohjauksen rakenne sovitetaan kohteeseen ja tiimiin.",
+      "Saat selkeän priorisoidun näkymän siihen, missä tulos vuotaa ja mitä kannattaa korjata ensin.",
   },
   {
-    title: "Viikoittainen ohjaus",
+    title: "Jatkuva revenue management",
     description:
-      "Jatkuva kaupallinen rytmi: hinnoittelu, saatavuus, segmentit ja kanavat päivitetään datan mukaan.",
-  },
-  {
-    title: "Raportointi ja kehitys",
-    description:
-      "Kuukausittainen yhteenveto, päätösloki ja seuraavat toimenpiteet — ei pelkkää raportointia, vaan ohjausta.",
+      "Tarvittaessa auditista jatketaan viikoittaiseen kaupalliseen tulosohjaukseen.",
   },
 ];
 
-export const PROOF_BULLETS = [
-  "Revenue-strategian vastuu noin 12 M€ monikohdeportfoliosta",
-  "Noin 7 % vuosittainen parannus keskeisissä revenue KPI:issa",
-  "Yli 300 000 € vuosittainen kaupallinen mahdollisuus tunnistettu",
-  "Käytännön kokemus forecastingista, Power BI:stä, SQL:stä ja raportoinnista",
-  "Työskentely hinnoittelun, operatiivin, talouden ja johdon välillä",
-];
+export const CREDIBILITY = {
+  headline: "Kokemusta hotellien kaupallisesta tulosohjauksesta",
+  body:
+    "Olen erikoistunut majoitusliiketoiminnan kaupalliseen ohjaukseen: hinnoitteluun, kysynnän hallintaan, forecastiin, kanavamixiin ja revenue management -prosessien rakentamiseen.",
+  profile: {
+    name: SITE.name,
+    role: "Fractional Revenue Manager",
+    tagline:
+      "Kaupallinen tulosohjaus hotelleille, aparthotelleille ja serviced living -operaattoreille",
+  },
+  bullets: [
+    "Revenue management -prosessien rakentaminen",
+    "Hinnoittelun ja saatavuuden optimointi",
+    "Forecast- ja raportointimallien kehittäminen",
+    "OTA- ja suoramyynnin kaupallinen ohjaus",
+    "Serviced living-, long-stay- ja corporate-kysynnän optimointi",
+  ],
+  caseStudy: {
+    title: "Esimerkkicase: boutique-hotelli, 48 huonetta",
+    text:
+      "Lähtötilanteessa hinnoittelu päivittyi epäsäännöllisesti, korkean kysynnän päivät jäivät osin alihinnoitelluiksi ja hiljaisiin jaksoihin reagoitiin liian myöhään. Työssä rakennettiin kysyntäkalenteri, pickup-seuranta, hintaportaat ja selkeä viikoittainen päätösmalli.",
+  },
+} as const;
+
+export const PROOF_BULLETS = [...CREDIBILITY.bullets];
 
 export const FAQ_ITEMS = [
   {
-    question: "Mikä ero on Revenue Auditilla ja jatkuvalla palvelulla?",
+    question: "Korvaako palvelu kokoaikaisen revenue managerin?",
     answer:
-      "Revenue Audit on kertaluonteinen analyysi ja toimintasuunnitelma. Revenue Control ja Revenue Growth ovat jatkuvaa fractional revenue management -työtä, jossa vastaan hinnoittelusta, forecastista ja kaupallisesta ohjauksesta kuukausittain.",
+      "Ei kaikissa tilanteissa. Palvelu sopii erityisesti kohteille, joissa tarvitaan säännöllistä kaupallista ohjausta, mutta kokoaikainen rekrytointi ei ole vielä perusteltu.",
   },
   {
-    question: "Kuinka monta asiakasta otat kerrallaan?",
+    question: "Tarvitaanko hotellilla RMS-järjestelmä?",
     answer:
-      "Työskentelen rajoitetun määrän kohteita kerrallaan, jotta jokaiselle jää riittävästi aikaa ja vastuuta. Tämä ei ole massapalvelu.",
+      "Ei välttämättä. Palvelu voidaan aloittaa nykyisillä järjestelmillä, kunhan saatavilla on riittävästi dataa varauksista, hinnoista, segmenteistä ja kanavista.",
   },
   {
-    question: "Tarvitseeko hotellilla olla RMS tai channel manager?",
+    question: "Kuinka nopeasti tuloksia voidaan nähdä?",
     answer:
-      "Ei välttämättä heti. Aloitan nykytilasta ja järjestelmäympäristöstä. Työkalut voidaan ottaa käyttöön tai kehittää vaiheittain tarpeen mukaan.",
+      "Ensimmäiset havainnot syntyvät usein auditin aikana. Jatkuvassa mallissa vaikutus riippuu kysyntätilanteesta, nykyisestä hinnoittelusta, kanavamixistä ja siitä, kuinka nopeasti päätökset voidaan viedä käytäntöön.",
   },
   {
-    question: "Voiko aloittaa auditilla ilman sitoutumista jatkuvaan palveluun?",
+    question: "Onko palvelu vain hotelleille?",
     answer:
-      "Kyllä. Revenue Audit on itsenäinen vaihtoehto. Sen jälkeen näette selkeästi, kannattaako jatkuva fractional revenue management ottaa käyttöön.",
+      "Ei. Palvelu sopii myös aparthotel-, serviced apartment- ja serviced living -operaattoreille.",
   },
   {
-    question: "Miten hinnoittelu määräytyy?",
+    question: "Mistä yhteistyö kannattaa aloittaa?",
     answer:
-      "Hinta riippuu kohteen koosta, huonemäärästä, datan saatavuudesta ja siitä, kuinka paljon käytännön työtä palvelu sisältää. Hinnat sivulla ovat suuntaa-antavia.",
+      "Useimmissa tapauksissa Revenue Audit on paras ensimmäinen vaihe. Sen jälkeen tiedetään, missä tulospotentiaali vuotaa ja onko jatkuvalle fractional revenue management -mallille perustetta.",
   },
 ];
 
@@ -228,14 +302,14 @@ export const SITE_INTRO = {
   headline: HERO.subheadline,
   text: HERO.body,
   text2: HERO.trustLine,
-  goal: SOLUTION.paragraphs[2],
+  goal: SOLUTION.goal,
 };
-export const PACKAGE_COMPARISON = SERVICE_PATHS.map((s) => ({
-  package: s.title,
-  bestWhen: s.description,
-  includes: s.focus.join(", "),
-  model: s.price?.includes("/kk") ? "Kuukausiveloitus" : "Kertaprojekti",
-  href: s.href,
+export const PACKAGE_COMPARISON = PACKAGES.map((pkg) => ({
+  package: pkg.title,
+  bestWhen: pkg.positioning,
+  includes: pkg.description,
+  model: pkg.price.includes("/kk") ? "Kuukausiveloitus" : "Kertaprojekti",
+  href: pkg.href,
 }));
 
 export type FractionalTier = {
@@ -250,14 +324,27 @@ export const FRACTIONAL_TIERS: FractionalTier[] = [
     name: "Revenue Control",
     description:
       "Kevyt jatkuva revenue management -malli pienelle tai stabiilille kohteelle.",
-    includes: SERVICE_PATHS[1].focus,
+    includes: [
+      "Pickup- ja kysyntäseuranta",
+      "Hinnoittelun suositukset",
+      "Forecastin läpikäynti",
+      "Kanavien ja saatavuuden tarkistus",
+      "Kuukausittainen revenue-raportti",
+    ],
     price: "1 200–2 500 €/kk",
   },
   {
     name: "Revenue Growth",
     description:
       "Täysi fractional revenue manager -palvelu kasvuhakuiselle hotellille tai serviced living -operaattorille.",
-    includes: SERVICE_PATHS[2].focus,
+    includes: [
+      "Viikoittainen hinnoittelun optimointi",
+      "90/180/365 päivän forecast",
+      "Kanavamixin ja nettotuoton ohjaus",
+      "Korkean ja hiljaisen kysynnän toimenpiteet",
+      "Revenue-palaverit johdolle tai tiimille",
+      "Päätösloki ja kaupallinen raportointi",
+    ],
     price: "2 500–4 500 €/kk",
   },
 ];
@@ -277,7 +364,10 @@ export const REVENUE_AUDIT = {
     "suunnittelee kasvua tai jakelustrategian uudistamista",
     "haluaa selkeän 90 päivän toimintasuunnitelman ennen jatkuvaa palvelua",
   ],
-  areas: SOLUTION_AREAS.map((a) => ({ title: a.title, description: a.description })),
+  areas: SOLUTION_AREAS.map((a) => ({
+    title: a.title,
+    bullets: [...a.bullets],
+  })),
   deliverables: [
     "Nykytilan revenue-analyysi",
     "Keskeiset löydökset ja tulovuodot",
@@ -297,10 +387,10 @@ export const REVENUE_AUDIT = {
 export const FRACTIONAL_RM = {
   eyebrow: "Kuukausimalli",
   headline: "Fractional Revenue Manager",
-  subheadline: SOLUTION.paragraphs[0],
-  intro: SOLUTION.paragraphs[0],
-  intro2: SOLUTION.paragraphs[1],
-  intro3: SOLUTION.paragraphs[2],
+  subheadline: SOLUTION.body,
+  intro: SOLUTION.headline,
+  intro2: SOLUTION.body,
+  intro3: SOLUTION.goal,
   fitFor: [
     "haluaa kehittää liikevaihtoa ja kannattavuutta jatkuvasti",
     "tarvitsee revenue managerin, mutta ei kokoaikaisesti",
@@ -308,8 +398,11 @@ export const FRACTIONAL_RM = {
     "haluaa parantaa suoravarausten, OTA-kanavien ja kanavamixin tuottoa",
     "tarvitsee säännöllisen asiantuntijan johtamaan kaupallista päätöksentekoa",
   ],
-  includes: SOLUTION_AREAS.map((a) => ({ title: a.title, description: a.description })),
-  impact: SOLUTION.paragraphs[2],
+  includes: SOLUTION_AREAS.map((a) => ({
+    title: a.title,
+    bullets: [...a.bullets],
+  })),
+  impact: SOLUTION.goal,
   impact2:
     "Päätöksiä tehdään datan, markkinan ja strategian pohjalta — ei pelkästään historiallisen käyttöasteen tai kilpailijoiden hintojen mukaan.",
   whyNow:

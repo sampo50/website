@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, Instrument_Serif } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { SITE } from "@/lib/site";
+import { SITE, SEO } from "@/lib/site";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -19,15 +19,22 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.domain),
   title: {
-    default: `${SITE.name} | ${SITE.tagline}`,
+    default: SEO.title,
     template: `%s | ${SITE.name}`,
   },
-  description:
-    "Fractional Revenue Manager itsenäisille hotelleille ja serviced living -operaattoreille. Hinnoittelu, forecast ja kaupallinen ohjaus ilman kokoaikaista rekrytointia.",
+  description: SEO.description,
   openGraph: {
+    title: SEO.title,
+    description: SEO.description,
+    url: SITE.domain,
     siteName: SITE.name,
     locale: "fi_FI",
     type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: SEO.title,
+    description: SEO.description,
   },
 };
 

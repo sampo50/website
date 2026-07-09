@@ -6,7 +6,7 @@ type ProcessStepsProps = {
 
 export function ProcessSteps({ steps }: ProcessStepsProps) {
   return (
-    <ol className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {steps.map((step, i) => (
         <li key={step.title} className="card">
           <span className="text-sm font-bold text-accent">
