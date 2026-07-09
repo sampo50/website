@@ -88,9 +88,9 @@ export default function HomePage() {
         </p>
       </Section>
 
-      {/* Palvelu */}
-      <Section id="palvelu">
-        <p className="section-label">Palvelu</p>
+      {/* Mitä */}
+      <Section id="mitä">
+        <p className="section-label">Mitä</p>
         <h2 className="section-title mt-3">{SOLUTION.headline}</h2>
         <p className="mt-6 max-w-2xl text-muted">{SOLUTION.body}</p>
         <div className="mt-10">
@@ -116,10 +116,10 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Paketointi */}
-      <Section alt id="paketointi">
-        <p className="section-label">Paketointi</p>
-        <h2 className="section-title mt-3">Palvelupaketit</h2>
+      {/* Palvelut */}
+      <Section alt id="palvelut">
+        <p className="section-label">Palvelut</p>
+        <h2 className="section-title mt-3">Palvelut</h2>
         <p className="mt-4 max-w-2xl text-muted">
           Aloita Revenue Auditilla tai valitse jatkuva malli kohteesi tarpeen
           mukaan. Hinnat ovat suuntaa-antavia — lopullinen laajuus sovitaan
