@@ -30,8 +30,7 @@ export function ServiceCard({
       </ul>
       {detailed && price && (
         <p className="mt-4 text-sm text-muted">
-          Laajemmat kokonaisuudet, useat kohteet tai portfoliot hinnoitellaan
-          erikseen.
+          Lopullinen laajuus ja hinta sovitaan kartoituksessa.
         </p>
       )}
       <Link href={href} className="btn-secondary mt-6 self-start">

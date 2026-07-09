@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.name}`,
   },
   description:
-    "Revenue Audit ja Fractional Revenue Manager majoitus- ja serviced living -yrityksille — hinnoittelu, forecasting ja AI-avusteinen revenue management.",
+    "Fractional Revenue Manager itsenäisille hotelleille ja serviced living -operaattoreille. Hinnoittelu, forecast ja kaupallinen ohjaus ilman kokoaikaista rekrytointia.",
   openGraph: {
     siteName: SITE.name,
     locale: "fi_FI",

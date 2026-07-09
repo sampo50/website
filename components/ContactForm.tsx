@@ -58,11 +58,9 @@ export function ContactForm() {
         className="card border-accent/30 bg-accent/5 p-8 text-center"
         role="status"
       >
-        <p className="font-semibold text-ink">
-          Kiitos — viestisi on tallennettu (MVP-lomake).
-        </p>
+        <p className="font-semibold text-ink">Kiitos — viestisi on vastaanotettu.</p>
         <p className="mt-2 text-sm text-muted">
-          Tämä on väliaikainen toiminnallisuus. Sami ottaa yhteyttä sähköpostitse.
+          Palaan asiaan sähköpostitse mahdollisimman pian.
         </p>
         <button
           type="button"
@@ -77,11 +75,6 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="card space-y-5" noValidate>
-      <p className="text-xs text-muted">
-        MVP-lomake — ei vielä backendiä. Viestejä ei lähetetä ulkoiseen
-        palveluun.
-      </p>
-
       {error && (
         <p className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-800" role="alert">
           {error}

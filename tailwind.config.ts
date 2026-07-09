@@ -9,12 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        canvas: "#f6f5f2",
-        ink: "#14181f",
-        muted: "#5c6470",
-        accent: "#1a4d5c",
-        "accent-hover": "#153f4b",
-        border: "#ddd8d0",
+        canvas: "#f7f5f0",
+        ink: "#1a2332",
+        navy: "#141c28",
+        muted: "#5a6370",
+        accent: "#2a4a5c",
+        "accent-hover": "#1f3a49",
+        border: "#ddd8cf",
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
