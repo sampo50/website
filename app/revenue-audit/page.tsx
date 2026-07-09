@@ -9,7 +9,7 @@ import { REVENUE_AUDIT } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Revenue Audit",
   description:
-    "Nykytilan analyysi ja 90 päivän kaupallinen toimintasuunnitelma majoitus- ja serviced living -yrityksille.",
+    "Kertaluonteinen analyysi hotellin tai serviced living -kohteen hinnoittelusta, kanavista, segmenteista ja tulospotentiaalista.",
 };
 
 export default function RevenueAuditPage() {
@@ -76,9 +76,9 @@ export default function RevenueAuditPage() {
       </Section>
 
       <CTASection
-        headline={REVENUE_AUDIT.primaryCta}
-        text="Varaa Revenue Audit tai pyydä arvio yrityksesi tilanteesta."
-        buttonLabel={REVENUE_AUDIT.primaryCta}
+        headline="Aloita Revenue Auditilla"
+        text="Auditoinnin jälkeen tiedät, missä nykyinen tulospotentiaali vuotaa, mitkä päätökset vaikuttavat nopeimmin ja kannattaako jatkuva fractional revenue management ottaa käyttöön."
+        buttonLabel="Varaa 30 minuutin revenue-kartoitus"
         secondaryButtonLabel={REVENUE_AUDIT.secondaryCta}
       />
     </>

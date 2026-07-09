@@ -4,6 +4,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { ProofSection } from "@/components/ProofSection";
 import { CTASection } from "@/components/CTASection";
 import { ComparisonTable } from "@/components/ComparisonTable";
+import { ServiceAreaList } from "@/components/ServiceAreaList";
 import {
   SERVICE_PATHS,
   SITE_INTRO,
@@ -12,6 +13,8 @@ import {
   PROOF_BULLETS,
   HERO_PROOF_STRIP,
   CLIENT_TYPES,
+  PROBLEM_SIGNALS,
+  SOLUTION_AREAS,
 } from "@/lib/site";
 
 export default function HomePage() {
@@ -55,16 +58,57 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section alt id="services">
+      <Section alt id="problems">
         <h2 className="font-serif text-3xl font-normal text-ink md:text-4xl">
-          Palvelut
+          Tunnistatko nämä ongelmat?
+        </h2>
+        <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+          {PROBLEM_SIGNALS.map((item) => (
+            <li key={item} className="card text-sm font-medium text-ink">
+              {item}
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section id="solution">
+        <h2 className="font-serif text-3xl font-normal text-ink md:text-4xl">
+          Ratkaisu
+        </h2>
+        <div className="mt-6 max-w-2xl space-y-4 text-muted">
+          <p>
+            Toimin ulkoistettuna revenue managerina, joka tuo hotellillenne
+            viikoittaisen kaupallisen rytmin.
+          </p>
+          <p>
+            Hinnoittelu, saatavuus, rajoitukset, kampanjat, segmentit ja
+            jakelukanavat ohjataan järjestelmällisesti datan, kysynnän ja
+            liiketoimintatavoitteiden perusteella.
+          </p>
+          <p>
+            Tavoite ei ole tehdä satunnaisia hintamuutoksia, vaan rakentaa
+            toimintamalli, jossa johto näkee ajoissa missä kysyntä vahvistuu,
+            missä ollaan jäljessä ja mitä päätöksiä seuraavaksi tarvitaan.
+          </p>
+        </div>
+      </Section>
+
+      <Section alt id="includes">
+        <ServiceAreaList
+          title="Mitä palvelu sisältää?"
+          areas={SOLUTION_AREAS.map((area) => ({ ...area }))}
+        />
+      </Section>
+
+      <Section id="services">
+        <h2 className="font-serif text-3xl font-normal text-ink md:text-4xl">
+          Palvelupaketit
         </h2>
         <p className="mt-4 max-w-2xl text-muted">
-          Kaksi tapaa työskennellä yhdessä: kertaluonteinen Revenue Audit
-          nykytilan kartoittamiseen tai jatkuva Fractional Revenue Manager
-          -palvelu kuukausimallilla.
+          Aloita Revenue Auditilla tai valitse jatkuva revenue management -malli
+          kohteesi tarpeen mukaan.
         </p>
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {SERVICE_PATHS.map((s) => (
             <ServiceCard key={s.title} {...s} />
           ))}
@@ -82,13 +126,12 @@ export default function HomePage() {
 
       <Section alt id="clients">
         <h2 className="font-serif text-3xl font-normal text-ink md:text-4xl">
-          Kenelle palvelut on suunnattu
+          Sopii erityisesti
         </h2>
         <p className="mt-4 max-w-2xl text-muted">
-          Työskentelen rajoitetun määrän majoitus- ja serviced living
-          -yritysten kanssa — operaattoreita, jotka haluavat rakentaa
-          järjestelmällisen revenue management -mallin eivätkä tyytyä
-          ad-hoc-hinnoitteluun.
+          Itsenäisille hotelleille, boutique-hotelleille ja serviced living
+          -operaattoreille, jotka haluavat ohjata tuottoa järjestelmällisesti
+          eivätkä vain reagoida liian myöhään.
         </p>
         <ul className="mt-8 flex flex-wrap gap-2">
           {CLIENT_TYPES.map((type) => (
@@ -107,9 +150,9 @@ export default function HomePage() {
       </Section>
 
       <CTASection
-        headline="Haluatko selvittää, mikä paketti sopii yrityksellesi?"
-        text="Varaa kartoituspuhelu ja käydään läpi nykytilanne, tavoitteet ja seuraavat askeleet."
-        buttonLabel="Varaa kartoituspuhelu"
+        headline="Aloita Revenue Auditilla"
+        text="Auditoinnin jälkeen tiedät, missä nykyinen tulospotentiaali vuotaa, mitkä päätökset vaikuttavat nopeimmin ja kannattaako jatkuva fractional revenue management ottaa käyttöön."
+        buttonLabel="Varaa 30 minuutin revenue-kartoitus"
       />
     </>
   );

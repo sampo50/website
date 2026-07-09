@@ -5,7 +5,8 @@ import { CLIENT_TYPES } from "@/lib/site";
 
 const PACKAGES = [
   "Revenue Audit",
-  "Fractional Revenue Manager",
+  "Revenue Control",
+  "Revenue Growth",
   "En tiedä vielä",
 ] as const;
 
@@ -14,8 +15,8 @@ const CHALLENGES = [
   "Forecasting ja kysynnän ennakointi",
   "Jakelukanavat ja kanavamix",
   "Käyttöaste ja saatavuus",
-  "AI-avusteinen hinnoittelu",
-  "Raportointi ja analytiikka",
+  "Ryhmä- ja long-stay-hinnoittelu",
+  "Forecast ja raportointi",
   "En tiedä vielä",
 ] as const;
 
@@ -126,6 +127,18 @@ export function ContactForm() {
       </div>
 
       <div>
+        <label htmlFor="phone" className="block text-sm font-medium text-ink">
+          Puhelin
+        </label>
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          className="mt-1 w-full rounded-md border border-border px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+        />
+      </div>
+
+      <div>
         <label htmlFor="website" className="block text-sm font-medium text-ink">
           Verkkosivut
         </label>
@@ -210,7 +223,7 @@ export function ContactForm() {
           id="message"
           name="message"
           rows={4}
-          placeholder="Kerro portfoliostasi, kohteiden määrästä ja nykyisestä revenue management -tilanteesta."
+          placeholder="Kerro hotellistasi tai kohteestasi, huonemäärästä ja nykyisestä revenue management -tilanteesta."
           className="mt-1 w-full rounded-md border border-border px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
         />
       </div>

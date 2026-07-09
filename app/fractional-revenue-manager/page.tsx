@@ -9,7 +9,7 @@ import { FRACTIONAL_RM, FRACTIONAL_TIERS } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Fractional Revenue Manager",
   description:
-    "Ulkopuolinen revenue manager kuukausimallilla majoitus- ja serviced living -yrityksille.",
+    "Fractional Revenue Manager hotellille tai serviced living -operaattorille ilman kokoaikaista rekrytointia.",
 };
 
 export default function FractionalRevenueManagerPage() {
@@ -33,6 +33,7 @@ export default function FractionalRevenueManagerPage() {
         <div className="max-w-2xl space-y-4 text-muted">
           <p>{FRACTIONAL_RM.intro}</p>
           <p>{FRACTIONAL_RM.intro2}</p>
+          <p>{FRACTIONAL_RM.intro3}</p>
         </div>
       </Section>
 
@@ -84,11 +85,11 @@ export default function FractionalRevenueManagerPage() {
         </div>
       </Section>
 
-      <Section alt>
+      <Section alt id="packages">
         <h2 className="font-serif text-2xl text-ink md:text-3xl">
           Palvelutasot
         </h2>
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+        <div className="mt-10 grid gap-6 lg:grid-cols-2">
           {FRACTIONAL_TIERS.map((tier) => (
             <TierCard key={tier.name} {...tier} />
           ))}
@@ -102,8 +103,8 @@ export default function FractionalRevenueManagerPage() {
 
       <CTASection
         headline={FRACTIONAL_RM.primaryCta}
-        text="Varaa kartoituspuhelu ja käydään läpi, mikä palvelutaso sopii yrityksellesi."
-        buttonLabel={FRACTIONAL_RM.primaryCta}
+        text="Varaa kartoituspuhelu ja käydään läpi, sopiiko hotellillesi paremmin Revenue Control vai Revenue Growth."
+        buttonLabel="Varaa 30 minuutin revenue-kartoitus"
         secondaryButtonLabel={FRACTIONAL_RM.secondaryCta}
       />
     </>

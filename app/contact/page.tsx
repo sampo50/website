@@ -7,15 +7,15 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Yhteystiedot",
   description:
-    "Varaa kartoituspuhelu Sami Olavuon kanssa — Revenue Audit tai Fractional Revenue Manager majoitus- ja serviced living -yrityksille.",
+    "Varaa 30 minuutin revenue-kartoitus hotellillesi tai serviced living -kohteellesi.",
 };
 
 export default function ContactPage() {
   return (
     <>
       <PageHero
-        headline="Varaa kartoituspuhelu"
-        subheadline="Kerro yrityksestäsi, portfoliostasi ja nykyisestä revenue management -tilanteesta. Käydään läpi, sopiiko Revenue Audit vai Fractional Revenue Manager -palvelu."
+        headline="Varaa 30 minuutin revenue-kartoitus"
+        subheadline="Kerro hotellistasi tai kohteestasi, nykyisestä revenue management -tilanteesta ja tärkeimmistä kaupallisista haasteista."
       />
 
       <Section>

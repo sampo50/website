@@ -19,65 +19,117 @@ export const SERVICE_PATHS: ServicePath[] = [
   {
     title: "Revenue Audit",
     description:
-      "Nykytilan analyysi ja 90 päivän kaupallinen toimintasuunnitelma. Tiivis mutta syvällinen katsaus hinnoitteluun, forecastingiin, jakelukanaviin ja AI-valmiuteen.",
+      "Kertaluonteinen analyysi nykyisestä hinnoittelusta, kanavista, segmenteistä, kilpailukentästä ja tulospotentiaalista.",
     focus: [
-      "Nykytilan revenue-analyysi",
-      "Hinnoittelun ja forecasting-käytäntöjen arviointi",
-      "Jakelukanavien ja kaupallisen rakenteen tarkastelu",
-      "AI-avusteisen hinnoittelun mahdollisuudet",
+      "Hinnoittelu ja kysyntä",
+      "Kanavat ja segmentit",
+      "Kilpailukenttä ja tulospotentiaali",
       "90 päivän toimintasuunnitelma",
     ],
     href: "/revenue-audit",
     cta: "Tutustu Revenue Auditiin",
-    price: "Alkaen 2 900 € + alv",
+    price: "1 500-3 500 €",
   },
   {
-    title: "Fractional Revenue Manager",
+    title: "Revenue Control",
     description:
-      "Ulkopuolinen revenue manager kuukausimallilla. Strateginen hinnoittelu, forecasting, kaupallinen analytiikka ja AI-avusteinen päätöksenteko ilman kokoaikaista rekrytointia.",
+      "Kevyt jatkuva revenue management -malli pienelle tai stabiilille kohteelle.",
     focus: [
-      "Dynaaminen hinnoittelu ja saatavuuden hallinta",
-      "Forecasting ja kaupallinen ennustaminen",
-      "AI-avusteinen hinnoittelu ja analytiikka",
-      "Jakelukanavien optimointi",
-      "Säännölliset revenue-palaverit ja raportointi",
+      "Perushinnoittelun ohjaus",
+      "Pickup- ja kysyntäseuranta",
+      "Forecast ja KPI-raportointi",
+      "Kanavien kaupallinen kontrolli",
+    ],
+    href: "/fractional-revenue-manager#packages",
+    cta: "Tutustu Revenue Controliin",
+    price: "1 200-2 500 €/kk",
+  },
+  {
+    title: "Revenue Growth",
+    description:
+      "Taysi fractional revenue manager -palvelu kasvuhakuiselle hotellille tai serviced living -operaattorille.",
+    focus: [
+      "Viikoittainen kaupallinen rytmi",
+      "Hinnoittelu, saatavuus ja rajoitukset",
+      "Forecast, kanavamix ja segmentit",
+      "Johtoa tukeva paatoksenteko",
     ],
     href: "/fractional-revenue-manager",
-    cta: "Tutustu palveluun",
-    price: "Alkaen 1 500 € / kk + alv",
+    cta: "Tutustu Revenue Growthiin",
+    price: "2 500-4 500 €/kk",
   },
 ];
 
 export const PACKAGE_COMPARISON = [
   {
     package: "Revenue Audit",
-    bestWhen: "Haluat selkeän kuvan nykytilasta ja 90 päivän toimintasuunnitelman",
-    includes: "Auditointi, löydökset, hinnoittelun arviointi, forecast-katsaus, jatkotoimenpiteet",
+    bestWhen: "Haluat selkean kuvan nykytilasta ja 90 paivan toimintasuunnitelman",
+    includes: "Analyysi, loydokset, hinnoittelu, kanavat, segmentit, jatkotoimenpiteet",
     model: "Kertaprojekti",
     href: "/revenue-audit",
   },
   {
-    package: "Fractional Revenue Manager",
-    bestWhen: "Haluat jatkuvan revenue managerin ilman kokoaikaista rekrytointia",
-    includes: "Hinnoittelu, forecasting, AI-avusteinen analytiikka, jakelustrategia, raportointi",
+    package: "Revenue Control",
+    bestWhen: "Tarvitset kevyen jatkuvan mallin pienelle tai vakaalle kohteelle",
+    includes: "Hinnoittelu, seuranta, forecast, kanavakontrolli, raportointi",
+    model: "Kuukausiveloitus",
+    href: "/fractional-revenue-manager#packages",
+  },
+  {
+    package: "Revenue Growth",
+    bestWhen: "Haluat tayden fractional revenue manager -mallin kasvun tueksi",
+    includes: "Hinnoittelu, forecast, jakelustrategia, viikoittainen ohjaus, kaupallinen tuki",
     model: "Kuukausiveloitus",
     href: "/fractional-revenue-manager",
   },
 ];
 
 export const SITE_INTRO = {
-  headline: "Revenue management, joka vaikuttaa suoraan liikevaihtoon",
-  text: "Majoitus- ja serviced living -liiketoiminnassa kaupallinen menestys syntyy oikeasta hinnasta, oikeasta saatavuudesta, oikeasta kanavamixistä ja kyvystä ennakoida kysyntää ennen markkinaa.",
+  headline: "Kaupallinen tulosohjaus ilman kokoaikaista rekrytointia",
+  text: "Autan itsenaisia hotelleja, boutique-hotelleja ja serviced living -operaattoreita parantamaan hinnoittelua, kayttoastetta, kanavamixia ja ennustettavuutta jatkuvalla revenue management -mallilla.",
   text2:
-    "Autan yrityksiä rakentamaan modernin revenue management -mallin, jossa strateginen hinnoittelu, forecasting, kaupallinen analytiikka ja AI-avusteinen päätöksenteko yhdistyvät käytännön toimenpiteiksi.",
-  goal: "Tavoitteena on kasvattaa liikevaihtoa, parantaa kannattavuutta ja vahvistaa yrityksen kilpailukykyä AI-aikakaudella.",
+    "Sopii erityisesti 25-120 huoneen hotelleille, serviced apartment -kohteille, aparthotelleille ja pienille hotelliportfolioille.",
+  goal: "Tavoitteena on rakentaa jatkuva kaupallinen rytmi, jossa kysynta, hinnat ja kanavat ohjautuvat ajoissa eivatka vasta liian myohaan.",
 };
 
 export const HERO_TAGLINE =
-  "Kasvata majoitusliiketoimintasi tuottoa strategisella hinnoittelulla, forecastingilla ja AI-avusteisella revenue managementilla.";
+  "Fractional Revenue Manager hotellillesi";
 
 export const HERO_SUBTAGLINE =
-  "Autan majoitus- ja serviced living -yrityksiä tekemään parempia kaupallisia päätöksiä, optimoimaan hinnoittelua ja rakentamaan kilpailuetua datan sekä AI:n avulla.";
+  "Kasvata tuottoa strategisella hinnoittelulla, paremmalla forecastilla ja jatkuvalla revenue management -mallilla.";
+
+export const PROBLEM_SIGNALS = [
+  "Hintoja muutetaan liian harvoin tai liian myohaan",
+  "Paatokset perustuvat tuntumaan, eivat kysyntadataan",
+  "OTA-kanavat ohjaavat liikaa myyntia ja katetta",
+  "Hiljaisiin jaksoihin reagoidaan vasta kun on liian myohaista",
+  "Korkean kysynnan paivina potentiaalia jaa poydalle",
+  "Ryhmä- ja long-stay-varauksia hyvaksytaan ilman displacement-analyysia",
+  "Forecast ei ohjaa myyntia, markkinointia eika operatiivista suunnittelua",
+] as const;
+
+export const SOLUTION_AREAS = [
+  {
+    title: "Hinnoittelu ja kysynnan hallinta",
+    description:
+      "Paivittainen pickup-seuranta, dynaaminen hinnoittelu, korkean kysynnan paivien optimointi, hiljaisten jaksojen toimenpiteet seka minimiyopymisten ja saatavuusrajoitusten hallinta.",
+  },
+  {
+    title: "Forecast ja raportointi",
+    description:
+      "90/180/365 paivan forecast, kuukausittainen revenue-raportti, KPI-seuranta seka selkea paatosloki: mita muutettiin, miksi ja mita seurataan seuraavaksi.",
+  },
+  {
+    title: "Jakelustrategia",
+    description:
+      "OTA-kanavien optimointi, suoran myynnin kaupallinen tuki, kampanjoiden seuranta, hintapariteetin valvonta ja kanavakohtaisen nettotuoton arviointi.",
+  },
+  {
+    title: "Serviced living -optimointi",
+    description:
+      "Lyhyiden ja pitkien varausten tasapainotus, corporate- ja long-stay-kysynnan hinnoittelu seka kayttoasteen, vaihtokustannusten ja kassavirran yhteensovittaminen.",
+  },
+] as const;
 
 export const REVENUE_AUDIT = {
   eyebrow: "Kertaprojekti",
@@ -87,7 +139,7 @@ export const REVENUE_AUDIT = {
   intro:
     "Revenue Audit on tiivis mutta syvällinen katsaus yrityksesi kaupalliseen nykytilaan. Auditissa selvitetään, missä hinnoittelu, saatavuuden hallinta, kysyntäennusteet, jakelukanavat ja kaupallinen päätöksenteko tällä hetkellä seisovat — ja mitä tulee tehdä seuraavaksi liikevaihdon, käyttöasteen ja kannattavuuden parantamiseksi.",
   fitIntro:
-    "Revenue Audit sopii erityisesti yrityksille, jotka haluavat tunnistaa nopeasti suurimmat revenue management -mahdollisuudet ja rakentaa selkeän 90 päivän etenemissuunnitelman.",
+    "Auditoinnin jalkeen tiedat, missa nykyinen tulospotentiaali vuotaa, mitka paatokset vaikuttavat nopeimmin ja kannattaako jatkuva fractional revenue management ottaa kayttoon.",
   fitFor: [
     "haluaa parantaa hinnoittelua ja kaupallista suorituskykyä",
     "kokee, että nykyinen hinnoittelu perustuu liikaa tuntumaan",
@@ -135,7 +187,7 @@ export const REVENUE_AUDIT = {
   ],
   benefits:
     "Revenue Audit auttaa tekemään parempia kaupallisia päätöksiä nopeammin. Tavoitteena ei ole pelkkä raportti, vaan selkeä suunnitelma siitä, miten liikevaihtoa, käyttöastetta ja kannattavuutta voidaan kehittää käytännössä. Saat ulkopuolisen revenue management -näkemyksen ilman pitkää sitoutumista.",
-  price: "Alkaen 2 900 € + alv",
+  price: "1 500-3 500 €",
   priceNote:
     "Laajemmat kokonaisuudet, useat kohteet tai portfoliot hinnoitellaan erikseen.",
   primaryCta: "Varaa Revenue Audit",
@@ -145,55 +197,41 @@ export const REVENUE_AUDIT = {
 export const FRACTIONAL_RM = {
   eyebrow: "Kuukausimalli",
   headline: "Fractional Revenue Manager",
-  subheadline: "Ulkopuolinen revenue manager kuukausimallilla",
+  subheadline: "Kaupallinen tulosohjaus ilman kokoaikaista rekrytointia",
   intro:
-    "Fractional Revenue Manager on palvelu yrityksille, jotka tarvitsevat kokeneen revenue managerin osaamista, mutta eivät välttämättä kokoaikaista henkilöä omille palkkalistoilleen.",
+    "Toimin ulkoistettuna revenue managerina, joka tuo hotellillenne viikoittaisen kaupallisen rytmin.",
   intro2:
-    "Toimin yrityksesi ulkopuolisena kaupallisena asiantuntijana ja vastaan revenue managementin keskeisistä tehtävistä kuukausiveloitteisesti. Palvelu tuo käyttöösi strategisen hinnoitteluosaamisen, kysynnän ennakoinnin, kaupallisen analytiikan ja AI-avusteisen päätöksenteon ilman rekrytoinnin hitautta tai kiinteän henkilöstökulun riskiä.",
+    "Hinnoittelu, saatavuus, rajoitukset, kampanjat, segmentit ja jakelukanavat ohjataan jargestelmallisesti datan, kysynnan ja liiketoimintatavoitteiden perusteella.",
+  intro3:
+    "Tavoite ei ole tehda satunnaisia hintamuutoksia, vaan rakentaa toimintamalli, jossa johto nakee ajoissa missa kysynta vahvistuu, missa ollaan jaljessa ja mita paatoksia seuraavaksi tarvitaan.",
   fitFor: [
-    "haluaa kehittää liikevaihtoa ja kannattavuutta jatkuvasti",
+    "haluaa kehittaa liikevaihtoa ja kannattavuutta jatkuvasti",
     "tarvitsee revenue managerin, mutta ei kokoaikaisesti",
     "haluaa ammattimaisemman hinnoittelun ja forecasting-prosessin",
-    "operoi majoitus-, serviced living-, aparthotel-, hotellihuoneisto- tai hospitality-liiketoiminnassa",
+    "operoi itsenaisessa hotellissa, boutique-hotellissa, serviced apartment -kohteessa tai pienessa hotellisalkussa",
     "haluaa parantaa suoravarausten, OTA-kanavien ja jakelustrategian tuottoa",
-    "haluaa rakentaa kaupallista kilpailuetua AI-aikakaudella",
-    "tarvitsee säännöllisen asiantuntijan johtamaan kaupallista päätöksentekoa datan pohjalta",
+    "tarvitsee saannollisen asiantuntijan johtamaan kaupallista päätöksentekoa datan pohjalta",
   ],
   includes: [
     {
-      title: "Dynaaminen hinnoittelu",
+      title: "Hinnoittelu ja kysynnan hallinta",
       description:
-        "Hintojen aktiivinen optimointi kysynnän, sesonkien, tapahtumien, kilpailutilanteen, varaustahdin ja käyttöasteen perusteella.",
+        "Paivittainen pickup-seuranta, dynaaminen hinnoittelu, korkean kysynnan paivien optimointi, hiljaisten jaksojen toimenpiteet seka minimiyopymisten ja saatavuusrajoitusten hallinta.",
     },
     {
-      title: "Forecasting ja kaupallinen ennustaminen",
+      title: "Forecast ja raportointi",
       description:
-        "Kysynnän, käyttöasteen, RevPARin, ADR:n, liikevaihdon ja varaustahdin seuranta sekä ennusteiden rakentaminen päätöksenteon tueksi.",
+        "90/180/365 paivan forecast, kuukausittainen revenue-raportti, KPI-seuranta seka selkea paatosloki: mita muutettiin, miksi ja mita seurataan seuraavaksi.",
     },
     {
-      title: "AI-avusteinen hinnoittelu ja analytiikka",
+      title: "Jakelustrategia",
       description:
-        "AI-työkalujen hyödyntäminen hinnoittelun, markkinaseurannan, kilpailija-analyysin, skenaarioiden ja kaupallisen reagointikyvyn parantamisessa.",
+        "OTA-kanavien optimointi, suoran myynnin kaupallinen tuki, kampanjoiden seuranta, hintapariteetin valvonta ja kanavakohtaisen nettotuoton arviointi.",
     },
     {
-      title: "Kaupallinen strategia",
+      title: "Serviced living -optimointi",
       description:
-        "Revenue managementin yhdistäminen myyntiin, markkinointiin, jakeluun, asiakassegmentteihin ja liiketoiminnan tavoitteisiin.",
-    },
-    {
-      title: "Jakelukanavien optimointi",
-      description:
-        "Kanavamixin, provisiokustannusten, suoravarausten, OTA-kanavien ja saatavuuden hallinnan kehittäminen.",
-    },
-    {
-      title: "Raportointi ja päätöksenteon tuki",
-      description:
-        "Selkeät kuukausittaiset havainnot, toimenpiteet ja suositukset johdolle tai operatiiviselle tiimille.",
-    },
-    {
-      title: "Revenue-palaverit",
-      description:
-        "Säännölliset kaupalliset palaverit, joissa käydään läpi tilanne, luvut, riskit, mahdollisuudet ja seuraavat toimenpiteet.",
+        "Lyhyiden ja pitkien varausten tasapainotus, corporate- ja long-stay-kysynnan hinnoittelu seka kayttoasteen, vaihtokustannusten ja kassavirran yhteensovittaminen.",
     },
   ],
   impact:
@@ -219,48 +257,31 @@ export type FractionalTier = {
 
 export const FRACTIONAL_TIERS: FractionalTier[] = [
   {
-    name: "Essential",
+    name: "Revenue Control",
     description:
-      "Kevyt kuukausimalli pienemmille toimijoille tai yksittäisille kohteille.",
+      "Kevyt jatkuva revenue management -malli pienelle tai stabiilille kohteelle.",
     includes: [
-      "Kuukausittainen revenue-analyysi",
+      "Pickup- ja kysyntaseuranta",
       "Hinnoittelun suositukset",
-      "Forecastin läpikäynti",
+      "Forecastin lapikaynti",
       "Kanavien ja saatavuuden tarkistus",
-      "Yksi revenue-palaveri kuukaudessa",
+      "Kuukausittainen revenue-raportti",
     ],
-    price: "Alkaen 1 500 € / kk + alv",
+    price: "1 200-2 500 €/kk",
   },
   {
-    name: "Growth",
+    name: "Revenue Growth",
     description:
-      "Aktiivinen revenue management -malli yrityksille, joilla on selkeä kasvutavoite.",
+      "Taysi fractional revenue manager -palvelu kasvuhakuiselle hotellille tai serviced living -operaattorille.",
     includes: [
-      "Säännöllinen hinnoittelun optimointi",
-      "Kysyntä- ja varaustahdin seuranta",
-      "Kuukausittainen forecast",
-      "Kilpailija- ja markkinaseuranta",
-      "AI-avusteisen hinnoittelun kehittäminen",
-      "Kaksi revenue-palaveria kuukaudessa",
-      "Johdon kaupallinen raportointi",
+      "Viikoittainen hinnoittelun optimointi",
+      "90/180/365 paivan forecast",
+      "Kanavamixin ja nettotuoton ohjaus",
+      "Korkean ja hiljaisen kysynnan toimenpiteet",
+      "Revenue-palaverit johdolle tai tiimille",
+      "Paatosloki ja kaupallinen raportointi",
     ],
-    price: "Alkaen 2 900 € / kk + alv",
-  },
-  {
-    name: "Strategic Partner",
-    description:
-      "Laajempi kumppanuus useamman kohteen, portfolion tai kasvuyhtiön tarpeisiin.",
-    includes: [
-      "Jatkuva revenue management -ohjaus",
-      "Portfolio- ja kohdetason hinnoittelustrategia",
-      "Forecast-prosessin rakentaminen",
-      "AI-avusteiset kaupalliset mallit ja työkalut",
-      "Jakelustrategian kehitys",
-      "Suoravarausten ja kanavamixin optimointi",
-      "Säännöllinen johtoryhmätason sparraus",
-      "Kaupallisten mittareiden ja toimintamallien kehittäminen",
-    ],
-    price: "Alkaen 4 900 € / kk + alv",
+    price: "2 500-4 500 €/kk",
   },
 ];
 
@@ -273,10 +294,10 @@ export const PROOF_BULLETS = [
 ];
 
 export const HERO_PROOF_STRIP = [
-  "Revenue Audit tai Fractional Revenue Manager",
-  "Majoitus- ja serviced living -yritykset",
-  "Hinnoittelu, forecasting ja AI-avusteinen analytiikka",
-  "Rajoitettu määrä asiakkaita kerrallaan",
+  "Itsenaiset hotellit ja boutique-hotellit",
+  "Serviced living ja aparthotellit",
+  "25-120 huonetta tai pieni portfolio",
+  "Jatkuva kaupallinen rytmi ilman rekrytointia",
 ];
 
 export const CLIENT_TYPES = [
