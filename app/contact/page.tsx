@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { Section } from "@/components/Section";
-import { ContactForm } from "@/components/ContactForm";
 import { ContactActions } from "@/components/ContactActions";
 import { CONTACT } from "@/lib/site";
 
@@ -20,11 +19,8 @@ export default function ContactPage() {
       />
 
       <Section>
-        <div className="mx-auto max-w-5xl">
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
-            <ContactActions />
-            <ContactForm />
-          </div>
+        <div className="mx-auto max-w-xl">
+          <ContactActions />
         </div>
       </Section>
     </>

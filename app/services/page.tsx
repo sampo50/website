@@ -18,13 +18,13 @@ export default function ServicesPage() {
       <PageHero
         headline={SITE_INTRO.headline}
         subheadline={`${SITE_INTRO.text} ${SITE_INTRO.text2}`}
-        primaryCta={{ label: CTA.primary, href: "/#yhteystiedot" }}
+        primaryCta={{ label: CTA.primary, href: "/contact" }}
       />
 
       <Section>
         <div className="grid items-stretch gap-6 lg:grid-cols-3">
           {PACKAGES.map((pkg) => (
-            <PackageCard key={pkg.title} {...pkg} />
+            <PackageCard key={pkg.title} {...pkg} href="/contact" />
           ))}
         </div>
       </Section>
@@ -42,6 +42,7 @@ export default function ServicesPage() {
         headline="Etkö ole varma, mikä paketti sopii?"
         text="Varaa kartoituspuhelu ja katsotaan aloitetaanko Revenue Auditilla, Revenue Controlilla vai Revenue Growth -mallilla."
         buttonLabel={CTA.primary}
+        href="/contact"
       />
     </>
   );

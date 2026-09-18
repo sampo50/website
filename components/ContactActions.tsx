@@ -7,33 +7,30 @@ type ContactActionsProps = {
 export function ContactActions({ className = "" }: ContactActionsProps) {
   return (
     <div className={className}>
-      <p className="text-sm font-medium text-ink">Suora yhteys</p>
-      <ul className="mt-4 space-y-3">
-        <li>
-          <a
-            href={CONTACT_MAILTO}
-            className="text-muted transition-colors hover:text-ink"
-          >
-            {CONTACT.email}
-          </a>
-        </li>
-        <li>
-          <a
-            href={telHref}
-            className="text-muted transition-colors hover:text-ink"
-          >
-            {CONTACT.phone}
-          </a>
-        </li>
-      </ul>
-      <div className="mt-8 flex flex-wrap gap-3">
-        <a href={CONTACT_MAILTO} className="btn-primary">
-          Lähetä sähköpostia
-        </a>
-        <a href={telHref} className="btn-secondary">
-          Soita
-        </a>
-      </div>
+      <dl className="space-y-6">
+        <div>
+          <dt className="text-sm font-medium text-ink">Sähköposti</dt>
+          <dd className="mt-1">
+            <a
+              href={CONTACT_MAILTO}
+              className="text-lg text-ink transition-colors hover:text-accent md:text-xl"
+            >
+              {CONTACT.email}
+            </a>
+          </dd>
+        </div>
+        <div>
+          <dt className="text-sm font-medium text-ink">Puhelin</dt>
+          <dd className="mt-1">
+            <a
+              href={telHref}
+              className="text-lg text-ink transition-colors hover:text-accent md:text-xl"
+            >
+              {CONTACT.phone}
+            </a>
+          </dd>
+        </div>
+      </dl>
     </div>
   );
 }

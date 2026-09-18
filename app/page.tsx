@@ -6,7 +6,6 @@ import { ServiceAreaList } from "@/components/ServiceAreaList";
 import { ProcessSteps } from "@/components/ProcessSteps";
 import { FAQ } from "@/components/FAQ";
 import { SolutionComparison } from "@/components/SolutionComparison";
-import { ContactForm } from "@/components/ContactForm";
 import { ContactActions } from "@/components/ContactActions";
 import {
   HERO,
@@ -150,9 +149,8 @@ export default function HomePage() {
           <h2 className="section-title mt-3">{CONTACT.heading}</h2>
           <p className="mt-4 max-w-2xl text-muted">{CONTACT.body}</p>
 
-          <div className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
+          <div className="mt-12 max-w-xl">
             <ContactActions />
-            <ContactForm />
           </div>
         </div>
       </Section>
