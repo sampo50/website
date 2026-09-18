@@ -240,26 +240,32 @@ export const PROCESS_STEPS = [
 ];
 
 export const CREDIBILITY = {
-  headline: "Kokemusta hotellien kaupallisesta tulosohjauksesta",
+  headline: "Käytännön revenue managementia – ei vain suosituksia",
   body:
-    "Olen erikoistunut majoitusliiketoiminnan kaupalliseen ohjaukseen: hinnoitteluun, kysynnän hallintaan, forecastiin, kanavamixiin ja revenue management -prosessien rakentamiseen.",
+    "Olen vastannut seitsemän majoituskohteen portfolio-tason revenue managementista noin 12 miljoonan euron liiketoimintaympäristössä.",
+  work:
+    "Työhöni on kuulunut hinnoittelu, kysyntäennusteet, kohdekohtainen kaupallinen ohjaus sekä päätösmallien rakentaminen tilanteisiin, joissa kysyntä, sesongit ja asiakassegmentit vaihtelevat nopeasti.",
+  meaningHeading: "Mitä tämä tarkoittaa hotellillesi",
+  bullets: [
+    "Osaan erottaa kiinnostavan havainnon päätöksestä, jolla on todellinen vaikutus liikevaihtoon.",
+    "Tarkastelen käyttöasteen lisäksi ADR:ää, RevPARia, kanavakustannuksia ja nettotuottoa.",
+    "Muutan analyysin konkreettiseksi toimintarytmiksi: mitä tehdään nyt, kuka tekee ja mitä vaikutusta seurataan.",
+    "Rakennan mallin hotellin nykyisten järjestelmien ja resurssien ympärille – en oleta raskasta RMS-investointia.",
+  ],
+  proof:
+    "Aiemmassa portfolioanalyysissä tunnistetut hinnoittelu- ja kysyntämahdollisuudet vastasivat yli 300 000 euron vuotuista parannuspotentiaalia.",
+  bridge:
+    "Ensimmäinen vaihe ei silti perustu lupaukseen tietystä tuloksesta. Revenue Audit näyttää, missä juuri sinun hotellisi potentiaali vuotaa, mitä voidaan korjata nopeasti ja onko jatkuvalle revenue managementille taloudellista perustetta.",
+  cta: {
+    label: "Selvitä hotellisi revenue-potentiaali",
+    text: "30 minuutin kartoitus. Käymme läpi nykytilanteen ja arvioimme, onko Revenue Audit oikea seuraava askel.",
+    href: "#yhteystiedot",
+  },
   profile: {
     name: SITE.name,
     role: "Fractional Revenue Manager",
     tagline:
       "Kaupallinen tulosohjaus hotelleille, aparthotelleille ja serviced living -operaattoreille",
-  },
-  bullets: [
-    "Revenue management -prosessien rakentaminen",
-    "Hinnoittelun ja saatavuuden optimointi",
-    "Forecast- ja raportointimallien kehittäminen",
-    "OTA- ja suoramyynnin kaupallinen ohjaus",
-    "Serviced living-, long-stay- ja corporate-kysynnän optimointi",
-  ],
-  caseStudy: {
-    title: "Esimerkkicase: boutique-hotelli, 48 huonetta",
-    text:
-      "Lähtötilanteessa hinnoittelu päivittyi epäsäännöllisesti, korkean kysynnän päivät jäivät osin alihinnoitelluiksi ja hiljaisiin jaksoihin reagoitiin liian myöhään. Työssä rakennettiin kysyntäkalenteri, pickup-seuranta, hintaportaat ja selkeä viikoittainen päätösmalli.",
   },
 } as const;
 

@@ -5,8 +5,8 @@ type ProofSectionProps = {
 };
 
 export function ProofSection({
-  headline = "Kokemus käytännön revenue managementista",
-  text = "Taustani on portfolio-tason revenue managementissa, hinnoittelussa ja forecastingissa — ei pelkässä neuvonnassa, vaan operatiivisessa kaupallisessa työssä.",
+  headline = "Käytännön revenue managementia – ei vain suosituksia",
+  text = "Olen vastannut seitsemän majoituskohteen portfolio-tason revenue managementista noin 12 miljoonan euron liiketoimintaympäristössä.",
   bullets,
 }: ProofSectionProps) {
   return (
