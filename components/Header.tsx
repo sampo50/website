@@ -3,16 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { SITE, NAV_ANCHORS, CTA } from "@/lib/site";
-
-function anchorHref(hash: string) {
-  return `/${hash}`;
-}
+import { SITE, NAV_LINKS, CTA } from "@/lib/site";
 
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const onHome = pathname === "/";
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-canvas/95 backdrop-blur">
@@ -25,19 +20,20 @@ export function Header() {
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Päänavigaatio">
-          {NAV_ANCHORS.map((item) => (
+          {NAV_LINKS.map((item) => (
             <Link
               key={item.href}
-              href={onHome ? item.href : anchorHref(item.href)}
-              className="text-sm font-medium text-muted transition-colors hover:text-ink"
+              href={item.href}
+              className={`text-sm font-medium transition-colors hover:text-ink ${
+                pathname === item.href || pathname.startsWith(`${item.href}/`)
+                  ? "text-ink"
+                  : "text-muted"
+              }`}
             >
               {item.label}
             </Link>
           ))}
-          <Link
-            href={onHome ? "#yhteystiedot" : "/#yhteystiedot"}
-            className="btn-primary text-sm"
-          >
+          <Link href="/#yhteystiedot" className="btn-primary text-sm">
             {CTA.header}
           </Link>
         </nav>
@@ -60,10 +56,10 @@ export function Header() {
           aria-label="Mobiilinavigaatio"
         >
           <ul className="flex flex-col gap-3">
-            {NAV_ANCHORS.map((item) => (
+            {NAV_LINKS.map((item) => (
               <li key={item.href}>
                 <Link
-                  href={onHome ? item.href : anchorHref(item.href)}
+                  href={item.href}
                   className="text-sm font-medium text-ink"
                   onClick={() => setOpen(false)}
                 >
@@ -73,7 +69,7 @@ export function Header() {
             ))}
             <li>
               <Link
-                href={onHome ? "#yhteystiedot" : "/#yhteystiedot"}
+                href="/#yhteystiedot"
                 className="btn-primary mt-2 w-full text-center"
                 onClick={() => setOpen(false)}
               >

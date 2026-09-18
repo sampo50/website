@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { SITE, NAV_ANCHORS, FOOTER } from "@/lib/site";
+import { SITE, NAV_LINKS, FOOTER } from "@/lib/site";
 
 const FOOTER_LINKS = [
-  ...NAV_ANCHORS,
-  { href: "#yhteystiedot", label: "Yhteystiedot" },
+  ...NAV_LINKS,
+  { href: "/#yhteystiedot", label: "Yhteystiedot" },
 ] as const;
 
 const linkClassName =
@@ -26,7 +26,7 @@ export function Footer() {
             <ul className="flex flex-wrap gap-x-6 gap-y-3">
               {FOOTER_LINKS.map((item) => (
                 <li key={item.href}>
-                  <Link href={`/${item.href}`} className={linkClassName}>
+                  <Link href={item.href} className={linkClassName}>
                     {item.label}
                   </Link>
                 </li>

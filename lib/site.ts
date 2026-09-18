@@ -33,12 +33,9 @@ export const CONTACT = {
   },
 } as const;
 
-export const NAV_ANCHORS = [
-  { href: "#kenelle", label: "Kenelle" },
-  { href: "#palvelu", label: "Palvelu" },
-  { href: "#paketointi", label: "Paketointi" },
-  { href: "#kokemus", label: "Kokemus" },
-  { href: "#faq", label: "FAQ" },
+export const NAV_LINKS = [
+  { href: "/services", label: "Palvelut" },
+  { href: "/blog", label: "Blogi" },
 ] as const;
 
 export type Package = {
