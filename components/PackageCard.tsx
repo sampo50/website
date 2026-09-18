@@ -1,6 +1,13 @@
-import type { Package } from "@/lib/site";
-
-type PackageCardProps = Package;
+type PackageCardProps = {
+  title: string;
+  positioning: string;
+  description: string;
+  price: string;
+  cta: string;
+  href: string;
+  highlighted?: boolean;
+  badge?: string;
+};
 
 export function PackageCard({
   title,
@@ -10,14 +17,19 @@ export function PackageCard({
   cta,
   href,
   highlighted,
+  badge,
 }: PackageCardProps) {
   if (highlighted) {
     return (
       <article className="relative flex flex-col rounded-lg border-2 border-navy bg-white p-6 shadow-md">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">
-          Kasvuhakuisille
-        </p>
-        <h3 className="mt-2 text-lg font-semibold text-ink">{title}</h3>
+        {badge && (
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">
+            {badge}
+          </p>
+        )}
+        <h3 className={`${badge ? "mt-2" : ""} text-lg font-semibold text-ink`}>
+          {title}
+        </h3>
         <p className="mt-2 text-sm font-medium text-ink/80">{positioning}</p>
         <p className="mt-4 flex-1 text-sm leading-relaxed text-muted">
           {description}

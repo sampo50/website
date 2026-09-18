@@ -1,12 +1,9 @@
-import Link from "next/link";
-import { CONTACT_MAILTO, telHref } from "@/lib/site";
-
 type CTASectionProps = {
   headline: string;
   text: string;
   buttonLabel: string;
   secondaryButtonLabel?: string;
-  href?: string;
+  href: string;
   secondaryHref?: string;
 };
 
@@ -15,8 +12,8 @@ export function CTASection({
   text,
   buttonLabel,
   secondaryButtonLabel,
-  href = CONTACT_MAILTO,
-  secondaryHref = telHref,
+  href,
+  secondaryHref,
 }: CTASectionProps) {
   return (
     <section className="bg-accent py-16 text-white md:py-20">
@@ -30,7 +27,7 @@ export function CTASection({
           >
             {buttonLabel}
           </a>
-          {secondaryButtonLabel && (
+          {secondaryButtonLabel && secondaryHref && (
             <a
               href={secondaryHref}
               className="inline-flex items-center justify-center rounded-md border border-white/40 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"

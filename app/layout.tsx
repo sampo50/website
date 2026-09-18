@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { DM_Sans, Instrument_Serif } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { SITE, SEO } from "@/lib/site";
+import { HtmlLangSetter } from "@/components/HtmlLangSetter";
+import { SkipToContent } from "@/components/SkipToContent";
+import { SITE } from "@/lib/site";
+import { getDictionary } from "@/lib/dictionaries";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -16,25 +19,33 @@ const instrumentSerif = Instrument_Serif({
   variable: "--font-serif",
 });
 
+const fi = getDictionary("fi");
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.domain),
   title: {
-    default: SEO.title,
+    default: fi.meta.titleDefault,
     template: `%s | ${SITE.name}`,
   },
-  description: SEO.description,
+  description: fi.meta.description,
   openGraph: {
-    title: SEO.title,
-    description: SEO.description,
+    title: fi.meta.titleDefault,
+    description: fi.meta.description,
     url: SITE.domain,
     siteName: SITE.name,
-    locale: "fi_FI",
+    locale: fi.meta.locale,
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: SEO.title,
-    description: SEO.description,
+    title: fi.meta.titleDefault,
+    description: fi.meta.description,
+  },
+  alternates: {
+    languages: {
+      fi: "/",
+      en: "/en/",
+    },
   },
 };
 
@@ -46,12 +57,8 @@ export default function RootLayout({
   return (
     <html lang="fi" className={`${dmSans.variable} ${instrumentSerif.variable}`}>
       <body className="font-sans">
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-white"
-        >
-          Siirry sisältöön
-        </a>
+        <HtmlLangSetter />
+        <SkipToContent />
         <Header />
         <main id="main">{children}</main>
         <Footer />

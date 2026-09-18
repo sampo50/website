@@ -1,6 +1,9 @@
-import type { FractionalTier } from "@/lib/site";
-
-type TierCardProps = FractionalTier;
+type TierCardProps = {
+  name: string;
+  description: string;
+  includes: string[];
+  price: string;
+};
 
 export function TierCard({ name, description, includes, price }: TierCardProps) {
   return (

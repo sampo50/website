@@ -1,14 +1,21 @@
 type SolutionComparisonProps = {
   before: readonly string[];
   after: readonly string[];
+  beforeLabel: string;
+  afterLabel: string;
 };
 
-export function SolutionComparison({ before, after }: SolutionComparisonProps) {
+export function SolutionComparison({
+  before,
+  after,
+  beforeLabel,
+  afterLabel,
+}: SolutionComparisonProps) {
   return (
     <div className="grid gap-6 md:grid-cols-2">
       <div className="card bg-canvas">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
-          Ennen
+          {beforeLabel}
         </p>
         <ul className="mt-4 space-y-3">
           {before.map((item) => (
@@ -21,7 +28,7 @@ export function SolutionComparison({ before, after }: SolutionComparisonProps) {
       </div>
       <div className="card border-navy/10 bg-navy text-white">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/60">
-          Jälkeen
+          {afterLabel}
         </p>
         <ul className="mt-4 space-y-3">
           {after.map((item) => (
