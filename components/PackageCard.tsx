@@ -34,8 +34,8 @@ export function PackageCard({
     ? "text-base font-semibold text-navy lg:text-lg"
     : "text-base font-semibold text-accent lg:text-lg";
   const ctaClass = highlighted
-    ? "btn-primary mt-5 w-full justify-center self-stretch text-center lg:mt-6"
-    : "btn-secondary mt-5 w-full justify-center self-stretch text-center lg:mt-6";
+    ? "btn-primary mt-5 w-full justify-center self-stretch text-center"
+    : "btn-secondary mt-5 w-full justify-center self-stretch text-center";
 
   return (
     <article className={shellClass}>
@@ -52,19 +52,34 @@ export function PackageCard({
       <p className="mt-2 text-sm font-medium leading-snug text-ink/80">{tagline}</p>
       <p className="mt-3 text-sm leading-relaxed text-muted">{description}</p>
 
-      <p className="mt-5 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-ink">
-        {includesLabel}
-      </p>
-      <ul className="mt-2.5 flex-1 space-y-1.5">
-        {includes.map((item) => (
-          <li key={item} className="flex gap-2 text-[0.8125rem] leading-snug text-ink">
-            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-            {item}
-          </li>
-        ))}
-      </ul>
+      <details className="group mt-4 rounded-md border border-border bg-canvas/60">
+        <summary className="cursor-pointer list-none px-3 py-2.5 marker:content-none [&::-webkit-details-marker]:hidden">
+          <span className="flex items-center justify-between gap-3">
+            <span className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-ink">
+              {includesLabel}
+            </span>
+            <span
+              aria-hidden
+              className="text-sm leading-none text-muted transition-transform group-open:rotate-45"
+            >
+              +
+            </span>
+          </span>
+        </summary>
+        <ul className="space-y-1.5 border-t border-border px-3 py-3">
+          {includes.map((item) => (
+            <li
+              key={item}
+              className="flex gap-2 text-[0.8125rem] leading-snug text-ink"
+            >
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </details>
 
-      <div className="mt-5 border-t border-border pt-5">
+      <div className="mt-auto border-t border-border pt-5">
         <p className={priceClass}>{price}</p>
         <p className="mt-1.5 text-xs leading-relaxed text-muted">{terms}</p>
 
