@@ -48,34 +48,78 @@ export const fi = {
   packages: [
     {
       title: "Revenue Audit",
-      positioning:
-        "Paras aloituspiste, kun haluat nähdä tulospotentiaalin ennen jatkuvaa yhteistyötä.",
+      badge: "Paras ensimmäinen askel",
+      tagline: "Selvitä, missä hotellisi revenue-potentiaali vuotaa",
       description:
-        "Kertaluonteinen analyysi nykyisestä hinnoittelusta, kanavista, segmenteistä, kilpailukentästä ja kaupallisesta ohjauksesta.",
-      price: "1 500–3 500 €",
-      cta: "Aloita auditilla",
-      highlighted: false,
+        "Kertaluonteinen analyysi yhden majoituskohteen hinnoittelusta, kysynnästä, pickupista, kanavamixistä ja kaupallisesta suorituskyvystä.",
+      includesLabel: "Saat",
+      includes: [
+        "nykytilan revenue-analyysin",
+        "tärkeimmät hinnoittelu- ja kysyntälöydökset",
+        "kanava- ja segmenttimixin arvion",
+        "korkean ja hiljaisen kysynnän mahdollisuudet",
+        "priorisoidun 90 päivän toimintasuunnitelman",
+        "60 minuutin tulosten läpikäynnin",
+      ],
+      price: "1 900 € + alv",
+      terms:
+        "Yksi kohde · toimitus 2–3 viikossa · ei jatkuvaa sitoutumista",
+      footnote:
+        "Portfoliot ja merkittävää datan käsittelyä vaativat toimeksiannot hinnoitellaan erikseen.",
+      cta: "Aloita Revenue Audit",
+      highlighted: true,
     },
     {
       title: "Revenue Control",
-      positioning:
-        "Kevyt jatkuva revenue management -malli pienelle tai stabiilille kohteelle.",
+      badge: "Kevyt jatkuva malli",
+      tagline: "Pidä hinnat, pickup ja kysyntä hallinnassa",
       description:
-        "Sopii hotellille, joka tarvitsee säännöllistä hinnoittelun, pickupin ja forecastin seurantaa ilman täyttä kaupallista kokonaisvastuuta.",
-      price: "1 200–2 500 €/kk",
+        "Hotellille, joka tarvitsee säännöllisen revenue management -rytmin ja asiantuntijan suositukset, mutta ei vielä jatkuvaa operatiivista kokonaisvastuuta.",
+      includesLabel: "Sisältää",
+      includes: [
+        "pickupin ja kysynnän säännöllisen seurannan",
+        "hinnoittelu- ja saatavuussuositukset",
+        "korkean ja hiljaisen kysynnän tarkistukset",
+        "forecastin kuukausittaisen päivityksen",
+        "kanavamixin ja kampanjoiden seurannan",
+        "kuukausittaisen revenue-palaverin",
+        "kirjallisen päätös- ja toimenpideyhteenvedon",
+      ],
+      price: "Alkaen 1 500 €/kk + alv",
+      terms:
+        "Yksi kohde · vähintään 3 kuukautta · tarkka laajuus sovitaan kartoituksessa",
+      footnote:
+        "Sopii erityisesti pienelle tai kysynnältään suhteellisen vakaalle hotellille, jossa oma tiimi toteuttaa sovitut hintamuutokset.",
       cta: "Kysy Revenue Controlista",
       highlighted: false,
     },
     {
       title: "Revenue Growth",
-      positioning:
-        "Täysi fractional revenue manager -palvelu kasvuhakuiselle hotellille tai operaattorille.",
+      badge: "Kokonaisvaltainen kumppanuus",
+      tagline:
+        "Ulkoinen revenue manager osaksi hotellisi kaupallista johtamista",
       description:
-        "Sopii kohteelle tai pienelle portfoliolle, jossa hinnoittelu, forecast, kanavamix, kampanjat ja kaupallinen rytmi halutaan rakentaa järjestelmällisesti.",
-      price: "2 500–4 500 €/kk",
-      cta: "Keskustele kasvumallista",
-      highlighted: true,
-      badge: "Kasvuhakuisille",
+        "Kasvuhakuiselle hotellille tai pienelle portfoliolle, joka haluaa jatkuvan revenue managerin ilman kokoaikaista rekrytointia.",
+      includesLabel: "Sisältää",
+      includes: [
+        "jatkuvan pickup- ja kysyntäseurannan",
+        "hinnoittelun, saatavuuden ja rajoitusten aktiivisen ohjauksen",
+        "90/180/365 päivän forecastin",
+        "korkean kysynnän päivien optimoinnin",
+        "hiljaisten jaksojen toimenpidesuunnitelmat",
+        "kanava-, segmentti- ja nettotuottoanalyysin",
+        "kampanjoiden ja hintapariteetin seurannan",
+        "ryhmä- ja long-stay-kysynnän kaupallisen arvioinnin",
+        "säännölliset revenue-palaverit",
+        "kuukausittaisen tulosraportin ja päätöslokin",
+      ],
+      price: "Alkaen 3 000 €/kk + alv",
+      terms:
+        "Laajuus määräytyy kohteiden, huonemäärän, järjestelmien ja operatiivisen vastuun perusteella",
+      footnote:
+        "Sopii hotellille, joka haluaa ulkoistaa merkittävän osan revenue managementista ja tehdä päätöksiä viikoittain datan perusteella.",
+      cta: "Keskustele Revenue Growth -mallista",
+      highlighted: false,
     },
   ],
   home: {
@@ -95,7 +139,7 @@ export const fi = {
       servicesLabel: "Palvelut",
       servicesHeadline: "Palvelut",
       servicesIntro:
-        "Aloita Revenue Auditilla tai valitse jatkuva malli kohteesi tarpeen mukaan. Hinnat ovat suuntaa-antavia — lopullinen laajuus sovitaan kartoituksessa.",
+        "Aloita Revenue Auditilla tai valitse jatkuva malli kohteesi tarpeen mukaan. Tarkka laajuus sovitaan kartoituksessa.",
       experienceLabel: "Kokemus",
       faqLabel: "FAQ",
       faqHeadline: "Usein kysyttyä",
@@ -335,8 +379,9 @@ export const fi = {
     benefitsHeading: "Hyödyt yritykselle",
     benefits:
       "Tavoitteena ei ole pelkkä raportti, vaan selkeä suunnitelma siitä, miten liikevaihtoa, käyttöastetta ja kannattavuutta voidaan kehittää käytännössä.",
-    price: "1 500–3 500 €",
-    priceNote: "Useat kohteet tai portfoliot hinnoitellaan erikseen.",
+    price: "1 900 € + alv",
+    priceNote:
+      "Yksi kohde. Portfoliot ja merkittävää datan käsittelyä vaativat toimeksiannot hinnoitellaan erikseen.",
     fitFor: [
       "haluaa parantaa hinnoittelua ja kaupallista suorituskykyä",
       "kokee, että nykyinen hinnoittelu perustuu liikaa tuntumaan",
@@ -407,27 +452,27 @@ export const fi = {
         description:
           "Kevyt jatkuva revenue management -malli pienelle tai stabiilille kohteelle.",
         includes: [
-          "Pickup- ja kysyntäseuranta",
-          "Hinnoittelun suositukset",
-          "Forecastin läpikäynti",
-          "Kanavien ja saatavuuden tarkistus",
-          "Kuukausittainen revenue-raportti",
+          "Pickupin ja kysynnän säännöllinen seuranta",
+          "Hinnoittelu- ja saatavuussuositukset",
+          "Forecastin kuukausittainen päivitys",
+          "Kanavamixin ja kampanjoiden seuranta",
+          "Kuukausittainen revenue-palaveri",
         ],
-        price: "1 200–2 500 €/kk",
+        price: "Alkaen 1 500 €/kk + alv",
       },
       {
         name: "Revenue Growth",
         description:
           "Täysi fractional revenue manager -palvelu kasvuhakuiselle hotellille tai serviced living -operaattorille.",
         includes: [
-          "Viikoittainen hinnoittelun optimointi",
+          "Jatkuva pickup- ja kysyntäseuranta",
           "90/180/365 päivän forecast",
-          "Kanavamixin ja nettotuoton ohjaus",
+          "Kanava-, segmentti- ja nettotuottoanalyysi",
           "Korkean ja hiljaisen kysynnän toimenpiteet",
-          "Revenue-palaverit johdolle tai tiimille",
-          "Päätösloki ja kaupallinen raportointi",
+          "Säännölliset revenue-palaverit",
+          "Kuukausittainen tulosraportti ja päätösloki",
         ],
-        price: "2 500–4 500 €/kk",
+        price: "Alkaen 3 000 €/kk + alv",
       },
     ],
   },

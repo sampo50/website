@@ -48,34 +48,77 @@ export const en = {
   packages: [
     {
       title: "Revenue Audit",
-      positioning:
-        "The best starting point when you want to see the revenue potential before committing to ongoing work.",
+      badge: "Best first step",
+      tagline: "Find where your hotel's revenue potential is leaking",
       description:
-        "A one-off analysis of current pricing, channels, segments, competitive landscape and commercial steering.",
-      price: "€1,500–3,500",
-      cta: "Start with an audit",
-      highlighted: false,
+        "A one-off analysis of pricing, demand, pickup, channel mix and commercial performance for a single property.",
+      includesLabel: "You get",
+      includes: [
+        "a current-state revenue analysis",
+        "the key pricing and demand findings",
+        "a channel and segment mix assessment",
+        "high-demand and soft-period opportunities",
+        "a prioritised 90-day action plan",
+        "a 60-minute results walkthrough",
+      ],
+      price: "€1,900 + VAT",
+      terms: "One property · delivery in 2–3 weeks · no ongoing commitment",
+      footnote:
+        "Portfolios and engagements that require significant data handling are priced separately.",
+      cta: "Start a Revenue Audit",
+      highlighted: true,
     },
     {
       title: "Revenue Control",
-      positioning:
-        "A light, ongoing revenue management model for a small or stable property.",
+      badge: "Light ongoing model",
+      tagline: "Keep rates, pickup and demand under control",
       description:
-        "Fits a hotel that needs regular monitoring of pricing, pickup and forecast — without full commercial ownership.",
-      price: "€1,200–2,500 / month",
+        "For a hotel that needs a regular revenue management rhythm and expert recommendations, but not yet full ongoing operational ownership.",
+      includesLabel: "Includes",
+      includes: [
+        "regular pickup and demand monitoring",
+        "pricing and availability recommendations",
+        "high-demand and soft-period checks",
+        "a monthly forecast update",
+        "channel mix and campaign tracking",
+        "a monthly revenue meeting",
+        "a written decision and action summary",
+      ],
+      price: "From €1,500 / month + VAT",
+      terms:
+        "One property · minimum 3 months · exact scope agreed in the consultation",
+      footnote:
+        "Especially suited to a small or relatively stable-demand hotel where your own team implements the agreed rate changes.",
       cta: "Ask about Revenue Control",
       highlighted: false,
     },
     {
       title: "Revenue Growth",
-      positioning:
-        "Full Fractional Revenue Manager service for a growth-focused hotel or operator.",
+      badge: "Full partnership",
+      tagline:
+        "An external revenue manager as part of your hotel's commercial leadership",
       description:
-        "Fits a property or small portfolio where pricing, forecast, channel mix, campaigns and commercial rhythm need to be built systematically.",
-      price: "€2,500–4,500 / month",
-      cta: "Discuss the growth model",
-      highlighted: true,
-      badge: "For growth-focused properties",
+        "For a growth-focused hotel or small portfolio that wants an ongoing revenue manager without a full-time hire.",
+      includesLabel: "Includes",
+      includes: [
+        "continuous pickup and demand monitoring",
+        "active steering of pricing, availability and restrictions",
+        "a 90/180/365-day forecast",
+        "optimisation of high-demand days",
+        "action plans for soft periods",
+        "channel, segment and net contribution analysis",
+        "campaign and rate parity monitoring",
+        "commercial assessment of group and long-stay demand",
+        "regular revenue meetings",
+        "a monthly performance report and decision log",
+      ],
+      price: "From €3,000 / month + VAT",
+      terms:
+        "Scope depends on properties, room count, systems and operational ownership",
+      footnote:
+        "Suited to a hotel that wants to outsource a significant share of revenue management and make weekly data-driven decisions.",
+      cta: "Discuss the Revenue Growth model",
+      highlighted: false,
     },
   ],
   home: {
@@ -95,7 +138,7 @@ export const en = {
       servicesLabel: "Services",
       servicesHeadline: "Services",
       servicesIntro:
-        "Start with a Revenue Audit or choose an ongoing model that matches your property's needs. Prices are indicative — final scope is agreed during the consultation.",
+        "Start with a Revenue Audit or choose an ongoing model that matches your property's needs. Exact scope is agreed during the consultation.",
       experienceLabel: "Experience",
       faqLabel: "FAQ",
       faqHeadline: "Frequently asked questions",
@@ -335,8 +378,9 @@ export const en = {
     benefitsHeading: "Benefits for your business",
     benefits:
       "The goal is not just a report, but a clear plan for how revenue, occupancy and profitability can be improved in practice.",
-    price: "€1,500–3,500",
-    priceNote: "Multiple properties or portfolios are priced separately.",
+    price: "€1,900 + VAT",
+    priceNote:
+      "One property. Portfolios and engagements that require significant data handling are priced separately.",
     fitFor: [
       "want to improve pricing and commercial performance",
       "feel that current pricing relies too much on gut feel",
@@ -407,27 +451,27 @@ export const en = {
         description:
           "A light, ongoing revenue management model for a small or stable property.",
         includes: [
-          "Pickup and demand monitoring",
-          "Pricing recommendations",
-          "Forecast review",
-          "Channel and availability checks",
-          "Monthly revenue report",
+          "Regular pickup and demand monitoring",
+          "Pricing and availability recommendations",
+          "Monthly forecast update",
+          "Channel mix and campaign tracking",
+          "Monthly revenue meeting",
         ],
-        price: "€1,200–2,500 / month",
+        price: "From €1,500 / month + VAT",
       },
       {
         name: "Revenue Growth",
         description:
           "Full Fractional Revenue Manager service for a growth-focused hotel or serviced living operator.",
         includes: [
-          "Weekly pricing optimisation",
+          "Continuous pickup and demand monitoring",
           "90/180/365-day forecast",
-          "Channel mix and net contribution steering",
+          "Channel, segment and net contribution analysis",
           "Actions for high and soft demand periods",
-          "Revenue meetings with leadership or the team",
-          "Decision log and commercial reporting",
+          "Regular revenue meetings",
+          "Monthly performance report and decision log",
         ],
-        price: "€2,500–4,500 / month",
+        price: "From €3,000 / month + VAT",
       },
     ],
   },

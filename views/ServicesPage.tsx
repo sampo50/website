@@ -19,9 +19,9 @@ export function ServicesPage({ locale }: { locale: Locale }) {
 
   const rows = packages.map((pkg) => ({
     package: pkg.title,
-    bestWhen: pkg.positioning,
-    includes: pkg.description,
-    model: pkg.price.includes("/kk") || pkg.price.includes("/ month")
+    bestWhen: pkg.tagline,
+    includes: pkg.includes.join("; "),
+    model: pkg.price.includes("/kk") || pkg.price.toLowerCase().includes("/ month")
       ? page.modelMonthly
       : page.modelOneOff,
     href: contactHref,

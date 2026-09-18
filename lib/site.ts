@@ -38,12 +38,16 @@ export function packagesFor(locale: Locale) {
 
     return {
       title: pkg.title,
-      positioning: pkg.positioning,
+      badge: pkg.badge,
+      tagline: pkg.tagline,
       description: pkg.description,
+      includesLabel: pkg.includesLabel,
+      includes: [...pkg.includes],
       price: pkg.price,
+      terms: pkg.terms,
+      footnote: pkg.footnote,
       cta: pkg.cta,
       highlighted: pkg.highlighted,
-      badge: "badge" in pkg ? pkg.badge : undefined,
       href: contactMailto(locale, subjectKey),
     };
   });
