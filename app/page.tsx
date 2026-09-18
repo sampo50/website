@@ -45,7 +45,7 @@ export default function HomePage() {
               <Link href="#yhteystiedot" className="btn-primary">
                 {CTA.primary}
               </Link>
-              <Link href="#paketointi" className="btn-secondary">
+              <Link href="/services" className="btn-secondary">
                 {CTA.secondary}
               </Link>
             </div>

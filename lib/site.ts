@@ -36,6 +36,7 @@ export const CONTACT = {
 export const NAV_LINKS = [
   { href: "/services", label: "Palvelut" },
   { href: "/blog", label: "Blogi" },
+  { href: "/contact", label: "Yhteystiedot" },
 ] as const;
 
 export type Package = {

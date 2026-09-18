@@ -1,11 +1,6 @@
 import Link from "next/link";
 import { SITE, NAV_LINKS, FOOTER } from "@/lib/site";
 
-const FOOTER_LINKS = [
-  ...NAV_LINKS,
-  { href: "/#yhteystiedot", label: "Yhteystiedot" },
-] as const;
-
 const linkClassName =
   "rounded-sm text-sm text-muted transition-colors hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
 
@@ -24,7 +19,7 @@ export function Footer() {
 
           <nav aria-label="Sivuston navigaatio">
             <ul className="flex flex-wrap gap-x-6 gap-y-3">
-              {FOOTER_LINKS.map((item) => (
+              {NAV_LINKS.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className={linkClassName}>
                     {item.label}
