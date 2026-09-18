@@ -28,9 +28,8 @@ export const CONTACT = {
   body: "Auditoinnin jälkeen tiedät, missä nykyinen tulospotentiaali vuotaa, mitkä päätökset vaikuttavat nopeimmin ja kannattaako jatkuva fractional revenue management ottaa käyttöön.",
   cta: CTA.primary,
   direct: {
-    email: "[Sähköposti]",
-    phone: "[Puhelin]",
-    website: "[Verkkosivu]",
+    email: "sami.olavuo@gmail.com",
+    phone: "+358400450773",
   },
 } as const;
 

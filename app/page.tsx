@@ -155,7 +155,6 @@ export default function HomePage() {
               <ul className="mt-4 space-y-3 text-muted">
                 <li>{CONTACT.direct.email}</li>
                 <li>{CONTACT.direct.phone}</li>
-                <li>{CONTACT.direct.website}</li>
               </ul>
             </div>
             <ContactForm />
