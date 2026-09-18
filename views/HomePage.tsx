@@ -111,7 +111,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         <p className="section-label">{home.sections.servicesLabel}</p>
         <h2 className="section-title mt-3">{home.sections.servicesHeadline}</h2>
         <p className="mt-4 max-w-2xl text-muted">{home.sections.servicesIntro}</p>
-        <div className="mt-10 grid items-stretch gap-6 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {packages.map((pkg) => (
             <PackageCard key={pkg.title} {...pkg} />
           ))}

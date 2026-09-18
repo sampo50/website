@@ -28,8 +28,8 @@ export function PackageCard({
   highlighted,
 }: PackageCardProps) {
   const shellClass = highlighted
-    ? "relative flex flex-col rounded-lg border-2 border-navy bg-white p-6 shadow-md"
-    : "card flex flex-col";
+    ? "relative flex h-full min-w-0 flex-col rounded-lg border-2 border-navy bg-white p-6 shadow-md"
+    : "card flex h-full min-w-0 flex-col";
   const priceClass = highlighted
     ? "text-lg font-semibold text-navy"
     : "text-lg font-semibold text-accent";
