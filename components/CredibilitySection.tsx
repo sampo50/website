@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { CREDIBILITY } from "@/lib/site";
 
 export function CredibilitySection() {
@@ -35,9 +34,9 @@ export function CredibilitySection() {
       </p>
 
       <div className="mt-10">
-        <Link href={CREDIBILITY.cta.href} className="btn-primary">
+        <a href={CREDIBILITY.cta.href} className="btn-primary">
           {CREDIBILITY.cta.label}
-        </Link>
+        </a>
         <p className="mt-3 max-w-md text-sm text-muted">{CREDIBILITY.cta.text}</p>
       </div>
     </div>

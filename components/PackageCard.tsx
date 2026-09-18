@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Package } from "@/lib/site";
 
 type PackageCardProps = Package;
@@ -24,9 +23,9 @@ export function PackageCard({
           {description}
         </p>
         <p className="mt-6 text-lg font-semibold text-navy">{price}</p>
-        <Link href={href} className="btn-primary mt-6 self-start">
+        <a href={href} className="btn-primary mt-6 self-start">
           {cta}
-        </Link>
+        </a>
       </article>
     );
   }
@@ -39,9 +38,9 @@ export function PackageCard({
         {description}
       </p>
       <p className="mt-6 text-lg font-semibold text-accent">{price}</p>
-      <Link href={href} className="btn-secondary mt-6 self-start">
+      <a href={href} className="btn-secondary mt-6 self-start">
         {cta}
-      </Link>
+      </a>
     </article>
   );
 }

@@ -27,11 +27,19 @@ export const CONTACT = {
   heading: "Aloita Revenue Auditilla",
   body: "Auditoinnin jälkeen tiedät, missä nykyinen tulospotentiaali vuotaa, mitkä päätökset vaikuttavat nopeimmin ja kannattaako jatkuva fractional revenue management ottaa käyttöön.",
   cta: CTA.primary,
-  direct: {
-    email: "sami.olavuo@gmail.com",
-    phone: "+358400450773",
-  },
+  email: "sami.olavuo@gmail.com",
+  phone: "+358400450773",
 } as const;
+
+export function mailtoHref(subject = "Revenue-kartoitus") {
+  return `mailto:${CONTACT.email}?subject=${encodeURIComponent(subject)}`;
+}
+
+export const telHref = `tel:${CONTACT.phone}` as const;
+
+/** Default booking CTA — opens email */
+export const CONTACT_MAILTO = mailtoHref();
+
 
 export const NAV_LINKS = [
   { href: "/services", label: "Palvelut" },
@@ -58,7 +66,7 @@ export const PACKAGES: Package[] = [
       "Kertaluonteinen analyysi nykyisestä hinnoittelusta, kanavista, segmenteistä, kilpailukentästä ja kaupallisesta ohjauksesta.",
     price: "1 500–3 500 €",
     cta: "Aloita auditilla",
-    href: "#yhteystiedot",
+    href: mailtoHref("Revenue Audit"),
   },
   {
     title: "Revenue Control",
@@ -68,7 +76,7 @@ export const PACKAGES: Package[] = [
       "Sopii hotellille, joka tarvitsee säännöllistä hinnoittelun, pickupin ja forecastin seurantaa ilman täyttä kaupallista kokonaisvastuuta.",
     price: "1 200–2 500 €/kk",
     cta: "Kysy Revenue Controlista",
-    href: "#yhteystiedot",
+    href: mailtoHref("Revenue Control"),
   },
   {
     title: "Revenue Growth",
@@ -78,7 +86,7 @@ export const PACKAGES: Package[] = [
       "Sopii kohteelle tai pienelle portfoliolle, jossa hinnoittelu, forecast, kanavamix, kampanjat ja kaupallinen rytmi halutaan rakentaa järjestelmällisesti.",
     price: "2 500–4 500 €/kk",
     cta: "Keskustele kasvumallista",
-    href: "#yhteystiedot",
+    href: mailtoHref("Revenue Growth"),
     highlighted: true,
   },
 ];
@@ -256,7 +264,7 @@ export const CREDIBILITY = {
   cta: {
     label: "Selvitä hotellisi revenue-potentiaali",
     text: "30 minuutin kartoitus. Käymme läpi nykytilanteen ja arvioimme, onko Revenue Audit oikea seuraava askel.",
-    href: "#yhteystiedot",
+    href: mailtoHref("Revenue-potentiaali"),
   },
   profile: {
     name: SITE.name,
