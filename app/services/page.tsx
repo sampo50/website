@@ -39,7 +39,7 @@ export default function ServicesPage() {
       </Section>
 
       <CTASection
-        headline="Etkö ole varma, kumpi paketti sopii?"
+        headline="Etkö ole varma, mikä paketti sopii?"
         text="Varaa kartoituspuhelu ja katsotaan aloitetaanko Revenue Auditilla, Revenue Controlilla vai Revenue Growth -mallilla."
         buttonLabel={CTA.primary}
       />
