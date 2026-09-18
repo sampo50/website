@@ -66,17 +66,22 @@ export function PackageCard({
             </span>
           </span>
         </summary>
-        <ul className="space-y-1.5 border-t border-border px-3 py-3">
-          {includes.map((item) => (
-            <li
-              key={item}
-              className="flex gap-2 text-[0.8125rem] leading-snug text-ink"
-            >
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-              {item}
-            </li>
-          ))}
-        </ul>
+        <div className="space-y-3 border-t border-border px-3 py-3">
+          <ul className="space-y-1.5">
+            {includes.map((item) => (
+              <li
+                key={item}
+                className="flex gap-2 text-[0.8125rem] leading-snug text-ink"
+              >
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                {item}
+              </li>
+            ))}
+          </ul>
+          {footnote && (
+            <p className="text-xs leading-relaxed text-muted">{footnote}</p>
+          )}
+        </div>
       </details>
 
       <div className="mt-auto border-t border-border pt-5">
@@ -86,10 +91,6 @@ export function PackageCard({
         <a href={href} className={ctaClass}>
           {cta}
         </a>
-
-        {footnote && (
-          <p className="mt-3 text-xs leading-relaxed text-muted">{footnote}</p>
-        )}
       </div>
     </article>
   );
