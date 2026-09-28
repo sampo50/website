@@ -1,4 +1,5 @@
 import type { Locale } from "@/lib/i18n";
+import { localizeHref } from "@/lib/i18n";
 import { getDictionary, type Dictionary } from "@/lib/dictionaries";
 
 export const SITE = {
@@ -36,6 +37,11 @@ export function packagesFor(locale: Locale) {
           ? "control"
           : "growth";
 
+    const href =
+      pkg.title === "Revenue Audit"
+        ? localizeHref(locale, "/services/revenue-audit")
+        : contactMailto(locale, subjectKey);
+
     return {
       title: pkg.title,
       badge: pkg.badge,
@@ -48,7 +54,7 @@ export function packagesFor(locale: Locale) {
       footnote: pkg.footnote,
       cta: pkg.cta,
       highlighted: pkg.highlighted,
-      href: contactMailto(locale, subjectKey),
+      href,
     };
   });
 }

@@ -8,6 +8,37 @@ type PageHeroProps = {
   secondaryCta?: { label: string; href: string };
 };
 
+function isExternalHref(href: string) {
+  return (
+    href.startsWith("mailto:") ||
+    href.startsWith("tel:") ||
+    href.startsWith("http")
+  );
+}
+
+function CtaLink({
+  href,
+  label,
+  className,
+}: {
+  href: string;
+  label: string;
+  className: string;
+}) {
+  if (isExternalHref(href)) {
+    return (
+      <a href={href} className={className}>
+        {label}
+      </a>
+    );
+  }
+  return (
+    <Link href={href} className={className}>
+      {label}
+    </Link>
+  );
+}
+
 export function PageHero({
   eyebrow,
   headline,
@@ -30,14 +61,18 @@ export function PageHero({
         {(primaryCta || secondaryCta) && (
           <div className="mt-8 flex flex-wrap gap-3">
             {primaryCta && (
-              <Link href={primaryCta.href} className="btn-primary">
-                {primaryCta.label}
-              </Link>
+              <CtaLink
+                href={primaryCta.href}
+                label={primaryCta.label}
+                className="btn-primary"
+              />
             )}
             {secondaryCta && (
-              <Link href={secondaryCta.href} className="btn-secondary">
-                {secondaryCta.label}
-              </Link>
+              <CtaLink
+                href={secondaryCta.href}
+                label={secondaryCta.label}
+                className="btn-secondary"
+              />
             )}
           </div>
         )}

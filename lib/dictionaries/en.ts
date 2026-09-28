@@ -363,43 +363,226 @@ export const en = {
   revenueAuditPage: {
     metaTitle: "Revenue Audit",
     metaDescription:
-      "A one-off analysis of pricing, channels, segments and revenue potential for a hotel or serviced living property.",
+      "Find where your hotel is leaving revenue on the table. A focused review of pricing, demand, distribution and revenue-management processes with a 90-day action plan. €1,900 + VAT.",
     eyebrow: "One-off project",
     headline: "Revenue Audit",
-    subheadline: "Current-state analysis and a 90-day action plan",
-    intro:
-      "Revenue Audit is a focused but thorough look at the property's commercial current state — pricing, channels, segments and revenue potential.",
-    fitIntro:
-      "After the audit, you will know where current revenue potential is leaking, which decisions will move the needle fastest, and whether ongoing fractional revenue management makes sense.",
-    fitHeading: "Who is this for?",
-    fitLead: "Revenue Audit is a fit if you:",
-    areasTitle: "What the audit covers",
-    deliverablesTitle: "What you get",
-    benefitsHeading: "Benefits for your business",
-    benefits:
-      "The goal is not just a report, but a clear plan for how revenue, occupancy and profitability can be improved in practice.",
+    subheadline: "Find where your hotel is leaving revenue on the table.",
+    lead: "A focused review of your pricing, demand patterns, distribution and revenue-management processes — with a clear 90-day action plan.",
     price: "€1,900 + VAT",
-    priceNote:
-      "One property. Portfolios and engagements that require significant data handling are priced separately.",
-    fitFor: [
-      "want to improve pricing and commercial performance",
-      "feel that current pricing relies too much on gut feel",
-      "need an external expert view of the current state",
-      "are planning growth or a distribution strategy refresh",
-      "want a clear 90-day action plan before ongoing service",
-    ],
-    deliverables: [
-      "Current-state revenue analysis",
-      "Key findings and revenue leaks",
-      "Assessment of pricing and forecasting practices",
-      "Distribution channel review",
-      "90-day action plan",
-      "Joint walkthrough meeting",
-    ],
-    ctaHeadline: "Start with a Revenue Audit",
-    ctaText:
-      "After the audit, you will know where current revenue potential is leaking, which decisions will move the needle fastest, and whether ongoing fractional revenue management makes sense.",
-    secondaryCta: "Request an assessment of your situation",
+    priceLabel: "Fixed price",
+    whatIs: {
+      heading: "What is the Revenue Audit?",
+      paragraphs: [
+        "The Revenue Audit is designed for independent hotels, aparthotels and serviced-living operators that want a clearer view of how well their current revenue management is working.",
+        "I analyse your historical performance, pricing behaviour, booking patterns, channel mix and current revenue-management practices to identify the highest-value opportunities.",
+        "The result is not another dashboard. You receive a prioritized plan showing what should change, why it matters and what to do first.",
+      ],
+    },
+    analyse: {
+      heading: "What I analyse",
+      intro:
+        "The audit focuses on the areas that have the largest impact on commercial performance.",
+      areas: [
+        {
+          title: "Pricing",
+          items: [
+            "How prices change across demand periods",
+            "High-demand dates that may be underpriced",
+            "Low-demand periods where pricing reacts too slowly",
+            "Weekday and weekend pricing patterns",
+            "Room type and rate-plan structure",
+            "Competitor positioning",
+          ],
+        },
+        {
+          title: "Demand & booking behaviour",
+          items: [
+            "Booking window",
+            "Pickup patterns",
+            "Demand by day of week",
+            "Seasonal patterns",
+            "Compression and peak dates",
+            "Cancellation behaviour where data is available",
+          ],
+        },
+        {
+          title: "Revenue performance",
+          items: [
+            "Occupancy",
+            "ADR",
+            "RevPAR",
+            "Revenue by period",
+            "Performance by room type, channel or segment where available",
+          ],
+        },
+        {
+          title: "Distribution",
+          items: [
+            "Direct vs OTA mix",
+            "Channel dependency",
+            "Rate consistency",
+            "Distribution structure",
+            "Opportunities to improve channel economics",
+          ],
+        },
+        {
+          title: "Revenue management process",
+          items: [
+            "How often pricing decisions are made",
+            "Who owns pricing",
+            "How forecasts are used",
+            "How demand changes are monitored",
+            "Current PMS, RMS and reporting setup",
+            "Where manual work or missing data slows decision-making",
+          ],
+        },
+      ],
+    },
+    receive: {
+      heading: "What you receive",
+      items: [
+        {
+          title: "Revenue Performance Diagnosis",
+          body: "A concise assessment of how your current revenue-management setup performs and where the largest gaps are.",
+        },
+        {
+          title: "Pricing Opportunity Map",
+          body: "Identification of periods, booking patterns and pricing situations where revenue opportunities are most likely being missed.",
+        },
+        {
+          title: "Demand & Pickup Analysis",
+          body: "A clear view of how demand develops, when customers book and how pricing should react throughout the booking window.",
+        },
+        {
+          title: "Revenue Management Scorecard",
+          body: "A structured assessment across pricing, forecasting, distribution, data, processes and tools — making it easy to see which areas are already strong and which require attention.",
+          bullets: [
+            "Pricing",
+            "Forecasting",
+            "Distribution",
+            "Data",
+            "Processes",
+            "Tools",
+          ],
+        },
+        {
+          title: "90-Day Revenue Action Plan",
+          body: "A prioritized roadmap of the most important actions for the next three months. Each recommendation is evaluated based on expected commercial impact, implementation effort, urgency, and data or system requirements.",
+        },
+      ],
+    },
+    examples: {
+      heading: "Example findings",
+      intro: "The Revenue Audit may identify issues such as:",
+      items: [
+        "Strong-demand dates being priced too conservatively",
+        "Rates increasing too late in the booking curve",
+        "Weak periods being identified only shortly before arrival",
+        "Weekend and weekday pricing following the same logic despite different demand behaviour",
+        "Too much dependence on OTAs",
+        "Room-type price gaps that do not reflect willingness to pay",
+        "Forecasting that does not influence pricing decisions",
+        "Pricing decisions being made manually without clear triggers",
+        "Valuable PMS data not being used in commercial decisions",
+      ],
+      outro: "The exact findings depend on your property and available data.",
+    },
+    data: {
+      heading: "Data required",
+      minimumIntro:
+        "The minimum requirement is typically 12 months of daily performance data containing:",
+      minimumItems: [
+        "Date",
+        "Rooms available",
+        "Rooms sold",
+        "Room revenue",
+        "Occupancy",
+        "ADR",
+        "RevPAR",
+      ],
+      deeperIntro:
+        "For a deeper analysis, booking-level data can also be used, including:",
+      deeperItems: [
+        "Booking date",
+        "Arrival date",
+        "Departure date",
+        "Room type",
+        "Rate plan",
+        "Sales channel",
+        "Customer segment",
+        "Cancellation status",
+        "Revenue",
+      ],
+      note: "I will confirm the exact data requirements before the audit begins.",
+    },
+    process: {
+      heading: "How it works",
+      steps: [
+        {
+          title: "Initial call",
+          body: "A short discussion about the property, current commercial setup and the questions you want the audit to answer.",
+        },
+        {
+          title: "Data collection",
+          body: "You provide the agreed performance and booking data.",
+        },
+        {
+          title: "Analysis",
+          body: "I review your pricing, performance, booking behaviour, distribution and revenue-management processes.",
+        },
+        {
+          title: "Findings",
+          body: "You receive the Revenue Audit with prioritized recommendations and the 90-day action plan.",
+        },
+        {
+          title: "Review session",
+          body: "We go through the findings together and discuss what should be implemented first.",
+        },
+      ],
+    },
+    who: {
+      heading: "Who is this for?",
+      intro: "The Revenue Audit works particularly well for:",
+      types: [
+        "Independent hotels",
+        "Boutique hotels",
+        "Aparthotels",
+        "Serviced apartments",
+        "Small hotel groups",
+        "Flexible-living operators",
+      ],
+      note: "Typically, the strongest fit is a property or portfolio that has enough demand variation for active revenue management but does not need a full-time Revenue Manager.",
+    },
+    investment: {
+      heading: "Investment",
+      title: "Revenue Audit",
+      price: "€1,900 + VAT",
+      includesLabel: "Includes",
+      includes: [
+        "Initial discovery call",
+        "Performance and pricing analysis",
+        "Demand and booking-pattern analysis",
+        "Distribution review",
+        "Revenue-management process review",
+        "Revenue Management Scorecard",
+        "Prioritized 90-day action plan",
+        "Final review session",
+      ],
+      note: "Fixed scope. Fixed price. No ongoing commitment.",
+    },
+    after: {
+      heading: "What happens after the audit?",
+      paragraphs: [
+        "You can implement the recommendations internally.",
+        "If ongoing revenue-management support is needed, the audit can also form the basis for a Fractional Revenue Management engagement.",
+        "There is no obligation to continue.",
+      ],
+    },
+    cta: {
+      heading: "Want to know where your biggest revenue opportunities are?",
+      text: "Book an introductory call and we can determine whether a Revenue Audit is suitable for your property.",
+      button: "Book a call",
+    },
   },
   fractionalPage: {
     metaTitle: "Fractional Revenue Manager",

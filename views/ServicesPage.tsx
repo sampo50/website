@@ -10,10 +10,11 @@ import { packagesFor } from "@/lib/site";
 
 export function ServicesPage({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
-  const packages = packagesFor(locale).map((pkg) => ({
-    ...pkg,
-    href: localizeHref(locale, "/contact"),
-  }));
+  const packages = packagesFor(locale).map((pkg) =>
+    pkg.title === "Revenue Audit"
+      ? pkg
+      : { ...pkg, href: localizeHref(locale, "/contact") },
+  );
   const contactHref = localizeHref(locale, "/contact");
   const page = dict.servicesPage;
 
@@ -24,7 +25,7 @@ export function ServicesPage({ locale }: { locale: Locale }) {
     model: pkg.price.includes("/kk") || pkg.price.toLowerCase().includes("/ month")
       ? page.modelMonthly
       : page.modelOneOff,
-    href: contactHref,
+    href: pkg.href,
   }));
 
   return (

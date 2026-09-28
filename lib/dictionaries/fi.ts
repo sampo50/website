@@ -364,43 +364,226 @@ export const fi = {
   revenueAuditPage: {
     metaTitle: "Revenue Audit",
     metaDescription:
-      "Kertaluonteinen analyysi hotellin tai serviced living -kohteen hinnoittelusta, kanavista, segmenteista ja tulospotentiaalista.",
+      "Selvitä, missä hotellisi jättää liikevaihtoa pöytään. Kohdennettu katsaus hinnoitteluun, kysyntään, jakeluun ja revenue management -prosesseihin sekä 90 päivän toimintasuunnitelma. 1 900 € + alv.",
     eyebrow: "Kertaprojekti",
     headline: "Revenue Audit",
-    subheadline: "Nykytilan analyysi ja 90 päivän toimintasuunnitelma",
-    intro:
-      "Revenue Audit on tiivis mutta syvällinen katsaus kohteen kaupalliseen nykytilaan — hinnoittelu, kanavat, segmentit ja tulospotentiaali.",
-    fitIntro:
-      "Auditoinnin jälkeen tiedät, missä nykyinen tulospotentiaali vuotaa, mitkä päätökset vaikuttavat nopeimmin ja kannattaako jatkuva fractional revenue management ottaa käyttöön.",
-    fitHeading: "Kenelle tämä sopii?",
-    fitLead: "Revenue Audit sopii yritykselle, joka:",
-    areasTitle: "Mitä auditissa käydään läpi?",
-    deliverablesTitle: "Lopputulos — mitä saat",
-    benefitsHeading: "Hyödyt yritykselle",
-    benefits:
-      "Tavoitteena ei ole pelkkä raportti, vaan selkeä suunnitelma siitä, miten liikevaihtoa, käyttöastetta ja kannattavuutta voidaan kehittää käytännössä.",
+    subheadline: "Selvitä, missä hotellisi jättää liikevaihtoa pöytään.",
+    lead: "Kohdennettu katsaus hinnoitteluun, kysyntäkuvioihin, jakeluun ja revenue management -prosesseihin — sekä selkeä 90 päivän toimintasuunnitelma.",
     price: "1 900 € + alv",
-    priceNote:
-      "Yksi kohde. Portfoliot ja merkittävää datan käsittelyä vaativat toimeksiannot hinnoitellaan erikseen.",
-    fitFor: [
-      "haluaa parantaa hinnoittelua ja kaupallista suorituskykyä",
-      "kokee, että nykyinen hinnoittelu perustuu liikaa tuntumaan",
-      "tarvitsee ulkopuolisen asiantuntijan näkemyksen nykytilasta",
-      "suunnittelee kasvua tai jakelustrategian uudistamista",
-      "haluaa selkeän 90 päivän toimintasuunnitelman ennen jatkuvaa palvelua",
-    ],
-    deliverables: [
-      "Nykytilan revenue-analyysi",
-      "Keskeiset löydökset ja tulovuodot",
-      "Hinnoittelun ja forecasting-käytäntöjen arviointi",
-      "Jakelukanavien tarkastelu",
-      "90 päivän toimintasuunnitelma",
-      "Yhteinen läpikäyntipalaveri",
-    ],
-    ctaHeadline: "Aloita Revenue Auditilla",
-    ctaText:
-      "Auditoinnin jälkeen tiedät, missä nykyinen tulospotentiaali vuotaa, mitkä päätökset vaikuttavat nopeimmin ja kannattaako jatkuva fractional revenue management ottaa käyttöön.",
-    secondaryCta: "Pyydä arvio tilanteesta",
+    priceLabel: "Kiinteä hinta",
+    whatIs: {
+      heading: "Mikä on Revenue Audit?",
+      paragraphs: [
+        "Revenue Audit on suunniteltu itsenäisille hotelleille, aparthotelleille ja serviced living -operaattoreille, jotka haluavat selkeämmän kuvan siitä, miten nykyinen revenue management toimii.",
+        "Analysoin historiallisen suorituskyvyn, hinnoittelukäyttäytymisen, varauskuviot, kanavamixin ja nykyiset revenue management -käytännöt tunnistaakseni korkeimman arvon mahdollisuudet.",
+        "Lopputulos ei ole uusi dashboard. Saat priorisoidun suunnitelman, joka näyttää mitä kannattaa muuttaa, miksi se merkitsee ja mistä aloittaa.",
+      ],
+    },
+    analyse: {
+      heading: "Mitä analysoin",
+      intro:
+        "Audit keskittyy alueisiin, joilla on suurin vaikutus kaupalliseen suorituskykyyn.",
+      areas: [
+        {
+          title: "Hinnoittelu",
+          items: [
+            "Miten hinnat muuttuvat eri kysyntäjaksoilla",
+            "Korkean kysynnän päivät, jotka voivat olla alihinnoiteltuja",
+            "Alhaisen kysynnän jaksot, joissa hinnoittelu reagoi liian hitaasti",
+            "Arki- ja viikonloppuhinnoittelun kuviot",
+            "Huonetyyppien ja rate plan -rakenne",
+            "Kilpailijasijoittuminen",
+          ],
+        },
+        {
+          title: "Kysyntä ja varauskäyttäytyminen",
+          items: [
+            "Booking window",
+            "Pickup-kuviot",
+            "Kysyntä viikonpäivittäin",
+            "Kausivaihtelut",
+            "Compression- ja huippupäivät",
+            "Peruutukset, kun dataa on saatavilla",
+          ],
+        },
+        {
+          title: "Revenue-suorituskyky",
+          items: [
+            "Käyttöaste",
+            "ADR",
+            "RevPAR",
+            "Liikevaihto jaksoittain",
+            "Suorituskyky huonetyypeittäin, kanavittain tai segmenteittäin, kun dataa on saatavilla",
+          ],
+        },
+        {
+          title: "Jakelu",
+          items: [
+            "Suora vs OTA -mix",
+            "Kanavariippuvuus",
+            "Hintojen johdonmukaisuus",
+            "Jakelurakenne",
+            "Mahdollisuudet parantaa kanavataloutta",
+          ],
+        },
+        {
+          title: "Revenue management -prosessi",
+          items: [
+            "Kuinka usein hinnoittelupäätöksiä tehdään",
+            "Kuka omistaa hinnoittelun",
+            "Miten forecastia käytetään",
+            "Miten kysynnän muutoksia seurataan",
+            "Nykyinen PMS-, RMS- ja raportointiasetelma",
+            "Missä manuaalinen työ tai puuttuva data hidastaa päätöksentekoa",
+          ],
+        },
+      ],
+    },
+    receive: {
+      heading: "Mitä saat",
+      items: [
+        {
+          title: "Revenue Performance Diagnosis",
+          body: "Tiivis arvio siitä, miten nykyinen revenue management -asetelma suoriutuu ja missä suurimmat aukot ovat.",
+        },
+        {
+          title: "Pricing Opportunity Map",
+          body: "Tunnistus jaksoista, varauskuvioista ja hinnoittelutilanteista, joissa liikevaihtomahdollisuuksia todennäköisimmin jää käyttämättä.",
+        },
+        {
+          title: "Demand & Pickup Analysis",
+          body: "Selkeä kuva siitä, miten kysyntä kehittyy, milloin asiakkaat varaavat ja miten hinnoittelun tulisi reagoida booking window -aikana.",
+        },
+        {
+          title: "Revenue Management Scorecard",
+          body: "Rakenteellinen arvio hinnoittelusta, forecastingista, jakelusta, datasta, prosesseista ja työkaluista — jotta näet helposti, mitkä alueet ovat jo vahvoja ja mitkä vaativat huomiota.",
+          bullets: [
+            "Hinnoittelu",
+            "Forecasting",
+            "Jakelu",
+            "Data",
+            "Prosessit",
+            "Työkalut",
+          ],
+        },
+        {
+          title: "90-Day Revenue Action Plan",
+          body: "Priorisoitu tiekartta tärkeimmistä toimenpiteistä seuraaville kolmelle kuukaudelle. Jokainen suositus arvioidaan odotetun kaupallisen vaikutuksen, toteutuksen vaivan, kiireellisyyden sekä data- tai järjestelmävaatimusten perusteella.",
+        },
+      ],
+    },
+    examples: {
+      heading: "Esimerkkilöydöksiä",
+      intro: "Revenue Audit voi tunnistaa esimerkiksi seuraavia asioita:",
+      items: [
+        "Vahvan kysynnän päivät hinnoitellaan liian varovaisesti",
+        "Hintoja nostetaan liian myöhään booking curve -aikana",
+        "Heikot jaksot tunnistetaan vasta juuri ennen saapumista",
+        "Viikonloppu- ja arkihinnoittelu noudattaa samaa logiikkaa, vaikka kysyntäkäyttäytyminen eroaa",
+        "Liiallinen riippuvuus OTA-kanavista",
+        "Huonetyyppien hintaerot eivät vastaa maksuhalukkuutta",
+        "Forecasting ei ohjaa hinnoittelupäätöksiä",
+        "Hinnoittelupäätökset tehdään manuaalisesti ilman selkeitä trigger-ehtoja",
+        "Arvokasta PMS-dataa ei hyödynnetä kaupallisessa päätöksenteossa",
+      ],
+      outro: "Tarkat löydökset riippuvat kohteestasi ja saatavilla olevasta datasta.",
+    },
+    data: {
+      heading: "Tarvittava data",
+      minimumIntro:
+        "Vähimmäisvaatimus on tyypillisesti 12 kuukauden päivittäinen suorituskykydata, joka sisältää:",
+      minimumItems: [
+        "Päivämäärä",
+        "Saatavilla olevat huoneet",
+        "Myydyt huoneet",
+        "Huoneliikevaihto",
+        "Käyttöaste",
+        "ADR",
+        "RevPAR",
+      ],
+      deeperIntro:
+        "Syvempään analyysiin voidaan käyttää myös varauskohtaista dataa, mukaan lukien:",
+      deeperItems: [
+        "Varauspäivä",
+        "Saapumispäivä",
+        "Lähtöpäivä",
+        "Huonetyyppi",
+        "Rate plan",
+        "Myyntikanava",
+        "Asiakassegmentti",
+        "Peruutuksen tila",
+        "Liikevaihto",
+      ],
+      note: "Vahvistan tarkat datavaatimukset ennen auditoinnin alkua.",
+    },
+    process: {
+      heading: "Miten se etenee",
+      steps: [
+        {
+          title: "Aloituspuhelu",
+          body: "Lyhyt keskustelu kohteesta, nykyisestä kaupallisesta asetelmasta ja kysymyksistä, joihin auditin tulee vastata.",
+        },
+        {
+          title: "Datan keruu",
+          body: "Toimitat sovitun suorituskyky- ja varausdatan.",
+        },
+        {
+          title: "Analyysi",
+          body: "Tarkastelen hinnoittelua, suorituskykyä, varauskäyttäytymistä, jakelua ja revenue management -prosesseja.",
+        },
+        {
+          title: "Löydökset",
+          body: "Saat Revenue Auditin priorisoituine suosituksineen ja 90 päivän toimintasuunnitelmineen.",
+        },
+        {
+          title: "Läpikäyntisessio",
+          body: "Käymme löydökset yhdessä läpi ja keskustelemme, mitä kannattaa toteuttaa ensin.",
+        },
+      ],
+    },
+    who: {
+      heading: "Kenelle tämä sopii?",
+      intro: "Revenue Audit sopii erityisen hyvin:",
+      types: [
+        "Itsenäiset hotellit",
+        "Boutique-hotellit",
+        "Aparthotellit",
+        "Serviced apartments",
+        "Pienet hotelliketjut",
+        "Flexible living -operaattorit",
+      ],
+      note: "Tyypillisesti paras sopivuus on kohteella tai portfoliolla, jossa on riittävästi kysynnän vaihtelua aktiiviseen revenue managementiin, mutta ei tarvetta kokoaikaiselle Revenue Managerille.",
+    },
+    investment: {
+      heading: "Investointi",
+      title: "Revenue Audit",
+      price: "1 900 € + alv",
+      includesLabel: "Sisältää",
+      includes: [
+        "Aloituskeskustelu",
+        "Suorituskyky- ja hinnoitteluanalyysi",
+        "Kysyntä- ja varauskuvioanalyysi",
+        "Jakelukatsaus",
+        "Revenue management -prosessin katsaus",
+        "Revenue Management Scorecard",
+        "Priorisoitu 90 päivän toimintasuunnitelma",
+        "Loppuläpikäyntisessio",
+      ],
+      note: "Kiinteä sisältö. Kiinteä hinta. Ei jatkuvaa sitoumusta.",
+    },
+    after: {
+      heading: "Mitä tapahtuu auditoinnin jälkeen?",
+      paragraphs: [
+        "Voit toteuttaa suositukset sisäisesti.",
+        "Jos tarvitaan jatkuvaa revenue management -tukea, audit voi myös muodostaa pohjan Fractional Revenue Management -yhteistyölle.",
+        "Jatkamiseen ei ole velvoitetta.",
+      ],
+    },
+    cta: {
+      heading: "Haluatko tietää, missä suurimmat liikevaihtomahdollisuutesi ovat?",
+      text: "Varaa esittelypuhelu, niin selvitetään, sopiiko Revenue Audit kohteellesi.",
+      button: "Varaa puhelu",
+    },
   },
   fractionalPage: {
     metaTitle: "Fractional Revenue Manager",
