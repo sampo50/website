@@ -332,6 +332,12 @@ export const fi = {
     headline: "Blogi",
     subheadline:
       "Käytännön näkökulmia hinnoitteluun, kysynnän hallintaan ja revenue managementiin hotelleille sekä serviced living -operaattoreille.",
+    themesLabel: "Teemat",
+    themes: [
+      "Hinnoittelun perusteet & analytiikka",
+      "Hotelli- / hospitality revenue management",
+      "Hinnoittelujärjestelmät, data & AI",
+    ],
     empty:
       "Ensimmäiset artikkelit julkaistaan pian. Jos haluat keskustella hotellisi revenue-tilanteesta jo nyt, varaa kartoitus.",
   },

@@ -331,6 +331,12 @@ export const en = {
     headline: "Blog",
     subheadline:
       "Practical perspectives on pricing, demand management and revenue management for hotels and serviced living operators.",
+    themesLabel: "Themes",
+    themes: [
+      "Pricing fundamentals & analytics",
+      "Hotel / hospitality revenue management",
+      "Pricing systems, data & AI",
+    ],
     empty:
       "The first articles will be published soon. If you want to discuss your hotel's revenue situation now, book a consultation.",
   },
